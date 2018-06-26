@@ -4,6 +4,9 @@
         <title>Laravel</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="assets/stylesheets/bootstrap.css">
+        <link rel="stylesheet" href="assets/stylesheets/bootstrap-theme.css">
+
 
         <style>
             html, body {
@@ -36,10 +39,14 @@
         </style>
     </head>
     <body>
+
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>
             </div>
         </div>
+
+      <script src="assets/javascripts/jquery-3.3.1.js"></script>
+      <script src="assets/javascripts/bootstrap.js"></script>
     </body>
 </html>
