@@ -15,5 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::auth();
-Route::get('/', 'HomeController@index');
+Route::group(['middleware' => ['web']], function () {
+
+  Route::auth();
+  Route::get('/', 'HomeController@index');
+  Route::get('/products/kachinko', 'TakesController@create');
+  Route::post('/products/takes', 'TakesController@store');
+});
