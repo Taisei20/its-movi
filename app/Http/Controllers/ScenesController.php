@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class Scenes extends Controller
+class ScenesController extends Controller
 {
     //
 }

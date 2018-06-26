@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class Takes extends Controller
+class ProductsController extends Controller
 {
     //
 }

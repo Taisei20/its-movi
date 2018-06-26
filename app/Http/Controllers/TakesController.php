@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class Cuts extends Controller
+class TakesController extends Controller
 {
     //
 }
