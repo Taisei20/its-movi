@@ -12,8 +12,7 @@ use Auth;
 class UsersController extends Controller
 {
     public function index(){
-      $products = Product::with('user');
-      return view('users.mypage')->with(array(
-                                        'products' => $products,));
+      $products = Product::where('user_id', Auth::user()->id)->get();
+      return view('users.mypage')->with('products', $products);
     }
 }

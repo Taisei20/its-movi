@@ -2,6 +2,7 @@
 
 @section('content')
 <style>
+  
 .new{
   display: inline-block;
   font-size: 24px;
@@ -14,7 +15,7 @@
   <h1 style=" float: left">作品一覧</h1>
   <a class=" new btn btn-default" href="" >新規作成</a>
   @foreach($products as $product)
-  <p>{{ $product->name }}</p>
+  <p>{{ $product->title }}</p>
   @endforeach
 </div>
 

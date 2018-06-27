@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+      $products = Product::where('user_id', Auth::user()->id)->get();
         return view('users.mypage');
     }
 }
