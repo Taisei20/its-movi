@@ -21,4 +21,5 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/', 'HomeController@index');
   Route::get('/products/kachinko', 'TakesController@create');
   Route::post('/products/kachinko', 'TakesController@store');
+  Route::get('/products/takes', 'TakesController@show');
 });

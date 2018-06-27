@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Take;
+use App\Take;
 
 class TakesController extends Controller
 {
@@ -24,6 +24,13 @@ class TakesController extends Controller
   }
 
   public function show(){
+  //   $judges = Take::all();
+  //   foreach ($judges as $judge){
+  //     if ($judge == 1) $judge = 'NG';
+  //     elseif ($judge == 2) $judge = 'OK';
+  //     else $judge = 'PD';
+  //   }
+
     $takes = Take::all();
     return view('products.takes')->with('takes', $takes);
   }
