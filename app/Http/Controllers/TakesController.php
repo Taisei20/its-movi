@@ -16,8 +16,10 @@ class TakesController extends Controller
   public function store(Request $request){
     Take::create(
       array(
+        'cut_id' => $request->cut_id,
         'take_number' => $request->take_number,
-        'judge' => $request->judge
+        'judge' => $request->judge,
+        'memo' => $request->memo
       )
     );
     return view('products.kachinko');
