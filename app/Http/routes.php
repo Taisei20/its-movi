@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::auth();
 Route::get('/', 'HomeController@index');
 Route::resource('users', 'UsersController',['only' => 'index']);
