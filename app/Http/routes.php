@@ -16,6 +16,13 @@ Route::get('/', function () {
 });
 
 
-Route::auth();
-Route::get('/', 'HomeController@index');
-Route::resource('users', 'UsersController',['only' => 'index']);
+Route::group(['middleware' => ['web']], function () {
+
+  Route::auth();
+  Route::get('/', 'HomeController@index');
+  Route::get('/products/kachinko', 'TakesController@create');
+  Route::post('/products/kachinko', 'TakesController@store');
+  Route::get('/products/takes', 'TakesController@show');
+  Route::resource('users', 'UsersController',['only' => 'index']);
+});
+
