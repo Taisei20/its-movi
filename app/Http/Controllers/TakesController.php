@@ -10,7 +10,7 @@ use App\Http\Take;
 class TakesController extends Controller
 {
   public function create(){
-      return view('products.takes');
+      return view('products.kachinko');
   }
 
   public function store(Request $request){
@@ -20,6 +20,11 @@ class TakesController extends Controller
         'judge' => $request->judge
       )
     );
-    return view('products.takes');
+    return view('products.kachinko');
+  }
+
+  public function show(){
+    $takes = Take::all();
+    return view('products.takes')->with('takes', $takes);
   }
 }
