@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <title>いつもMOVI</title>
 
     <!-- Fonts -->
@@ -44,11 +45,16 @@
                 </a>
             </div>
 
+
+            @if(Auth::check() )
+
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">ホーム</a></li>
+                   <li><a href="{{ url('/users') }}"> {{ Auth::user()->name }}さんのマイページ</a></li>
                 </ul>
+
+            @endif
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -72,7 +78,13 @@
         </div>
     </nav>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
     @yield('content')
+        </div>
+    </div>
+</div>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>

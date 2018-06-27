@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Product;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -24,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $products = Product::where('user_id', Auth::user()->id)->get();
+      return view('users.mypage')->with('products', $products);
     }
 }

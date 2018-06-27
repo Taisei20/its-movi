@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::group(['middleware' => ['web']], function () {
 
   Route::auth();
@@ -22,4 +23,6 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/products/kachinko', 'TakesController@create');
   Route::post('/products/kachinko', 'TakesController@store');
   Route::get('/products/takes', 'TakesController@show');
+  Route::resource('users', 'UsersController',['only' => 'index']);
 });
+
