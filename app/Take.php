@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Take extends Model
 {
-    protected $fillable = [
-        'cut_id', 'take_number', 'judge', 'memo'
-    ];
+
+     protected $guarded = ['id'];
+
+        public function cut()
+    {
+        return $this->belongsTo(Cut::class);
+    }
+
+
 }

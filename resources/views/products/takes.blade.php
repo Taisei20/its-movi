@@ -2,13 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>テイク一覧</title>
   </head>
   <body>
 @foreach($takes as $take)
+<h3>テイク</h3>
 <p>{{ $take->take_number }}</p>
 <p>{{ $take->judge }}</p>
+<h3>メモ</h3>
 <p>{{ $take->memo }}</p>
+<h3>カット</h3>
 <p>{{ $take->cut_id }}</p>
 @endforeach
   </body>
