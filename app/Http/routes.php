@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::auth();
 Route::get('/', 'HomeController@index');
+Route::resource('users', 'UsersController',['only' => 'index']);
