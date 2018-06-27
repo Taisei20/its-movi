@@ -14,7 +14,7 @@ class Cut extends Model
         return $this->hasMany(Take::class);
     }
 
-        public function scenes()
+        public function scene()
     {
         return $this->belongsTo(Scene::class);
     }

@@ -14,7 +14,7 @@ class Scene extends Model
         return $this->hasMany(Cut::class);
     }
 
-        public function products()
+        public function product()
     {
         return $this->belongsTo(Product::class);
 

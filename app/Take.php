@@ -8,7 +8,7 @@ class Take extends Model
 {
      protected $guarded = ['id'];
 
-        public function cuts()
+        public function cut()
     {
         return $this->belongsTo(Cut::class);
     }
