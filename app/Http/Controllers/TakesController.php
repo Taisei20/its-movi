@@ -9,22 +9,6 @@ use App\Take;
 
 class TakesController extends Controller
 {
-  public function create(){
-      return view('products.kachinko');
-  }
-
-  public function store(Request $request){
-    Take::create(
-      array(
-        'cut_id' => $request->cut_id,
-        'take_number' => $request->take_number,
-        'judge' => $request->judge,
-        'memo' => $request->memo
-      )
-    );
-    return view('products.kachinko');
-  }
-
   public function show(){
     $takes = Take::all();
     return view('products.takes')->with('takes', $takes);

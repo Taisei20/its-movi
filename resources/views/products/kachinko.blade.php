@@ -15,7 +15,6 @@
             </h3>
             <input placeholder="CUT No." type="integer" name="cut_id">
             <input placeholder="TAKE No." type="integer" name="take_number">
-            <!-- <input placeholder="NG=0, OK=1, PD=2" type="integer" name="judge"> -->
             <input name="judge" type="radio" value="1">OK
             <input name="judge" type="radio" value="2">NG
             <input name="judge" type="radio" value="3">PD
