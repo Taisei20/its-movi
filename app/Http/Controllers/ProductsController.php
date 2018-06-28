@@ -20,6 +20,11 @@ class ProductsController extends Controller
         $this->middleware('auth');
     }
 
+    public function index(){
+      $products = Product::where('user_id', Auth::user()->id)->get();
+      return view('users.mypage')->with('products', $products);
+    }
+
     public function create(){
       return view('products.create');
     }
