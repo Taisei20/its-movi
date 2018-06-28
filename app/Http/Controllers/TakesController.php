@@ -26,13 +26,6 @@ class TakesController extends Controller
   }
 
   public function show(){
-  //   $judges = Take::all();
-  //   foreach ($judges as $judge){
-  //     if ($judge == 1) $judge = 'NG';
-  //     elseif ($judge == 2) $judge = 'OK';
-  //     else $judge = 'PD';
-  //   }
-
     $takes = Take::all();
     return view('products.takes')->with('takes', $takes);
   }
