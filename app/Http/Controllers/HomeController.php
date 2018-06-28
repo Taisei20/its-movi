@@ -13,12 +13,12 @@ class HomeController extends Controller
      * Create a new controller instance.
      *
      * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('auth');
     }
-
+     */
     /**
      * Show the application dashboard.
      *
@@ -26,7 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $products = Product::where('user_id', Auth::user()->id)->get();
-      return view('users.mypage')->with('products', $products);
+      return view('welcome');
     }
 }
