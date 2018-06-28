@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Request;
+use App\Product;
+use Auth;
 
 class ProductsController extends Controller
 {
@@ -26,8 +27,8 @@ class ProductsController extends Controller
     public function store(Request $request){
       $product = Product::create(
                     array(
-                          'user_id'   => Auth::user()->id;
-                          'title'     => $request->title;
+                          'user_id'   => Auth::user()->id,
+                          'title'     => $request->title,
                     ));
       return redirect('/users');
     }

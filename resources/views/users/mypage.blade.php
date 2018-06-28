@@ -13,7 +13,7 @@
 
 <div class="content">
   <h1 style=" float: left">作品一覧</h1>
-  <a class=" new btn btn-default" href="" >新規作成</a>
+  <a class=" new btn btn-default" href="/users/products/create" >新規作成</a>
 </div>
 
 <div style="clear: both;"></div>
