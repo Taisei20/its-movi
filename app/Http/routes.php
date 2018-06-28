@@ -20,12 +20,17 @@ Route::group(['middleware' => ['web']], function () {
 
   Route::auth();
   Route::get('/', 'HomeController@index');
-  Route::get('/users/products/scenes/cuts/kachinko', 'TakesController@create');
-  Route::post('/users/products/scenes/cuts/kachinko', 'TakesController@store');
+  Route::get('/users/products/scenes/cuts/kachinko', 'KachinkoController@create');
+  Route::post('/users/products/scenes/cuts/kachinko', 'KachinkoController@store');
+  Route::post('/users/products/scenes/cuts/kachinko', 'KachinkoController@show');
   Route::get('users/products/scenes/cuts/takes', 'TakesController@show');
   Route::resource('/users', 'UsersController',['except' => 'create']);
   Route::resource('/users/products', 'ProductsController');
   Route::resource('/users/products/scenes','ScenesController');
   Route::resource('/users/products/scenes/cuts','CutsController');
+
+  Route::post('/users/products/scenes', 'ScenesController@store');
+  Route::get('/users/products/scenes', 'ScenesController@show');
+
 });
 
