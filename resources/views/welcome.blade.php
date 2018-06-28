@@ -31,9 +31,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <h1>Welcome</h1>
-            <p>Your Application's Landing Page.</p>
+            <h1>いつもMOVI</h1>
+            <p>あなたの心にいつもMOVI</p>
+            <div class="grid-6">
+            <a href="/login" class="post">ログイン</a>
+            <a href="/register" class="post">新規登録</a>
         </div>
-    </div>
-</div>
-
