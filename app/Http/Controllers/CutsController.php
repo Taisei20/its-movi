@@ -9,6 +9,17 @@ use App\Cut;
 
 class CutsController extends Controller
 {
+
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function store(Request $request){
     Cut::create(
       array(
@@ -22,4 +33,5 @@ class CutsController extends Controller
     $cuts = Cut::all();
     return view('products.cuts')->with('cuts', $cuts);
   }
+
 }

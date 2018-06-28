@@ -14,6 +14,19 @@ use App\Scene;
 class ScenesController extends Controller
 {
 
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    
+
+
   public function store(Request $request){
     Scene::create(
       array(
@@ -27,6 +40,7 @@ class ScenesController extends Controller
     $scenes = Scene::all();
     return view('products.scenes')->with('scenes', $scenes);
   }
+
 
 
 }
