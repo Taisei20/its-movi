@@ -10,7 +10,7 @@ use App\Scene;
 use App\Cut;
 use App\Take;
 
-class TakesController extends Controller
+class KachinkoController extends Controller
 {
   public function create(){
       return view('products.kachinko');
@@ -29,6 +29,9 @@ class TakesController extends Controller
   }
 
   public function show(){
+    $product_name = Product::find(1);
+    $scene_number = Scene::find(1);
 
+    return view('products.kachinko')->with(array('product_name' => $product_name, 'scene_number' => $scene_number));
   }
 }
