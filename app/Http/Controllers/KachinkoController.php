@@ -19,7 +19,6 @@ class KachinkoController extends Controller
   public function store(Request $request){
     Take::create(
       array(
-        'cut_id' => $request->cut_id,
         'take_number' => $request->take_number,
         'judge' => $request->judge,
         'memo' => $request->memo
@@ -31,7 +30,8 @@ class KachinkoController extends Controller
   public function show(){
     $product = Product::find(1);
     $scene = Scene::find(1);
+    $cut = Cut::find(1);
 
-    return view('products.kachinko')->with(array('product' => $product, 'scene' => $scene));
+    return view('products.kachinko')->with(array('product' => $product, 'scene' => $scene, 'cut' => $cut));
   }
 }
