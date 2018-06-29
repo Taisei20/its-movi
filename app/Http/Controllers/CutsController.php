@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Cut;
+use App\Scene;
+use App\Product;
 
 class CutsController extends Controller
 {
@@ -31,7 +33,11 @@ class CutsController extends Controller
 
   public function show($id){
     $cuts = Cut::where('scene_id',$id)->orderBy('cut_number', 'ASC')->get();
-    return view('products.cuts')->with('cuts', $cuts);
+    $nav_scene = Scene::find($id);
+    $title = Product::find($nav_scene->product_id);
+    return view('products.cuts')->with(array('cuts' => $cuts,
+                                             'nav_scene' => $nav_scene,
+                                             'title' => $title));
   }
 
 }

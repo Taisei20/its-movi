@@ -59,6 +59,10 @@
             <span class="navbar-brand" >{{ $title->title }}</span>
             @endif
 
+            @if(isset($nav_scene))
+            <span class="navbar-brand" >{{ $nav_scene->scene_number }}</span>
+            @endif
+
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
