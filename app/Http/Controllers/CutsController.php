@@ -29,8 +29,8 @@ class CutsController extends Controller
     return redirect('/users/products/scenes/cuts');
   }
 
-  public function show(){
-    $cuts = Cut::all();
+  public function show($id){
+    $cuts = Cut::where('scene_id',$id)->get();
     return view('products.cuts')->with('cuts', $cuts);
   }
 
