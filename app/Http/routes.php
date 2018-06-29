@@ -22,7 +22,7 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/', 'HomeController@index');
   Route::get('/users/products/scenes/cuts/kachinko', 'KachinkoController@create');
   Route::post('/users/products/scenes/cuts/kachinko', 'KachinkoController@store');
-  Route::post('/users/products/scenes/cuts/kachinko', 'KachinkoController@show');
+  Route::get('/users/products/scenes/cuts/kachinko', 'KachinkoController@show');
   Route::get('users/products/scenes/cuts/takes', 'TakesController@show');
   Route::resource('/users', 'UsersController',['except' => 'create']);
   Route::resource('/users/products', 'ProductsController');

@@ -29,9 +29,9 @@ class KachinkoController extends Controller
   }
 
   public function show(){
-    $product_name = Product::find(1);
-    $scene_number = Scene::find(1);
+    $product = Product::find(1);
+    $scene = Scene::find(1);
 
-    return view('products.kachinko')->with(array('product_name' => $product_name, 'scene_number' => $scene_number));
+    return view('products.kachinko')->with(array('product' => $product, 'scene' => $scene));
   }
 }
