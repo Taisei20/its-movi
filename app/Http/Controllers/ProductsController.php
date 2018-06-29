@@ -35,7 +35,7 @@ class ProductsController extends Controller
                           'user_id'   => Auth::user()->id,
                           'title'     => $request->title,
                     ));
-      return redirect('/users');
+      return redirect('/users/products');
     }
 
 
