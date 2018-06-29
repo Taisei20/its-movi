@@ -14,8 +14,7 @@
 
   <div>
     @foreach($cuts as $cut)
-    <h3>カットNo.</h3>
-    <p>{{ $cut->cut_number }}</p>
+    <h3>カットNo.{{ $cut->cut_number }}</h3>
     @endforeach
   </div>
 

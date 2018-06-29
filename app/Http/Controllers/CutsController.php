@@ -30,7 +30,7 @@ class CutsController extends Controller
   }
 
   public function show($id){
-    $cuts = Cut::where('scene_id',$id)->get();
+    $cuts = Cut::where('scene_id',$id)->orderBy('cut_number', 'ASC')->get();
     return view('products.cuts')->with('cuts', $cuts);
   }
 
