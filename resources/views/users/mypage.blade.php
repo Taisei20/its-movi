@@ -2,7 +2,7 @@
 
 @section('content')
 <style>
-  
+
 .new{
   display: inline-block;
   font-size: 24px;
@@ -19,14 +19,15 @@
 <div style="clear: both;"></div>
 
 <div class="row">
-<div class="products">
-<ul>
-  @foreach($products as $product)
-   <li >{{ $product->title }}</li> 
-   <a href="/users/products/1" title="">test</a>
-  @endforeach
-</ul>
-</div>
+  <div class="products">
+    <ul>
+      @foreach($products as $product)
+        <a href="/users/products/{{ $product->id }}" title="">
+         <li >{{ $product->title }}</li>
+       </a>
+      @endforeach
+    </ul>
+  </div>
 </div>
 
 @endsection
