@@ -37,7 +37,7 @@ class ScenesController extends Controller
   }
 
   public function show($id){
-    $scenes = Scene::where('product_id',$id)->get();
+    $scenes = Scene::where('product_id',$id)->orderBy('scene_number', 'ASC')->get();
     $title = Product::find($id);
     return view('products.scenes')->with(array(
                                           'scenes' => $scenes,

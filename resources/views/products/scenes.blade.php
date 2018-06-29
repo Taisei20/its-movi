@@ -14,8 +14,7 @@
 
   <div>
     @foreach($scenes as $scene)
-    <h3>シーン</h3>
-    <p>{{ $scene->scene_number }}</p>
+    <h3>シーンNo.{{ $scene->scene_number }}</h3>
     @endforeach
   </div>
 
