@@ -33,7 +33,17 @@
         <div class="col-md-10 col-md-offset-1">
             <h1>いつもMOVI</h1>
             <p>あなたの心にいつもMOVI</p>
+            @if(Auth::check())
             <div class="grid-6">
-            <a href="/login" class="post">ログイン</a>
-            <a href="/register" class="post">新規登録</a>
+                <a href="/users/products" class="post">マイページ</a>
+                <a href="/logout" class="post">ログアウト</a>
+            </div>
+            @else
+            <div class="grid-6">
+                <a href="/login" class="post">ログイン</a>
+                <a href="/register" class="post">新規登録</a>
+            </div>
+            @endif
         </div>
+    </div>
+</div>
