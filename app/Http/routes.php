@@ -38,7 +38,7 @@ Route::group(['middleware' => ['web']], function () {
 //
   Route::get('/users/products/scenes/cuts/kachinko', 'KachinkoController@create');
   Route::post('/users/products/scenes/cuts/kachinko', 'KachinkoController@store');
-  Route::post('/users/products/scenes/cuts/kachinko', 'KachinkoController@show');
+  Route::get('/users/products/scenes/cuts/kachinko', 'KachinkoController@show');
 
 });
 

@@ -8,10 +8,10 @@
     <div>
         {{ Form::open(['url' => '/users/products/scenes/cuts/kachinko', 'method' => 'post']) }}
             <h3>
-                    作品名
+                    {{$product->title}}
             </h3>
             <h3>
-                    SCENE No.
+                    SCENE {{$scene->scene_number}}
             </h3>
             <input placeholder="CUT No." type="integer" name="cut_id">
             <input placeholder="TAKE No." type="integer" name="take_number">
