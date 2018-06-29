@@ -7,10 +7,8 @@
   <body>
 @foreach($takes as $take)
 <p>==================================</p>
-<h3>カットNo.</h3>
-<p>{{ $take->cut_id }}</p>
-<h3>テイクNo.</h3>
-<p>{{ $take->take_number }}</p>
+<h3>カットNo.{{ $take->cut_id }}</h3>
+<h3>テイクNo.{{ $take->take_number }}</h3>
 <?php if ($take->judge == 1) : ?>
 <p>NG</p>
 <?php elseif ($take->judge == 2) : ?>
@@ -23,5 +21,6 @@
 <h3>メモ</h3>
 <p>{{ $take->memo }}</p>
 @endforeach
+<p>==================================</p>
   </body>
 </html>
