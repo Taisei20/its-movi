@@ -9,8 +9,8 @@ use App\Take;
 
 class TakesController extends Controller
 {
-  public function show(){
-    $takes = Take::all();
+  public function show($id){
+    $takes = Take::where('cut_id', $id)->orderBy('take_number', 'ASC')->get();
     return view('products.takes')->with('takes', $takes);
   }
 }
