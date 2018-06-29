@@ -36,8 +36,8 @@ class ScenesController extends Controller
     return redirect('/users/products/scenes');
   }
 
-  public function show(){
-    $scenes = Scene::all();
+  public function show($id){
+    $scenes = Scene::where('product_id',$id)->get();
     return view('products.scenes')->with('scenes', $scenes);
   }
 

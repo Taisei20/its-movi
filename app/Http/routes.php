@@ -25,20 +25,20 @@ Route::group(['middleware' => ['web']], function () {
   Route::resource('/users/products', 'ProductsController',['except' => 'show']);
 
 //
-  Route::post('/users/products/scenes', 'ScenesController@store');
-  Route::get('/users/products/scenes', 'ScenesController@show');
+  Route::post('/users/products/{id}', 'ScenesController@store');
+  Route::get('/users/products/{id}', 'ScenesController@show');
 
 //
-  Route::post('/users/products/scenes/cuts','CutsController@store');
-  Route::get('/users/products/scenes/cuts','CutsController@show');
+  Route::post('/users/products/scenes/{id}','CutsController@store');
+  Route::get('/users/products/scenes/{id}','CutsController@show');
 
 //
-  Route::get('users/products/scenes/cuts/takes', 'TakesController@show');
+  Route::get('/users/products/scenes/cuts/{id}', 'TakesController@show');
 
 //
-  Route::get('/users/products/scenes/cuts/kachinko', 'KachinkoController@create');
-  Route::post('/users/products/scenes/cuts/kachinko', 'KachinkoController@store');
-  Route::get('/users/products/scenes/cuts/kachinko', 'KachinkoController@show');
+  Route::get('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@create');
+  Route::post('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@store');
+  Route::get('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@show');
 
 });
 

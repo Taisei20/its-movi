@@ -23,6 +23,7 @@
 <ul>
   @foreach($products as $product)
    <li >{{ $product->title }}</li> 
+   <a href="/users/products/1" title="">test</a>
   @endforeach
 </ul>
 </div>
