@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Scene;
+use App\product;
 
 class ScenesController extends Controller
 {
@@ -24,7 +25,6 @@ class ScenesController extends Controller
         $this->middleware('auth');
     }
 
-    
 
 
   public function store(Request $request){
@@ -38,9 +38,11 @@ class ScenesController extends Controller
 
   public function show($id){
     $scenes = Scene::where('product_id',$id)->get();
-    return view('products.scenes')->with('scenes', $scenes);
+    $title = Product::find($id);
+    return view('products.scenes')->with(array(
+                                          'scenes' => $scenes,
+                                          'title' => $title));
   }
-
 
 
 }

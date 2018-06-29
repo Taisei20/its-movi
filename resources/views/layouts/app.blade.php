@@ -53,7 +53,10 @@
                 <ul class="nav navbar-nav">
                    <li><a href="{{ url('/users/products') }}"> {{ Auth::user()->name }}さんのマイページ</a></li>
                 </ul>
+            @endif
 
+            @if(isset($title))
+            <span class="navbar-brand" >{{ $title->title }}</span>
             @endif
 
                 <!-- Right Side Of Navbar -->
