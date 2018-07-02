@@ -7,10 +7,9 @@
   <body>
   	  	<div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">カチンコ画面へ</a></div>
 
-
 @foreach($takes as $take)
 <p>==================================</p>
-<h3>カットNo.{{ $take->cut_id }}</h3>
+<h3>カットNo.{{ $cut->cut_number }}</h3>
 <h3>テイクNo.{{ $take->take_number }}</h3>
 <?php if ($take->judge == 1) : ?>
 <p>NG</p>
