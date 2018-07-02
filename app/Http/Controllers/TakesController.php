@@ -6,11 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Take;
+use App\Product;
+use App\Scene;
+use App\Cut;
 
 class TakesController extends Controller
 {
   public function show($id){
     $takes = Take::where('cut_id', $id)->orderBy('take_number', 'ASC')->get();
-    return view('products.takes')->with('takes', $takes);
+    $nav_cut = Cut::find($id);
+    $nav_scene = Scene::find($nav_cut->id);
+    $title = Product::find($nav_scene->product_id);
+    return view('products.takes')->with(array(
+                                          'takes' => $takes,
+                                          'title' => $title,
+                                          'nav_scene' => $nav_scene,
+                                          'nav_cut' => $nav_cut));
   }
 }
