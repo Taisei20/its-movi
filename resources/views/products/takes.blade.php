@@ -5,6 +5,9 @@
     <title>テイク一覧</title>
   </head>
   <body>
+  	  	<div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">カチンコ画面へ</a></div>
+
+
 @foreach($takes as $take)
 <p>==================================</p>
 <h3>カットNo.{{ $take->cut_id }}</h3>
@@ -22,5 +25,6 @@
 <p>{{ $take->memo }}</p>
 @endforeach
 <p>==================================</p>
+
   </body>
 </html>
