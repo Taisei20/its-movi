@@ -13,11 +13,13 @@ use App\Cut;
 class TakesController extends Controller
 {
   public function show($id){
+    $cut = Cut::find($id);
     $takes = Take::where('cut_id', $id)->orderBy('take_number', 'ASC')->get();
     $nav_cut = Cut::find($id);
     $nav_scene = Scene::find($nav_cut->id);
     $title = Product::find($nav_scene->product_id);
     return view('products.takes')->with(array(
+                                          'cut' => $cut,
                                           'takes' => $takes,
                                           'title' => $title,
                                           'nav_scene' => $nav_scene,
