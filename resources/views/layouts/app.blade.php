@@ -45,6 +45,7 @@
                 </a>
             </div>
 
+<!-- ログインユーザの名前表示 -->
 
             @if(Auth::check() )
 
@@ -55,13 +56,25 @@
                 </ul>
             @endif
 
+<!-- header内のパン屑情報 -->
+
             @if(isset($title))
-            <span class="navbar-brand" >{{ $title->title }}</span>
+            <a class="navbar-brand" href="{{ url('/users/products') }}" title="">
+            {{ $title->title }}</a>
             @endif
 
             @if(isset($nav_scene))
-            <span class="navbar-brand" >{{ $nav_scene->scene_number }}</span>
+            <a class="navbar-brand" href="/users/products/{{ $title->id }}" title="">
+            Scene: {{ $nav_scene->scene_number }}
+            </a>
             @endif
+
+            @if(isset($nav_cut))
+            <a class="navbar-brand" href="/users/products/scenes/{{ $nav_scene->id }}" title="">
+            cut: {{ $nav_cut->cut_number }}
+            </a>
+            @endif
+
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
