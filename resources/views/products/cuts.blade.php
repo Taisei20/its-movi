@@ -21,6 +21,7 @@
     @foreach($cuts as $cut)
     <a href="/users/products/scenes/cuts/{{ $cut->id }}"><li>カットNo.{{ $cut->cut_number }}</li></a>
     @endforeach
+    <div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">カチンコ画面へ</a></div>
   </div>
 
 
