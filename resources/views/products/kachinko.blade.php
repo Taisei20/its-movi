@@ -7,7 +7,7 @@
   </head>
   <body>
     <div>
-        {{ Form::open(['url' => '/users/products/scenes/cuts/kachinko', 'method' => 'post']) }}
+        {{ Form::open(['url' => "/users/products/scenes/cuts/{$cut->id}/kachinko", 'method' => 'post']) }}
             <h3>
               {{$product->title}}
             </h3>
@@ -26,7 +26,7 @@
               <input name="judge" type="radio" value="3">PD
             </div>
             <div><textarea cols="30" name="memo" placeholder="memo" rows="10"></textarea></div>
-            <div><input type="submit" value="SENT"></div>
+            <div><input type="submit" value="保存"></div>
         {{ Form::close() }}
     </div>
 
