@@ -31,7 +31,8 @@ class KachinkoController extends Controller
     $cut = Cut::find($id);
     $scene = Scene::find($cut->scene_id);
     $product = Product::find($scene->product_id);
+    $take = Take::where('cut_id', $id)->orderBy('take_number', 'DESC')->first();
 
-    return view('products.kachinko')->with(array('product' => $product, 'scene' => $scene, 'cut' => $cut));
+    return view('products.kachinko')->with(array('product' => $product, 'scene' => $scene, 'cut' => $cut, 'take' => $take));
   }
 }
