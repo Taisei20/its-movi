@@ -1,0 +1,64 @@
+body {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+.contents {
+  heinht: 1080px;
+  width: 1920px;
+  background-color: #222222;
+}
+
+.shimashima {
+  height: 180px;
+  width: 1920px;
+  background-color: #222222;
+}
+
+.title {
+  height: 180px;
+  width: 1152px;
+  background-color: #222222;
+}
+
+.date {
+  height: 180px;
+  width: 768px;
+  background-color: #222222;
+}
+
+.scene {
+  height: 360px;
+  width: 640px;
+  background-color: #222222;
+}
+
+.cut {
+  height: 360px;
+  width: 640px;
+  background-color: #222222;
+}
+
+.take {
+  height: 360px;
+  width: 640px;
+  background-color: #222222;
+}
+
+.iroiro {
+  height: 360px;
+  width: 1280px;
+  background-color: #222222;
+}
+
+.play {
+  height: 360px;
+  width: 640px;
+  background-color: #222222;
+}
