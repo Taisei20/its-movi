@@ -18,7 +18,7 @@
               CUT {{$cut->cut_number}}
             </h3>
             <h3>
-              TAKE <input placeholder="No." type="integer" name="take_number"></div>
+              TAKE {{$take->take_number+1}}
             </h3>
             <div>
               <input name="judge" type="radio" value="1">OK
@@ -30,8 +30,8 @@
         {{ Form::close() }}
     </div>
 
-        <div><a href="/users/products/scenes/cuts/{{$cut->id}}" title="テイク一覧画面へ">テイク一覧画面へ</a></div>
-    <div><a href="/users/products/scenes/{{$cut->scene_id}}" title="テイク一覧画面へ">カット一覧画面へ</a></div>
+    <div><a href="/users/products/scenes/cuts/{{$cut->id}}" title="テイク一覧画面へ">テイク一覧画面へ</a></div>
+    <div><a href="/users/products/scenes/{{$cut->scene_id}}" title="カット一覧画面へ">カット一覧画面へ</a></div>
 
   </body>
 </html>
