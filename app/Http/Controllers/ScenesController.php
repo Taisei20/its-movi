@@ -27,13 +27,14 @@ class ScenesController extends Controller
 
 
 
-  public function store(Request $request){
+  public function store($id, Request $request){
     Scene::create(
       array(
-        'scene_number' => $request->scene_number
+        'scene_number' => $request->scene_number,
+        'product_id' => $id
       )
     );
-    return redirect('/users/products/scenes');
+    return redirect("/users/products/{$id}");
   }
 
   public function show($id){
@@ -41,7 +42,9 @@ class ScenesController extends Controller
     $title = Product::find($id);
     return view('products.scenes')->with(array(
                                           'scenes' => $scenes,
-                                          'title' => $title));
+                                          'title' => $title,
+                                          'id' => $id
+                                        ));
   }
 
 
