@@ -12,12 +12,9 @@ use App\Take;
 
 class KachinkoController extends Controller
 {
-  // public function create(){
-  //     return view('products.kachinko');
-  // }
 
   public function store($id, Request $request){
-    //dd($id);
+
     Take::create(
       array(
         'take_number' => $request->take_number,
@@ -26,7 +23,7 @@ class KachinkoController extends Controller
         'cut_id' => $id
       )
     );
-    //return view('products.kachinko');
+
     return redirect("/users/products/scenes/cuts/{$id}/kachinko");
   }
 

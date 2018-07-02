@@ -30,5 +30,8 @@
         {{ Form::close() }}
     </div>
 
+        <div><a href="/users/products/scenes/cuts/{{$cut->id}}" title="テイク一覧画面へ">テイク一覧画面へ</a></div>
+    <div><a href="/users/products/scenes/{{$cut->scene_id}}" title="テイク一覧画面へ">カット一覧画面へ</a></div>
+
   </body>
 </html>
