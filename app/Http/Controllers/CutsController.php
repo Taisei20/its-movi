@@ -22,13 +22,14 @@ class CutsController extends Controller
         $this->middleware('auth');
     }
 
-    public function store(Request $request){
+    public function store($id, Request $request){
     Cut::create(
       array(
-        'cut_number' => $request->cut_number
+        'cut_number' => $request->cut_number,
+        'scene_id' => $id
       )
     );
-    return redirect('/users/products/scenes/cuts');
+    return redirect("/users/products/scenes/{$id}");
   }
 
   public function show($id){
@@ -37,7 +38,9 @@ class CutsController extends Controller
     $title = Product::find($nav_scene->product_id);
     return view('products.cuts')->with(array('cuts' => $cuts,
                                              'nav_scene' => $nav_scene,
-                                             'title' => $title));
+                                             'title' => $title,
+                                             'id' => $id
+                                         ));
   }
 
 }
