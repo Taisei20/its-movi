@@ -14,7 +14,10 @@
 
   <div>
     @foreach($scenes as $scene)
-    <h3>シーンNo.{{ $scene->scene_number }}</h3>
+    <!-- <a href="/users/products/{{ $product->id }}/{{ $scenes->id }}" title=""><li>シーンNo.{{ $scene->scene_number }}</li></a> -->
+    <!-- <a href="/users/products/{{ $product->id }}" title="">
+         <li >{{ $product->title }}</li>
+       </a> -->
     @endforeach
   </div>
 
