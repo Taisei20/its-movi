@@ -11,7 +11,7 @@
   </head>
   <body>
   <div>
-    {{ Form::open(['url' => '/users/products/scenes/cuts', 'method' => 'post']) }}
+    {{ Form::open(['url' => "/users/products/scenes/{$id}", 'method' => 'post']) }}
         <input placeholder="追加するカット No." type="integer" name="cut_number">
         <input type="submit" value="カットを追加">
     {{ Form::close() }}
@@ -19,7 +19,7 @@
 
   <div>
     @foreach($cuts as $cut)
-    <h3>カットNo.{{ $cut->cut_number }}</h3>
+    <a href="/users/products/scenes/cuts/{{ $cut->id }}"><li>カットNo.{{ $cut->cut_number }}</li></a>
     @endforeach
   </div>
 
