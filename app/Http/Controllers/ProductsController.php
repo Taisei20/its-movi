@@ -30,7 +30,7 @@ class ProductsController extends Controller
     }
 
     public function store(Request $request){
-      $product = Product::create(
+      Product::create(
                     array(
                           'user_id'   => Auth::user()->id,
                           'title'     => $request->title,
