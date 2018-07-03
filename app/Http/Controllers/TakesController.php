@@ -15,7 +15,7 @@ class TakesController extends Controller
   public function show($id){
     $takes = Take::where('cut_id', $id)->orderBy('take_number', 'ASC')->get();
     $nav_cut = Cut::find($id);
-    $nav_scene = Scene::find($nav_cut->id);
+    $nav_scene = Scene::find($nav_cut->scene_id);
     $title = Product::find($nav_scene->product_id);
     return view('products.takes')->with(array(
                                           'takes' => $takes,
