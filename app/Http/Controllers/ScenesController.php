@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Scene;
-use App\product;
+use App\Product;
 
 class ScenesController extends Controller
 {
