@@ -13,7 +13,7 @@ class CreateProductsTable extends Migration{
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('story');
+            $table->text('story')->nullable();
             $table->text('url');
             $table->text('comment');
             $table->integer('end_flag');
