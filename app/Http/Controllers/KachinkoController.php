@@ -15,9 +15,11 @@ class KachinkoController extends Controller
 
   public function store($id, Request $request){
 
+    $take_number = Take::where('cut_id', $id)->orderBy('take_number', 'DESC')->first()->take_number;
+
     Take::create(
       array(
-        'take_number' => $request->take_number,
+        'take_number' => $take_number + 1,
         'judge' => $request->judge,
         'memo' => $request->memo,
         'cut_id' => $id
