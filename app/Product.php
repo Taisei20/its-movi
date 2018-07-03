@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 
-     protected $guarded = ['id'];
+     protected $fillable = ['title', 'user_id'];
 
         public function scences()
     {
