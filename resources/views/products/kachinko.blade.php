@@ -18,7 +18,7 @@
               CUT {{$cut->cut_number}}
             </h3>
             <h3>
-              TAKE {{$take->take_number+1}}
+              TAKE {{$take_number+1}}
             </h3>
             <div>
               <input name="judge" type="radio" value="1">OK

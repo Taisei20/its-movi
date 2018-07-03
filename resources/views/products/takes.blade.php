@@ -15,9 +15,9 @@
 <h3>カットNo.{{ $cut->cut_number }}</h3>
 <h3>テイクNo.{{ $take->take_number }}</h3>
 <?php if ($take->judge == 1) : ?>
-<p>NG</p>
-<?php elseif ($take->judge == 2) : ?>
 <p>OK</p>
+<?php elseif ($take->judge == 2) : ?>
+<p>NG</p>
 <?php elseif ($take->judge == 3) : ?>
 <p>PD</p>
 <?php else : ?>

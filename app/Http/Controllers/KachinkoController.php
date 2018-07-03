@@ -15,7 +15,10 @@ class KachinkoController extends Controller
 
   public function store($id, Request $request){
 
-    $take_number = Take::where('cut_id', $id)->orderBy('take_number', 'DESC')->first()->take_number;
+    $take_number = Take::where('cut_id', $id)->get()->count();
+    if(!$take_number){
+      $take_number = 0;
+    }
 
     Take::create(
       array(
@@ -33,8 +36,11 @@ class KachinkoController extends Controller
     $cut = Cut::find($id);
     $scene = Scene::find($cut->scene_id);
     $product = Product::find($scene->product_id);
-    $take = Take::where('cut_id', $id)->orderBy('take_number', 'DESC')->first();
+    $take_number = Take::where('cut_id', $id)->get()->count();
+    if(!$take_number){
+      $take_number = 0;
+    }
 
-    return view('products.kachinko')->with(array('product' => $product, 'scene' => $scene, 'cut' => $cut, 'take' => $take));
+    return view('products.kachinko')->with(array('product' => $product, 'scene' => $scene, 'cut' => $cut, 'take_number' => $take_number));
   }
 }
