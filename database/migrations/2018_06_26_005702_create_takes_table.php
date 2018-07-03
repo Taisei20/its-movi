@@ -14,10 +14,10 @@ class CreateTakesTable extends Migration
     {
         Schema::create('takes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('take_number');
-            $table->integer('judge');
-            $table->text('memo');
-            $table->integer('cut_id');
+            $table->integer('take_number')->nullable();
+            $table->integer('judge')->nullable();
+            $table->text('memo')->nullable();
+            $table->integer('cut_id')->nullable();
             $table->timestamps();
         });
     }

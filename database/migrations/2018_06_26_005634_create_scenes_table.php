@@ -12,12 +12,12 @@ class CreateScenesTable extends Migration{
     public function up(){
         Schema::create('scenes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('scene_number');
-            $table->double('lng',9,6);
-            $table->double('lat',8,6);
-            $table->string('place_name');
-            $table->text('adress');
-            $table->text('memo');
+            $table->integer('scene_number')->nullable();
+            $table->double('lng',9,6)->nullable();
+            $table->double('lat',8,6)->nullable();
+            $table->string('place_name')->nullable();
+            $table->text('adress')->nullable();
+            $table->text('memo')->nullable();
             $table->integer('product_id');
             $table->timestamps();
         });

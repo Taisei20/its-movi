@@ -12,9 +12,9 @@ class CreateCutsTable extends Migration{
     public function up(){
         Schema::create('cuts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('cut_number');
-            $table->text('memo');
-            $table->integer('scene_id');
+            $table->integer('cut_number')->nullable();
+            $table->text('memo')->nullable();
+            $table->integer('scene_id')->nullable();
             $table->timestamps();
         });
     }
