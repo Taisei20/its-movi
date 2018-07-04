@@ -26,7 +26,9 @@ class UsersController extends Controller
 
   //  share機能の作品詳細ページ表示・作品詳細表示
     public function products_share($id){
-      return view('products.share');
+    // shareページで選択した作品の詳細情報表示
+        $dtlProduct = Product::find($id);
+      return view('products.share')->with('dtlProduct', $dtlProduct);
     }
 
 }

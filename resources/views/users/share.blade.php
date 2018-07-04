@@ -4,9 +4,10 @@
 <div class="content">
   <h1 style=" float: left">作品一覧</h1>
 </div>
-</div>
 
-  <div class="col-md-10 col-md-offset-1">
+
+<div style="clear: both;"></div>
+<div>
     <ul>
       @foreach($products as $product)
         <a href="/users/products/share/{{ $product->id }}" title="">
@@ -15,6 +16,6 @@
       @endforeach
     </ul>
   </div>
-</div>
+
 
 @endsection

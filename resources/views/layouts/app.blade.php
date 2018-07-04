@@ -75,6 +75,14 @@
             </a>
             @endif
 
+<!-- header内のshare機能時のパン屑 -->
+
+            @if(isset($dtlProduct))
+            <a class="navbar-brand" href="/users/share/{{ $dtlProduct->user_id }}" title="">
+            作品名: {{ $dtlProduct->title }}
+            </a>
+            @endif
+
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
