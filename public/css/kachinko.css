@@ -25,12 +25,14 @@ h1,h2,h3,h4,h5,h6,p {
 .ue {
   height: 15vh;
   width: 100vw;
-
+  border-top: solid #EEEEEE;
+  border-bottom: solid #EEEEEE;
 }
 
 .mannaka {
   height: 30vh;
   width: 100vw;
+  border-bottom: solid #EEEEEE;
 }
 
 .shita {
@@ -56,6 +58,8 @@ h1,h2,h3,h4,h5,h6,p {
   width: 40%;
   background-color: #222222;
   float: right;
+  border-left: solid #EEEEEE;
+  box-sizing: border-box;
 }
 
 .scene {
@@ -63,6 +67,8 @@ h1,h2,h3,h4,h5,h6,p {
   width: 33%;
   background-color: #222222;
   float: left;
+  box-sizing: border-box;
+  border-right: solid #EEEEEE;
 }
 
 .cut {
@@ -70,6 +76,8 @@ h1,h2,h3,h4,h5,h6,p {
   width: 34%;
   background-color: #222222;
   float: left;
+  box-sizing: border-box;
+  border-right: solid #EEEEEE;
 }
 
 .take {
@@ -84,6 +92,8 @@ h1,h2,h3,h4,h5,h6,p {
   width: 67%;
   background-color: #222222;
   float: left;
+  box-sizing: border-box;
+  border-right: solid #EEEEEE;
 }
 
 .play {
@@ -91,4 +101,9 @@ h1,h2,h3,h4,h5,h6,p {
   width: 33%;
   background-color: #222222;
   float: right;
+}
+
+.kachinko-image {
+  height: 100%;
+  width: 100%;
 }
