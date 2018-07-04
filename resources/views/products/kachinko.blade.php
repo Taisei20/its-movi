@@ -11,7 +11,7 @@
         {{ Form::open(['url' => "/users/products/scenes/cuts/{$cut->id}/kachinko", 'method' => 'post']) }}
         <div>
           <div class="shimashima">
-            
+            <img src="/assets/images/kachinko.jpg" class="kachinko-image">
           </div>
           <div class="ue">
           <div class="title">
@@ -23,7 +23,7 @@
             
           </div>
         </div>
-          <div class="mannaka">
+          <div class="mannaka clearfix">
           <div class="scene">
             <h3>
               SCENE {{$scene->scene_number}}
