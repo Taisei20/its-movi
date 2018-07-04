@@ -79,7 +79,7 @@
 
             @if(isset($dtlProduct))
             <a class="navbar-brand" href="/users/share/{{ $dtlProduct->user_id }}" title="">
-            作品名: {{ $dtlProduct->title }}
+            {{ $dtlProduct->user->name }}さんの作品一覧
             </a>
             @endif
 
