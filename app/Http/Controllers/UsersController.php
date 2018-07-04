@@ -15,14 +15,16 @@ class UsersController extends Controller
      * Create a new controller instance.
      *
      * @return void
+    */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
+ // share機能の作品一覧ページ表示・作品情報取得
+    public function users_share($id){
+        return view('users.share');
     }
-     */
-    // public function index(){
-    //   $products = Product::where('user_id', Auth::user()->id)->get();
-    //   return view('users.mypage')->with('products', $products);
-    // }
+
+  //  share機能の作品詳細ページ表示・作品詳細表示
+    public function products_share($id){
+      return view('products.share');
+    }
+
 }

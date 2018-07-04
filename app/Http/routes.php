@@ -40,5 +40,9 @@ Route::group(['middleware' => ['web']], function () {
   Route::post('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@store');
   Route::get('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@show');
 
+// share機能のroute
+  Route::get('/users/share/{id}', 'UsersController@users_share');
+  Route::get('/users/products/share/{id}', 'UsersController@products_share');
+
 });
 
