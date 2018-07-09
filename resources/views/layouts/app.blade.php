@@ -97,11 +97,13 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>ログアウト</a></li>
+                                <li><a href="/users/share/{{ Auth::user()->id }}"><i class="fa fa-btn glyphicon glyphicon-share"></i>作品公開ページ</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn glyphicon glyphicon-log-out"></i>ログアウト</a></li>
                             </ul>
                         </li>
                     @endif
                 </ul>
+
             </div>
         </div>
     </nav>
