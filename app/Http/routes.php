@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::group(['middleware' => ['web']], function () {
-
   Route::auth();
   Route::get('/', 'HomeController@index');
 
@@ -44,5 +37,5 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/users/share/{id}', 'UsersController@users_share');
   Route::get('/users/products/share/{id}', 'UsersController@products_share');
 
-});
+
 
