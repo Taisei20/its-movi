@@ -28,12 +28,22 @@ class ScenesController extends Controller
 
 
   public function store($id, Request $request){
+
+// バリデーション
+// 半角数字以外の場合・空白の場合をエラー
+   $this->validate($request, [
+        'scene_number' => 'required|numeric'
+                // 'scene_number' => 'required|numeric|unique:scenes,scene_number'
+    ]);
+//
+
     Scene::create(
       array(
         'scene_number' => $request->scene_number,
         'product_id' => $id
       )
     );
+
     return redirect("/users/products/{$id}");
   }
 
