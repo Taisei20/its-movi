@@ -4,10 +4,15 @@ body {
   color: #333;
   margin: 0 auto;
 }
-h1,h2,h3,h4,h5,h6,p {
-  padding: 10px 0;
+
+h1,h2,h3,h4,h5,h6,p,.iroiro{
+  padding: 10px 10px 0;
   margin: 0;
   color: #EEEEEE;
+}
+
+h2{
+  text-align: center;
 }
 
 .clearfix:after {
@@ -29,10 +34,18 @@ h1,h2,h3,h4,h5,h6,p {
   border-bottom: solid #EEEEEE;
 }
 
+.ue h2 {
+  font-size: 30px;
+}
+
 .mannaka {
   height: 30vh;
   width: 100vw;
   border-bottom: solid #EEEEEE;
+}
+
+.mannaka h2 {
+  font-size: 100px;
 }
 
 .shita {
@@ -96,7 +109,7 @@ h1,h2,h3,h4,h5,h6,p {
   border-right: solid #EEEEEE;
 }
 
-.play {
+.link {
   height: 100%;
   width: 33%;
   background-color: #222222;
@@ -106,4 +119,20 @@ h1,h2,h3,h4,h5,h6,p {
 .kachinko-image {
   height: 100%;
   width: 100%;
+}
+
+.judge {
+  float: left;
+}
+
+.memo {
+  float: left;
+}
+
+button {
+  padding: 0;
+  border: none;
+  height: 15vh;
+  width: 100vw;
+  background-color: #222222;
 }
