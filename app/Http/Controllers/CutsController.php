@@ -23,6 +23,14 @@ class CutsController extends Controller
     }
 
     public function store($id, Request $request){
+
+// バリデーション
+// 半角数字以外の場合・空白の場合をエラー
+   $this->validate($request, [
+        'cut_number' => 'required|numeric'
+    ]);
+//
+
     Cut::create(
       array(
         'cut_number' => $request->cut_number,
