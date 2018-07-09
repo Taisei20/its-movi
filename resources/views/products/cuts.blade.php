@@ -8,12 +8,20 @@
   <head>
     <meta charset="utf-8">
     <title>カット一覧</title>
+    <link rel="stylesheet" type="text/css" href="/css/cuts.css">
   </head>
   <body>
   <div>
     {{ Form::open(['url' => "/users/products/scenes/{$id}", 'method' => 'post']) }}
         <input placeholder="追加するカット No." type="integer" name="cut_number">
         <input type="submit" value="カットを追加">
+
+      @if (count($errors)>0)
+      <div class ="error_message">
+      ※カットNo.は半角英数字で入力してください
+      </div>
+      @endif
+
     {{ Form::close() }}
   </div>
 

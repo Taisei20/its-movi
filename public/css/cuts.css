@@ -1,0 +1,14 @@
+body {
+  background-color: white;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+.error_message{
+  color: red;
+}
