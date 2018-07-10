@@ -33,14 +33,4 @@ function errorCallback(error) {
   alert(err_msg);
 }
 
-// function ajax(lng, lat) {
-//   $.ajax({
-//     type: "POST",
-//     dataType: "json",
-//     url: "/users/products/scenes/cuts/{$cut->id}/kachinko",
-//     data: {
-//       'lng': lng,
-//       'lat': lat,
-//     }
-//   })
-// }
+
