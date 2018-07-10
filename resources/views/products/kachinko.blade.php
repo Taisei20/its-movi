@@ -14,7 +14,7 @@
       <!-- しましまボタン -->
       <div class="shimashima">
         <button type="button" class="get_location" onclick="get_location()">
-          <img src="/assets/images/kachinko.jpg" alt="カチンコ音" class="kachinko-image">
+          <div class="message">Tap to CLAP!</div>
         </button>
       </div>
 
@@ -102,26 +102,37 @@
             <div class="iroiro">
 
               <!-- ジャッジラジオボタン -->
-              <div class="judge">
-                <div class="OK"><input name="judge" type="radio" value="1">OK</div>
-                <div class="NG"><input name="judge" type="radio" value="2">NG</div>
-                <div class="PD"><input name="judge" type="radio" value="3">PD</div>
+              <div class="judge_box">
+                <div class="judge">
+                  <div class="OK"><label class="radio_OK"><input name="judge" type="radio" value="1">OK</label></div>
+                  <div class="NG"><label class="radio_NG"><input name="judge" type="radio" value="2">NG</label></div>
+                  <div class="PD"><label class="radio_PD"><input name="judge" type="radio" value="3">PD</label></div>
+                </div>
               </div>
               <!-- メモテキストエリア -->
-              <div class="memo"><textarea cols="30" name="memo" placeholder="memo" rows="10"></textarea></div>
+              <div class="memo_box">
+                <div class="memo">
+                  <textarea name="memo" placeholder="memo" cols="70" rows="18"></textarea>
+                </div>
+              </div>
 
+              <!-- 位置情報保存（非表示） -->
               <input id="lat" class="form-control" name="lat" type="hidden" placeholder="緯度 :">
               <input id="lng" class="form-control" name="lng" type="hidden" placeholder="経度 :">
 
               <!-- 保存ボタン -->
-              <div class="save"><input type="submit" value="保存"></div>
+              <div class="save_box">
+                <div class="save"><input type="submit" value="保存"></div>
+              </div>
 
             </div>
 
             <!-- テイク・カットへのリンク -->
-            <div class="link">
-              <div><a href="/users/products/scenes/cuts/{{$cut->id}}" title="テイク一覧画面へ">テイク一覧画面へ</a></div>
-              <div><a href="/users/products/scenes/{{$cut->scene_id}}" title="カット一覧画面へ">カット一覧画面へ</a></div>
+            <div class="link_box">
+              <div class="link">
+                <div><h2><a href="/users/products/scenes/cuts/{{$cut->id}}" title="テイク一覧画面へ">テイク一覧画面へ</a></h2></div>
+                <div><h2><a href="/users/products/scenes/{{$cut->scene_id}}" title="カット一覧画面へ">カット一覧画面へ</a></h2></div>
+              </div>
             </div>
 
           </div>
