@@ -46,9 +46,9 @@
   $varLocations = json_encode($locations);
 ?>
 
+<!-- 位置情報をJSON変換 -->
 <script>
   var locations = JSON.parse('<?php echo $varLocations; ?>');
-  console.log(locations);
 </script>
 
 <!-- google maspの読み込み -->

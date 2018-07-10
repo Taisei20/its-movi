@@ -29,7 +29,7 @@ function initMap() {
 // windowの生成
         infoWindow[i] = new google.maps.InfoWindow(
           {
-            content: '<div class>' + locations[i]['place_name'] + '</div>'
+            content: '<div>' + locations[i]['place_name'] + '</div>'
           });
         markerEvent(i);
       }
