@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>いつもMOVI</title>
     <link rel="stylesheet" type="text/css" href="/css/kachinko.css">
-    <script src="{{ asset('assets/javascript/geolocation.js')}}"></script>
+    <script src="{{ asset('/assets/javascripts/geolocation.js') }}"></script>
+    <script src="{{ asset('/assets/javascripts/jquery-3.3.1.js') }}"></script>
   </head>
   <body>
 
@@ -12,7 +13,7 @@
 
       <!-- しましまボタン -->
       <div class="shimashima">
-        <button type="button">
+        <button type="button" class="get_location" onclick="get_location()">
           <img src="/assets/images/kachinko.jpg" alt="カチンコ音" class="kachinko-image">
         </button>
       </div>
@@ -28,6 +29,14 @@
 
         // buttonタグのDOMを取得後ボタンをクリックするというイベントに対してkachinkoメソッドを実行
         document.getElementsByTagName("button")[0].addEventListener("click", kachinko);
+
+        // 位置情報保存
+        $('get_location').on('click', function(){
+          ajax($('.lng').val())
+        });
+        $('get_location').on('click', function(){
+          ajax($('.lat').val())
+        });
       </script>
 
         {{ Form::open(['url' => "/users/products/scenes/cuts/{$cut->id}/kachinko", 'method' => 'post']) }}
@@ -100,6 +109,10 @@
               </div>
               <!-- メモテキストエリア -->
               <div class="memo"><textarea cols="30" name="memo" placeholder="memo" rows="10"></textarea></div>
+
+              <input id="lat" class="form-control" name="lat" type="text" placeholder="緯度 :">
+              <input id="lng" class="form-control" name="lng" type="text" placeholder="経度 :">
+
               <!-- 保存ボタン -->
               <div class="save"><input type="submit" value="保存"></div>
 

@@ -29,7 +29,6 @@
   Route::get('/users/products/scenes/cuts/{id}', 'TakesController@show');
 
 //
-  Route::get('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@create');
   Route::post('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@store');
   Route::get('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@show');
 
