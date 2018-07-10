@@ -59,6 +59,17 @@ h2{
   background-color: #222222;
 }
 
+.message{
+  height: 100%;
+  width: 100%;
+  color: #EEEEEE;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 100px;
+  -webkit-text-stroke: 2px #000;
+  background-image: url("/assets/images/kachinko.jpg");
+}
+
 .title {
   height: 100%;
   width: 60%;
@@ -109,24 +120,84 @@ h2{
   border-right: solid #EEEEEE;
 }
 
-.link {
+.link_box {
   height: 100%;
   width: 33%;
   background-color: #222222;
   float: right;
+  font-size: 20px;
 }
 
-.kachinko-image {
+.link {
+  padding: 80px;
+  height: 50px;
+}
+
+a:link{
+  color: #EEEEEE;
+  text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+a:visited{
+  color: #EEEEEE;
+}
+
+.judge_box {
+  width: 15%;
   height: 100%;
-  width: 100%;
+  float: left;
+  font-size: 15px;
+  line-height: 50px
 }
 
 .judge {
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.memo_box {
+  width: 55%;
+  height: 100%;
   float: left;
 }
 
 .memo {
+  margin: 0 auto;
+  padding: 10px 30px;
+}
+
+.save_box{
+  width: 30%;
+  height: 100%;
   float: left;
+}
+
+.save {
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.save input {
+  display: inline-block;
+  text-decoration: none;
+  background: #888888;
+  color: #FFFFFF;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+.save input:hover {
+    background: #555555;
 }
 
 button {
