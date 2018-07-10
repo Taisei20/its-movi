@@ -110,8 +110,8 @@
               <!-- メモテキストエリア -->
               <div class="memo"><textarea cols="30" name="memo" placeholder="memo" rows="10"></textarea></div>
 
-              <input id="lat" class="form-control" name="lat" type="text" placeholder="緯度 :">
-              <input id="lng" class="form-control" name="lng" type="text" placeholder="経度 :">
+              <input id="lat" class="form-control" name="lat" type="hidden" placeholder="緯度 :">
+              <input id="lng" class="form-control" name="lng" type="hidden" placeholder="経度 :">
 
               <!-- 保存ボタン -->
               <div class="save"><input type="submit" value="保存"></div>
