@@ -77,7 +77,7 @@
 
 <!-- header内のshare機能時のパン屑 -->
 
-            @if(isset($dtlProduct))
+            @if(isset($dtlProduct) && !Auth::user() )
             <a class="navbar-brand" href="/users/share/{{ $dtlProduct->user_id }}" title="">
             {{ $dtlProduct->user->name }}さんの作品一覧
             </a>
