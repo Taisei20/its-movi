@@ -1,56 +1,69 @@
 
-// mapsの生成
-      var markers = Array();
 
-      function initMap() {
-        var centerLat = 35.6284713;
-        var centerLon = 139.736571;
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: new google.maps.LatLng(centerLat, centerLon),
+var markers = Array();
+var infoWindow = Array();
+
+
+// mapsの生成
+function initMap() {
+  var centerLat = 35.6284713;
+  var centerLon = 139.736571;
+  var map = new google.maps.Map(document.getElementById('map'),
+    {
+      zoom: 15,
+      center: new google.maps.LatLng(centerLat, centerLon),
+    });
+
+// makerの生成
+    for (var i = 0; i < locations.length; i++)
+      {
+        var markLat = locations[i]['lat'];
+        var markLng = locations[i]['lng'];
+
+        markers[i] = new google.maps.Marker(
+        {
+          position: {lat : markLat, lng : markLng },
+          map: map,
         });
 
+// windowの生成
+        infoWindow[i] = new google.maps.InfoWindow(
+          {
+            content: '<div>' + locations[i]['place_name'] + '</div>'
+          });
+        markerEvent(i);
+      }
 
-  // function setMarkers(response){
+console.log(locations[0]);
 
-  //       if(markers.length > 0){
-  //         for(i = 0; i < markers.length; i++){
-  //           markers[i].setMap(null);
-  //         }
-  //         markers = [];
-  //       }
+// マーカーが収まる縮尺の判定
+  var minX = locations[0]['lng'];
+  var minY = locations[0]['lat'];
+  var maxX = locations[0]['lng'];
+  var maxY = locations[0]['lat'];
 
-  //       for (var i = 0; i < response.length; i++) {
-  //         var markLat = response[i]['lat'];
-  //         var lon = response[i]['lon'];
+  for (var i = 0; i < locations.length; i++) {
+    var lg = locations[i]['lng'];
+    var lt = locations[i]['lat'];
 
-  //         markers[i] = new google.maps.Marker({
-  //           position: {lat : markLat, lng : lon },
-  //           map: map,
-  //           icon : "{{ asset('assets/img/m1.png') }}",
-  //         });
-  //       }
-  //     }
+    if(lg <= minX){minX = lg;}
+    if(lg > maxX){maxX = lg;}
+    if(lt <= minY){minY = lt;}
+    if(lt > maxY){maxY = lt;}
+  }
 
-// google.maps.event.addListener(map, 'idle', function() {
-//       var bounds = map.getBounds();
-//       var mapLocation = {
-//       map_ne_lat : bounds.getNorthEast().lat(),
-//       map_sw_lat : bounds.getSouthWest().lat(),
-//       map_ne_lng : bounds.getNorthEast().lng(),
-//       map_sw_lng : bounds.getSouthWest().lng(),
-//     };
-//       console.log(mapLocation);
+// マーカーが収まる縮尺の設定
+  var sw = new google.maps.LatLng(maxY,minX);
+  var ne = new google.maps.LatLng(minY,maxX);
 
-//   $.ajax({
-//     url: '/map/2',
-//     type: 'GET',
-//     dataType:'JSON',
-//     timeout: 1000,
-//     data: mapLocation,
-//     error: console.log("×"),
-//     }).done( function(responseData){
-//       setMarkers(responseData) });
-// });
+  var bounds = new google.maps.LatLngBounds(sw,ne);
+  map.fitBounds(bounds);
 
+}
+
+// マーカーのクリックアクションの設定
+function markerEvent(i){
+  markers[i].addListener('click',function(){
+    infoWindow[i].open(map,markers[i]);
+  });
 }

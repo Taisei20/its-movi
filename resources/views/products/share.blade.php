@@ -42,10 +42,19 @@
 
   <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 40px;">  </div>
 
+<?php 
+  $varLocations = json_encode($locations);
+?>
+
+<!-- 位置情報をJSON変換 -->
+<script>
+  var locations = JSON.parse('<?php echo $varLocations; ?>');
+</script>
+
 <!-- google maspの読み込み -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KYE') }}&callback=initMap">
-    </script>
-    <script src="{{ asset('assets/javascripts/jquery-3.3.1.js') }}"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KYE') }}&callback=initMap">
+  </script>
+  <script src="{{ asset('assets/javascripts/jquery-3.3.1.js') }}"></script>
 
 @endsection

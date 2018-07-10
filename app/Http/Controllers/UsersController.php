@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\User;
 use App\Product;
+use App\Scene;
 use Auth;
 
 class UsersController extends Controller
@@ -28,7 +29,12 @@ class UsersController extends Controller
     public function products_share($id){
     // shareページで選択した作品の詳細情報表示
         $dtlProduct = Product::find($id);
-      return view('products.share')->with('dtlProduct', $dtlProduct);
+    // map上に表示する位置情報の取得
+        $locations = Scene::where('product_id',$id)->get();
+      return view('products.share')->with(array(
+                                          'dtlProduct' => $dtlProduct,
+                                          'locations'  => $locations
+                                          ));
     }
 
 }
