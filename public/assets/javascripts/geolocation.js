@@ -12,6 +12,8 @@ function get_location() {
 function successCallback(position) {
   document.getElementById("lat").value = position.coords.latitude;
   document.getElementById("lng").value = position.coords.longitude;
+  var lng = position.coords.longitude;
+  var lat = position.coords.latitude;
 }
 
 function errorCallback(error) {
@@ -30,3 +32,15 @@ function errorCallback(error) {
   }
   alert(err_msg);
 }
+
+// function ajax(lng, lat) {
+//   $.ajax({
+//     type: "POST",
+//     dataType: "json",
+//     url: "/users/products/scenes/cuts/{$cut->id}/kachinko",
+//     data: {
+//       'lng': lng,
+//       'lat': lat,
+//     }
+//   })
+// }

@@ -29,8 +29,39 @@ class KachinkoController extends Controller
       )
     );
 
+    // 位置情報をDBに保存
+    $cut = Cut::find($id);
+    Scene::find($cut->scene_id)->update(
+      array(
+        'lng' => $request->lng,
+        'lat' => $request->lat
+      )
+    );
+
+    // $location = Scene::create(
+    //   array(
+    //     'lng' => $request->lng,
+    //     'lat' => $request->lat
+    //   )
+    // );
+
+    // return response()->json($location);
     return redirect("/users/products/scenes/cuts/{$id}/kachinko");
   }
+
+  // public function update($id, Request $request){
+  //   $cut = Cut::find($id);
+  //   $scene = Scene::find($cut->scene_id);
+
+  //   $location = Scene::find($scene->id)->update(
+  //     array(
+  //       'lng' => $request->lng,
+  //       'lat' => $request->lat
+  //     )
+  //   );
+
+  //   return response()->json($location);
+  // }
 
   public function show($id){
     $cut = Cut::find($id);
