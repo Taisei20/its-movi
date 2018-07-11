@@ -24,6 +24,25 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        .ue {
+            height: 60px;
+            width: 100vw;
+            margin-top: -20px;
+
+            }
+
+        .shita {
+            height: 60px;
+            width: 100vw;
+            position: fixed;
+            bottom: 0;
+            }
+
+        .film-image {
+            height: 100%;
+            width: 100%;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -108,6 +127,9 @@
         </div>
     </nav>
 
+    <div class="ue">
+        <img src="/assets/images/filmline.png" class="film-image">
+    </div>
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -115,6 +137,9 @@
         </div>
     </div>
 </div>
+  <div class="shita">
+    <img src="/assets/images/filmline.png" class="film-image">
+    </div>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
