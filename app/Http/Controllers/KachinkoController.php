@@ -15,6 +15,13 @@ class KachinkoController extends Controller
 
   public function store($id, Request $request){
 
+// バリデーション
+// 空白の場合にはいらない
+   $this->validate($request, [
+        'judge' => 'required'
+    ]);
+//
+
     $take_number = Take::where('cut_id', $id)->get()->count();
     if(!$take_number){
       $take_number = 0;
