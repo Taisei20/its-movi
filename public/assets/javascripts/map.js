@@ -2,6 +2,7 @@
 
 var markers = Array();
 var infoWindow = Array();
+var currentInfoWindow = null;
 
 
 // mapsの生成
@@ -64,6 +65,13 @@ console.log(locations[0]);
 // マーカーのクリックアクションの設定
 function markerEvent(i){
   markers[i].addListener('click',function(){
+    if (currentInfoWindow){
+      currentInfoWindow.close();
+    }
     infoWindow[i].open(map,markers[i]);
+    currentInfoWindow = infoWindow[i];
   });
 }
+
+
+
