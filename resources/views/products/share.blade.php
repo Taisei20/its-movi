@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-xs-6 col-md-6">
       <a href="#" class="thumbnail ">
-        <img src="{{ asset( 'assets/images/171×180.svg') }}" alt="..." style="max-width: 100%">
+        <img src="{{ asset( 'assets/images')}}/{{$dtlProduct->image}}" alt="..." style="max-width: 100%">
   <!--       <img src="{{ asset( 'assets/images/kachinko.jpg') }}" alt="..." style="max-width: 100%"> -->
       </a>
     </div>
