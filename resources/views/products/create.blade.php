@@ -14,7 +14,7 @@
                          'files' => 'true') ) !!}
 
     <div class="row">
-      <div class="col-xs-6 col-md-6">
+      <div class="col-xs-5 col-md-5">
         <h3>作品名<span style="color: red; font-size: 15px; padding-left: 5px;">※入力必須</span></h3>
         {{ Form::textarea('title', '' , ['style' => 'width: 100%; height:40px;']) }}
 
@@ -32,7 +32,7 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-6 col-md-6">
+      <div class="col-xs-5 col-md-5">
         <h3>あらすじ</h3>
         {{ Form::textarea('story','',['style' => 'width: 100%; height:200px;']) }}
       </div>
