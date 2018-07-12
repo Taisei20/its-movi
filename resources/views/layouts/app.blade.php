@@ -32,6 +32,10 @@
 
             }
 
+        .mannaka {
+            margin-bottom: 80px;
+        }
+
         .shita {
             height: 60px;
             width: 100vw;
@@ -190,7 +194,7 @@
     <div class="ue">
         <img src="/assets/images/filmline.png" class="film-image">
     </div>
-<div class="container">
+<div class="container mannaka">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
     @yield('content')
