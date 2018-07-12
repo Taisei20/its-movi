@@ -43,6 +43,58 @@
             height: 100%;
             width: 100%;
         }
+
+        .navbar-default {
+            background-color: #000000;
+            color:#FFFFFF;
+            border-radius:0;
+            border-color: #000000;
+        }
+
+        .navbar-default a:link,
+        .navbar-default a:visited,
+        .navbar-default li a:link,
+        .navbar-default li a:visited {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        /*.navbar-default .navbar-nav > a:hover,*/
+        /*.navbar-default .navbar-nav > a:focus,*/
+        /*.navbar-default .navbar-nav li a:hover {*/
+        /*.navbar-default .navbar-nav > li > a:focus {*/
+/*            color: #FFFFFF;
+            text-decoration: none;
+            background-color: white;
+        }*/
+
+        .navbar-brand:hover {
+            background-color: white;
+        }
+
+        .navbar-default .navbar-nav>.open>a,
+        .navbar-default .navbar-nav>.open>a:focus,
+        .navbar-default .navbar-nav>.open>a:hover {
+            color: #FFFFFF;
+            background-color: #222222;
+        }
+
+        .dropdown-menu {
+            background-color: #000000;
+            border: 1px solid #000000;
+            border: 1px solid #000000(0, 0, 0, .15);
+            -webkit-box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+            box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+        }
+
+        .dropdown-menu>li>a:link {
+            color: #ffffff;
+        }
+
+        .dropdown-menu>li>a:hover {
+            background-color: #222222;
+        }
+
     </style>
 </head>
 <body id="app-layout">
@@ -66,13 +118,13 @@
 
 <!-- ログインユーザの名前表示 -->
 
-            @if(Auth::check() )
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            @if(Auth::check() )
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                   <li><a href="{{ url('/users/products') }}"> {{ Auth::user()->name }}さんのマイページ</a></li>
-                </ul>
+                <!-- <ul class="nav navbar-nav"> -->
+                   <a href="{{ url('/users/products') }}" class="navbar-brand"> {{ Auth::user()->name }}さんのマイページ</a>
+                <!-- </ul> -->
             @endif
 
 <!-- header内のパン屑情報 -->
@@ -116,8 +168,18 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/users/share/{{ Auth::user()->id }}"><i class="fa fa-btn glyphicon glyphicon-share"></i>作品公開ページ</a></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn glyphicon glyphicon-log-out"></i>ログアウト</a></li>
+                                <li>
+                                    <a href="/users/share/{{ Auth::user()->id }}">
+                                        <i class="fa fa-btn glyphicon glyphicon-share"></i>
+                                        作品公開ページ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/logout') }}">
+                                        <i class="fa fa-btn glyphicon glyphicon-log-out"></i>
+                                        ログアウト
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     @endif
