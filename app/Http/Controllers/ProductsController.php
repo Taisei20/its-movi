@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
 use Auth;
+use Image;
 
 class ProductsController extends Controller
 {
@@ -30,11 +31,24 @@ class ProductsController extends Controller
     }
 
     public function store(Request $request){
+
+// バリデーション 空白の場合を入力無効
+     $this->validate($request, [
+                        'title' => 'required'
+                     ]);
+
+      $fileName = $request->image->getClientOriginalName();
+      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
+
       Product::create(
                     array(
                           'user_id'   => Auth::user()->id,
                           'title'     => $request->title,
+                          'story'     => $request->story,
+                          'comment'   => $request->comment,
+                          'image'     => $fileName,
                     ));
+
       return redirect('/users/products');
     }
 

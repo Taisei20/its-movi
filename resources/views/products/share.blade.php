@@ -10,29 +10,57 @@
 <!-- 作品詳細情報の表示 -->
   <div class="row">
     <div class="col-xs-6 col-md-6">
-      <a href="#" class="thumbnail ">
-        <img src="{{ asset( 'assets/images/171×180.svg') }}" alt="..." style="max-width: 100%">
-  <!--       <img src="{{ asset( 'assets/images/kachinko.jpg') }}" alt="..." style="max-width: 100%"> -->
-      </a>
+      @if($dtlProduct->image)
+        <img class="thumbnail " src="{{ asset( 'assets/images')}}/{{$dtlProduct->image}}" alt="..." style="max-width: 100%">
+      @else
+        <img class="thumbnail " src="{{ asset( 'assets/images')}}/171×180.svg" alt="..." style="max-width: 100%">
+      @endif
     </div>
 
     <div class="col-xs-6 col-md-6">
       <ul class="list-group">
         <li class="list-group-item">作品分数</li>
-        <li class="list-group-item" style="word-wrap: break-word;">15</li>
+        <li class="list-group-item" style="word-wrap: break-word;">DB作り忘れてる</li>
       </ul>
 
       <ul class="list-group">
         <li class="list-group-item">作品URL</li>
-        <li class="list-group-item" style="word-wrap: break-word;"><a href="" title="">Vestibulum at eros</a></li>
+          <li class="list-group-item" style="word-wrap: break-word;">
+           @if($dtlProduct->url)
+            <a href="" title="">
+              {{ $dtlProduct->url }}
+            </a>
+          @else
+            No URL
+          @endif
+        </li>
       </ul>
     </div>
   </div>
 
-  <div class="row">
-    <ul class="list-group" style="margin: 0 15px;">
+  <div class="row" style="margin: 5px 0;">
+    <ul class="list-group" >
       <li class="list-group-item">あらすじ</li>
-      <li class="list-group-item" style="word-wrap: break-word;">Vestibulum at erosaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaerosaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
+      <li class="list-group-item" style="word-wrap: break-word;">
+        @if($dtlProduct->story)
+        {{ $dtlProduct->story }}
+        @else
+          No Summary
+        @endif
+      </li>
+    </ul>
+  </div>
+
+  <div class="row" style="margin: 5px 0;">
+    <ul class="list-group" >
+      <li class="list-group-item">コメント</li>
+      <li class="list-group-item" style="word-wrap: break-word;">
+        @if($dtlProduct->comment)
+          {{ $dtlProduct->comment }}
+        @else
+          No comment
+        @endif
+      </li>
     </ul>
   </div>
 
@@ -42,7 +70,7 @@
 
   <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 40px;">  </div>
 
-<?php 
+<?php
   $varLocations = json_encode($locations);
 ?>
 
