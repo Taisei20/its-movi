@@ -32,7 +32,7 @@ class ProductsController extends Controller
 
     public function store(Request $request){
 
-// バリデーション 空白の場合を入力無効
+    // バリデーション 空白の場合を入力無効
      $this->validate($request, [
                         'title' => 'required'
                      ]);
@@ -50,6 +50,26 @@ class ProductsController extends Controller
                     ));
 
       return redirect('/users/products');
+    }
+
+    public function edit($id){
+    // 作品情報の編集画面表示
+      $product = Product::find($id);
+      return view('products.edit')->with('product', $product);
+    }
+
+    public function update($id, Request $request){
+    // 作品情報の更新
+      Product::find($id)->update(
+                    array(
+                          'title'     => $request->title,
+                          'story'     => $request->story,
+                          'url'       => $request->url,
+                          'comment'   => $request->comment,
+                          'end_flag'  => $request->end_flag,
+                          'image'     => $fileName,
+                          ));
+      return view('users.mypage');
     }
 
 
