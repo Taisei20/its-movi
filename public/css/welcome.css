@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: table;
+    background-color: #000000;
+    background-image: url("/assets/images/welcome.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.outline {
+    display: inline-block;
+    color: #333333; /* 文字の色 */
+    font-size: 50pt; /* 文字のサイズ */
+    letter-spacing: 4px; /* 文字間 */
+    text-shadow:
+        2px  2px 0px #ffffff,
+       -2px  2px 0px #ffffff,
+        2px -2px 0px #ffffff,
+       -2px -2px 0px #ffffff,
+        2px  0px 0px #ffffff,
+        0px  2px 0px #ffffff,
+       -2px  0px 0px #ffffff,
+        0px -2px 0px #ffffff; /* 文字の影 */
+}
+
+.container {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content {
+    text-align: center;
+    display: inline-block;
+}
