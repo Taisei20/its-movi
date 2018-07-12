@@ -28,3 +28,16 @@ h1,h2,h3,h4,h5,h6,p {
   width: 100vw;
   background-color: red;
 }
+
+.moji {
+  font-size: 18px;
+}
+
+li,a {
+  margin: 10;
+/*  float: left;*/
+  /*padding-right: 10px;*/
+  /*display: block;*/
+  list-style: none;
+  line-height: 5;
+}
