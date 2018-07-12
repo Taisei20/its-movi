@@ -51,13 +51,6 @@
             border-color: #000000;
         }
 
-        /* .navbar-default a:link, */
-        /* .navbar-default li a:link, */
-        /* .navbar-default li a:visited { */
-        /*     color: #FFFFFF; */
-        /*     text-decoration: none; */
-        /* } */
-
         .navbar-default .navbar-brand {
           color: #FFFFFF;
         }
@@ -82,6 +75,22 @@
         .navbar-default .navbar-nav > li > a:hover {
             background-color: #222222;
             color: #ffffff;
+        }
+
+        .navbar-default .navbar-nav>.open>a,
+        .navbar-default .navbar-nav>.open>a:focus,
+        .navbar-default .navbar-nav>.open>a:hover {
+          color: #FFFFFF;
+          background-color: #222222;
+        }
+
+        .dropdown-menu > li > a {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu > li > a:hover {
+          color: #FFFFFF;
+          background-color: #222222;
         }
 
     </style>
