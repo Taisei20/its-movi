@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/stylesheets/bootstrap.css">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
@@ -46,37 +46,25 @@
 
         .navbar-default {
             background-color: #000000;
-            color:#FFFFFF;
+            color: white;
             border-radius:0;
             border-color: #000000;
         }
 
-        .navbar-default a:link,
-        .navbar-default a:visited,
-        .navbar-default li a:link,
-        .navbar-default li a:visited {
-            color: #FFFFFF;
-            text-decoration: none;
+        /* .navbar-default a:link, */
+        /* .navbar-default li a:link, */
+        /* .navbar-default li a:visited { */
+        /*     color: #FFFFFF; */
+        /*     text-decoration: none; */
+        /* } */
+
+        .navbar-default .navbar-brand {
+          color: #FFFFFF;
         }
 
-        /*.navbar-default .navbar-nav > a:hover,*/
-        /*.navbar-default .navbar-nav > a:focus,*/
-        /*.navbar-default .navbar-nav li a:hover {*/
-        /*.navbar-default .navbar-nav > li > a:focus {*/
-/*            color: #FFFFFF;
-            text-decoration: none;
-            background-color: white;
-        }*/
-
-        .navbar-brand:hover {
-            background-color: white;
-        }
-
-        .navbar-default .navbar-nav>.open>a,
-        .navbar-default .navbar-nav>.open>a:focus,
-        .navbar-default .navbar-nav>.open>a:hover {
-            color: #FFFFFF;
-            background-color: #222222;
+        .navbar-default a.navbar-brand:hover {
+          background-color: #222;
+          color: #FFFFFF;
         }
 
         .dropdown-menu {
@@ -87,12 +75,13 @@
             box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
         }
 
-        .dropdown-menu>li>a:link {
+        .navbar-default .navbar-nav > li > a {
             color: #ffffff;
         }
 
-        .dropdown-menu>li>a:hover {
+        .navbar-default .navbar-nav > li > a:hover {
             background-color: #222222;
+            color: #ffffff;
         }
 
     </style>
