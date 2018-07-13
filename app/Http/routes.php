@@ -21,6 +21,10 @@
   Route::post('/users/products/{id}', 'ScenesController@store');
   Route::get('/users/products/{id}', 'ScenesController@show');
 
+// シーン情報ページへのroute
+  Route::get('/users/products/scenes/{id}/info', 'ScenesController@show_info');
+//
+
 //
   Route::post('/users/products/scenes/{id}','CutsController@store');
   Route::get('/users/products/scenes/{id}','CutsController@show');
@@ -35,6 +39,5 @@
 // share機能のroute
   Route::get('/users/share/{id}', 'UsersController@users_share');
   Route::get('/users/products/share/{id}', 'UsersController@products_share');
-
 
 
