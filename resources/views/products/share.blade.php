@@ -4,8 +4,20 @@
 <script src="{{ asset('assets/javascripts/map.js') }}" ></script>
 
   <div class="row">
-    <h1>{{ $dtlProduct->title }}</h1>
+    <h1>{{ $dtlProduct->title }}
+    @if( Auth::check() )
+      <span style="font-size: 14px; padding-left: 10px;">
+        <a href="/users/products/{{ $dtlProduct->id }}/edit" >
+          <i class="fa fa-btn glyphicon glyphicon-pencil"></i>
+            編集
+        </a>
+      </span>
+    @endif
+    </h1>
   </div>
+
+
+
 
 <!-- 作品詳細情報の表示 -->
   <div class="row">
@@ -20,14 +32,21 @@
     <div class="col-xs-6 col-md-6">
       <ul class="list-group">
         <li class="list-group-item">作品分数</li>
-        <li class="list-group-item" style="word-wrap: break-word;">DB作り忘れてる</li>
+
+        <li class="list-group-item" style="word-wrap: break-word;">
+          @if($dtlProduct->running_time)
+            {{ $dtlProduct->running_time }}
+          @else
+            No data
+          @endif
+        </li>
       </ul>
 
       <ul class="list-group">
         <li class="list-group-item">作品URL</li>
           <li class="list-group-item" style="word-wrap: break-word;">
            @if($dtlProduct->url)
-            <a href="" title="">
+            <a href="{{ $dtlProduct->url }}" title="">
               {{ $dtlProduct->url }}
             </a>
           @else
@@ -64,11 +83,12 @@
     </ul>
   </div>
 
+
   <div class="row">
     <h1>Map</h1>
   </div>
 
-  <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 40px;">  </div>
+  <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
 
 <?php
   $varLocations = json_encode($locations);

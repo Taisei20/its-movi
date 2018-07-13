@@ -13,6 +13,7 @@
   <body>
 
   <div>
+    <h2>シーン:{{$nav_scene->scene_number}}</h2>
     {{ Form::open(['url' => "/users/products/scenes/{$id}", 'method' => 'post']) }}
         <input placeholder="追加するカット No." type="integer" name="cut_number">
         <input type="submit" value="カットを追加">
@@ -24,14 +25,25 @@
       @endif
 
     {{ Form::close() }}
-  </div>
+  </div><br>
 
-  <div>
+  <div class = "ichiran">
+    <ul>
     @foreach($cuts as $cut)
-    <a href="/users/products/scenes/cuts/{{ $cut->id }}"><li>カット:{{ $cut->cut_number }}</li></a>
-
-    <div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">カチンコ画面へ</a></div>
+    <li class="moji">カット:{{ $cut->cut_number }}
+      <a href="/users/products/scenes/cuts/{{ $cut->id }}">
+        <img src="/assets/images/take-icon.jpeg" width="45" height="45">
+      </a>
+      <a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">
+        <img src="/assets/images/kachinko-icon.jpeg" width="45" height="45">
+      </a>
+      <img src="/assets/images/pen.jpeg" width="45" height="45">
+      <a href="/users/products/scenes/cuts/{{ $cut->id }}/alart">
+        <img src="/assets/images/gomibako.jpeg" width="45" height="45">
+      </a>
+    </li>
     @endforeach
+    </ul>
 
   </div>
 

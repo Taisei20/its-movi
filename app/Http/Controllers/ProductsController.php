@@ -32,13 +32,10 @@ class ProductsController extends Controller
 
     public function store(Request $request){
 
-// バリデーション 空白の場合を入力無効
+    // バリデーション 空白の場合を入力無効
      $this->validate($request, [
                         'title' => 'required'
                      ]);
-
-      $fileName = $request->image->getClientOriginalName();
-      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
 
       Product::create(
                     array(
@@ -46,10 +43,54 @@ class ProductsController extends Controller
                           'title'     => $request->title,
                           'story'     => $request->story,
                           'comment'   => $request->comment,
-                          'image'     => $fileName,
                     ));
 
+     if($request->image){
+      $fileName = $request->image->getClientOriginalName();
+      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
+
+      Product::find($id)->update(
+                    array(
+                          'image'        => $fileName,
+                          ));
+    }
+
       return redirect('/users/products');
+    }
+
+    public function edit($id){
+    // 作品情報の編集画面表示
+      $product = Product::find($id);
+      return view('products.edit')->with('product', $product);
+    }
+
+    public function update($id, Request $request){
+
+    // バリデーション 空白の場合を入力無効
+     $this->validate($request, [
+                        'title' => 'required'
+                     ]);
+
+     if($request->image){
+      $fileName = $request->image->getClientOriginalName();
+      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
+
+      Product::find($id)->update(
+                    array(
+                          'image'        => $fileName,
+                          ));
+    }
+
+     // 作品情報の更新
+      Product::find($id)->update(
+                    array(
+                          'title'        => $request->title,
+                          'story'        => $request->story,
+                          'url'          => $request->url,
+                          'comment'      => $request->comment,
+                          'running_time' => $request->running_time,
+                          ));
+      return redirect("/users/products/share/$id");
     }
 
 

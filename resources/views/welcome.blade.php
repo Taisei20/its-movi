@@ -22,8 +22,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
+            <h1>21世紀の『カチンコ』を目指して</h1>
             <span class="outline">いつもMOVI</span>
-            <p>21世紀のカチンコとなる</p>
             @if(Auth::check())
             <div class="grid-6">
                 <button type="submit" class="btn btn-default"><a href="/users/products" class="post">マイページ</button>
