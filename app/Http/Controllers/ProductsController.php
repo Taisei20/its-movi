@@ -88,10 +88,9 @@ class ProductsController extends Controller
                           'story'        => $request->story,
                           'url'          => $request->url,
                           'comment'      => $request->comment,
-                          'end_flag'     => $request->end_flag,
                           'running_time' => $request->running_time,
                           ));
-      return redirect('/users/products');
+      return redirect("/users/products/share/$id");
     }
 
 
