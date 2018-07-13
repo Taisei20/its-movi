@@ -1,0 +1,26 @@
+.products li{
+  display: inline;
+}
+
+.product {
+  float: left;
+  margin: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.product a:hover {
+  background-color: #EEEEEE;
+}
+
+.image {
+  width: 192px;
+  height: 108px;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+}
