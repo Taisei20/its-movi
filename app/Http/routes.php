@@ -43,4 +43,4 @@
 
 // share機能のroute
   Route::get('/users/share/{id}', 'UsersController@users_share');
-  Route::get('/users/products/share/{id}', 'UsersController@products_share')
+  Route::get('/users/products/share/{id}', 'UsersController@products_share');
