@@ -21,9 +21,13 @@
   Route::post('/users/products/{id}', 'ScenesController@store');
   Route::get('/users/products/{id}', 'ScenesController@show');
 
+// シーン情報ページへのroute
+  Route::get('/users/products/scenes/{id}/info', 'ScenesController@show_info');
+
 //
   Route::post('/users/products/scenes/{id}','CutsController@store');
   Route::get('/users/products/scenes/{id}','CutsController@show');
+
   // カット削除画面
   Route::get('/users/products/scenes/cuts/{id}/delete', 'CutsController@destroy');
   Route::get('/users/products/scenes/cuts/{id}/alart', 'CutsController@alart');
