@@ -51,4 +51,17 @@ class CutsController extends Controller
                                          ));
   }
 
+  public function destroy($id) {
+    $scene_id = Cut::find($id)->scene_id;
+    Cut::destroy($id);
+
+    return redirect("/users/products/scenes/{$scene_id}");
+  }
+
+  public function alart($id){
+    $cut = Cut::find($id);
+    return view('products.delete')->with(array('cut' => $cut));
+  }
+
+
 }

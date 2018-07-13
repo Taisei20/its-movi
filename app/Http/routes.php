@@ -24,6 +24,9 @@
 //
   Route::post('/users/products/scenes/{id}','CutsController@store');
   Route::get('/users/products/scenes/{id}','CutsController@show');
+  // カット削除画面
+  Route::get('/users/products/scenes/cuts/{id}/delete', 'CutsController@destroy');
+  Route::get('/users/products/scenes/cuts/{id}/alart', 'CutsController@alart');
 
 //
   Route::get('/users/products/scenes/cuts/{id}', 'TakesController@show');
@@ -35,6 +38,7 @@
 // share機能のroute
   Route::get('/users/share/{id}', 'UsersController@users_share');
   Route::get('/users/products/share/{id}', 'UsersController@products_share');
+
 
 
 
