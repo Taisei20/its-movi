@@ -4,8 +4,20 @@
 <script src="{{ asset('assets/javascripts/map.js') }}" ></script>
 
   <div class="row">
-    <h1>{{ $dtlProduct->title }}</h1>
+    <h1>{{ $dtlProduct->title }}
+    @if( Auth::check() )
+      <span style="font-size: 14px; padding-left: 10px;">
+        <a href="/users/products/{{ $dtlProduct->id }}/edit" >
+          <i class="fa fa-btn glyphicon glyphicon-pencil"></i>
+            編集
+        </a>
+      </span>
+    @endif
+    </h1>
   </div>
+
+
+
 
 <!-- 作品詳細情報の表示 -->
   <div class="row">
@@ -71,8 +83,6 @@
     </ul>
   </div>
 
-<!-- とりあえず作品情報編集のリンク設置 -->
-  <a class="btn btn-default" href="/users/products/{{ $dtlProduct->id }}/edit" >作品情報編集</a>
 
   <div class="row">
     <h1>Map</h1>
