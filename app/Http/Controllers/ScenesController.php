@@ -11,10 +11,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Scene;
 use App\Product;
+use App\Http\User;
+use Auth;
 
 class ScenesController extends Controller
 {
-
         /**
      * Create a new controller instance.
      *
@@ -24,8 +25,6 @@ class ScenesController extends Controller
     {
         $this->middleware('auth');
     }
-
-
 
   public function store($id, Request $request){
 
@@ -56,6 +55,18 @@ class ScenesController extends Controller
                                           'id' => $id
                                         ));
   }
+
+
+  //  シーン情報ページの表示
+    public function show_info($id){
+        $Scene_info = Scene::find($id);
+    // シーンの位置情報を取得
+        $location = Scene::where('product_id',$Scene_info->product_id)->where('id',$id)->get();
+      return view('products.scene_info')->with(array(
+                                          'Scene_info' => $Scene_info,
+                                          'location'  => $location
+                                          ));
+    }
 
 
 }
