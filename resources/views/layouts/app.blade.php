@@ -25,15 +25,21 @@
             margin-right: 6px;
         }
 
+        .header {
+            position: fixed;
+            z-index: 10;
+        }
+
         .ue {
             height: 60px;
             width: 100vw;
             margin-top: -20px;
-
-            }
+        }
 
         .mannaka {
+            padding-top: 120px;
             margin-bottom: 80px;
+            z-index: 0;
         }
 
         .shita {
@@ -41,7 +47,7 @@
             width: 100vw;
             position: fixed;
             bottom: 0;
-            }
+        }
 
         .film-image {
             height: 100%;
@@ -65,11 +71,16 @@
         }
 
         .dropdown-menu {
-            background-color: #000000;
-            border: 1px solid #000000;
-            border: 1px solid #000000(0, 0, 0, .15);
+            background-color: #F8F8F8;
+            border: 1px solid #F8F8F8;
+            border: 1px solid #F8F8F8(0, 0, 0, .15);
             -webkit-box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
             box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+        }
+
+        .navbar > .container .navbar-brand,
+        .navbar > .container-fluid .navbar-brand {
+            margin: 0;
         }
 
         .navbar-default .navbar-nav > li > a {
@@ -89,17 +100,18 @@
         }
 
         .dropdown-menu > li > a {
-          color: #FFFFFF;
+          color: #000000;
         }
 
         .dropdown-menu > li > a:hover {
-          color: #FFFFFF;
-          background-color: #222222;
+          color: #000000;
+          background-color: #EEEEEE;
         }
 
     </style>
 </head>
 <body id="app-layout">
+<div class="header">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -194,6 +206,7 @@
     <div class="ue">
         <img src="/assets/images/filmline.png" class="film-image">
     </div>
+</div>
 <div class="container mannaka">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -203,7 +216,7 @@
 </div>
   <div class="shita">
     <img src="/assets/images/filmline.png" class="film-image">
-    </div>
+  </div>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
