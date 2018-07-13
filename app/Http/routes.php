@@ -27,9 +27,11 @@
   // カット削除画面
   Route::get('/users/products/scenes/cuts/{id}/delete', 'CutsController@destroy');
   Route::get('/users/products/scenes/cuts/{id}/alart', 'CutsController@alart');
+  Route::get('/users/products/scenes/{id}/edit', 'CutsController@edit');
 
 //
   Route::get('/users/products/scenes/cuts/{id}', 'TakesController@show');
+  Route::get('/users/products/scenes/cuts/{id}/edit', 'TakesController@edit');
 
 //
   Route::post('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@store');
