@@ -3,12 +3,12 @@
 @section('content')
 <style>
 .submit{
-  margin:8px 0;
+  margin:15px 0;
 }
 
 </style>
 
-    {!! Form::open( array('url' => 'users/products',
+    {!! Form::open( array('url' => "users/products/$product->id",
                          'method' => 'PATCH',
                          'files' => 'true') ) !!}
 
@@ -37,7 +37,18 @@
       </div>
       <div class="col-xs-5 col-md-5 col-md-offset-1">
         <h3>コメント</h3>
-        {{ Form::textarea('comment','$product->comment',['style' => 'width: 100%; height:200px;'])}}
+        {{ Form::textarea('comment' ,"$product->comment" ,['style' => 'width: 100%; height:200px;'] )}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5 col-md-5">
+        <h3>作品の分数</h3>
+        {{ Form::text('running_time',"$product->running_time" ,['style' => 'width: 100%; height:40px;'] )}}
+      </div>
+      <div class="col-xs-5 col-md-5 col-md-offset-1">
+        <h3>作品URL</h3>
+        {{ Form::text('url' ,"$product->url" ,['style' => 'width: 100%; height:40px;'] )}}
       </div>
     </div>
 

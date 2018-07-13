@@ -20,7 +20,14 @@
     <div class="col-xs-6 col-md-6">
       <ul class="list-group">
         <li class="list-group-item">作品分数</li>
-        <li class="list-group-item" style="word-wrap: break-word;">DB作り忘れてる</li>
+
+        <li class="list-group-item" style="word-wrap: break-word;">
+          @if($dtlProduct->running_time)
+            {{ $dtlProduct->running_time }}
+          @else
+            No data
+          @endif
+        </li>
       </ul>
 
       <ul class="list-group">
@@ -63,6 +70,9 @@
       </li>
     </ul>
   </div>
+
+<!-- とりあえず作品情報編集のリンク設置 -->
+  <a class="btn btn-default" href="/users/products/create" >作品情報編集</a>
 
   <div class="row">
     <h1>Map</h1>

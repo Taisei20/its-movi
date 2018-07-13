@@ -37,17 +37,23 @@ class ProductsController extends Controller
                         'title' => 'required'
                      ]);
 
-      $fileName = $request->image->getClientOriginalName();
-      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
-
       Product::create(
                     array(
                           'user_id'   => Auth::user()->id,
                           'title'     => $request->title,
                           'story'     => $request->story,
                           'comment'   => $request->comment,
-                          'image'     => $fileName,
                     ));
+
+     if($request->image){
+      $fileName = $request->image->getClientOriginalName();
+      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
+
+      Product::find($id)->update(
+                    array(
+                          'image'        => $fileName,
+                          ));
+    }
 
       return redirect('/users/products');
     }
@@ -59,17 +65,33 @@ class ProductsController extends Controller
     }
 
     public function update($id, Request $request){
-    // 作品情報の更新
+
+    // バリデーション 空白の場合を入力無効
+     $this->validate($request, [
+                        'title' => 'required'
+                     ]);
+
+     if($request->image){
+      $fileName = $request->image->getClientOriginalName();
+      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
+
       Product::find($id)->update(
                     array(
-                          'title'     => $request->title,
-                          'story'     => $request->story,
-                          'url'       => $request->url,
-                          'comment'   => $request->comment,
-                          'end_flag'  => $request->end_flag,
-                          'image'     => $fileName,
+                          'image'        => $fileName,
                           ));
-      return view('users.mypage');
+    }
+
+     // 作品情報の更新
+      Product::find($id)->update(
+                    array(
+                          'title'        => $request->title,
+                          'story'        => $request->story,
+                          'url'          => $request->url,
+                          'comment'      => $request->comment,
+                          'end_flag'     => $request->end_flag,
+                          'running_time' => $request->running_time,
+                          ));
+      return redirect('/users/products');
     }
 
 
