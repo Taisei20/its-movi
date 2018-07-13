@@ -20,14 +20,21 @@
     <div class="col-xs-6 col-md-6">
       <ul class="list-group">
         <li class="list-group-item">作品分数</li>
-        <li class="list-group-item" style="word-wrap: break-word;">DB作り忘れてる</li>
+
+        <li class="list-group-item" style="word-wrap: break-word;">
+          @if($dtlProduct->running_time)
+            {{ $dtlProduct->running_time }}
+          @else
+            No data
+          @endif
+        </li>
       </ul>
 
       <ul class="list-group">
         <li class="list-group-item">作品URL</li>
           <li class="list-group-item" style="word-wrap: break-word;">
            @if($dtlProduct->url)
-            <a href="" title="">
+            <a href="{{ $dtlProduct->url }}" title="">
               {{ $dtlProduct->url }}
             </a>
           @else
@@ -64,11 +71,14 @@
     </ul>
   </div>
 
+<!-- とりあえず作品情報編集のリンク設置 -->
+  <a class="btn btn-default" href="/users/products/{{ $dtlProduct->id }}/edit" >作品情報編集</a>
+
   <div class="row">
     <h1>Map</h1>
   </div>
 
-  <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 40px;">  </div>
+  <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
 
 <?php
   $varLocations = json_encode($locations);
