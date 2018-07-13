@@ -27,15 +27,19 @@
     {{ Form::close() }}
   </div><br>
 
-  <div>
+  <div class = "ichiran">
     <ul>
     @foreach($cuts as $cut)
     <li class="moji">カット:{{ $cut->cut_number }}
       <a href="/users/products/scenes/cuts/{{ $cut->id }}">
-        <img src="/assets/images/take-icon.jpeg" width="50" height="50">
+        <img src="/assets/images/take-icon.jpeg" width="45" height="45">
       </a>
       <a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">
-        <img src="/assets/images/kachinko-icon.jpeg" width="50" height="50">
+        <img src="/assets/images/kachinko-icon.jpeg" width="45" height="45">
+      </a>
+      <img src="/assets/images/pen.jpeg" width="45" height="45">
+      <a href="/users/products/scenes/cuts/{{ $cut->id }}/alart">
+        <img src="/assets/images/gomibako.jpeg" width="45" height="45">
       </a>
     </li>
     @endforeach

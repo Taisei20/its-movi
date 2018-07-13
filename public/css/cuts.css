@@ -30,7 +30,7 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 .moji {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 li,a {
@@ -40,4 +40,12 @@ li,a {
   /*display: block;*/
   list-style: none;
   line-height: 5;
+}
+
+.ichiran img {
+  margin-left: 10px;
+}
+
+.ichiran a:hover {
+  text-decoration: none;
 }
