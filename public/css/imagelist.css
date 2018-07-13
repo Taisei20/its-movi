@@ -1,8 +1,8 @@
-.products li{
+.contents li{
   display: inline;
 }
 
-.product {
+.content {
   float: left;
   margin: 10px;
   text-align: center;

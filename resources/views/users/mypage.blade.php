@@ -22,10 +22,10 @@
 <div style="clear: both;"></div>
 
 <div class="row">
-  <div class="products">
+  <div class="contents">
     <ul>
       @foreach($products as $product)
-      <div class="product">
+      <div class="content">
         <li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -52,9 +52,9 @@
                     <i class="fa fa-btn glyphicon glyphicon-log-out"></i>
                     作品情報編集
                   </a>
-                  <a href="#">
+                  <a href="/users/products/{{$product->id}}">
                     <i class="fa fa-btn glyphicon glyphicon-share"></i>
-                    カット一覧
+                    シーン一覧
                   </a>
                 </li>
                 <li>
