@@ -12,6 +12,6 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+        '/users/products/scenes/cuts/{id}/kachinko'
     ];
 }
