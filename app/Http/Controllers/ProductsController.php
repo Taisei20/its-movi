@@ -26,17 +26,18 @@ class ProductsController extends Controller
       return view('users.mypage')->with('products', $products);
     }
 
+
     public function create(){
       return view('products.create');
     }
 
-    public function store(Request $request){
 
+    public function store(Request $request){
     // バリデーション 空白の場合を入力無効
      $this->validate($request, [
                         'title' => 'required'
                      ]);
-
+    // 作品情報の登録
       Product::create(
                     array(
                           'user_id'   => Auth::user()->id,
@@ -44,19 +45,17 @@ class ProductsController extends Controller
                           'story'     => $request->story,
                           'comment'   => $request->comment,
                     ));
-
      if($request->image){
-      $fileName = $request->image->getClientOriginalName();
-      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
-
-      Product::find($id)->update(
-                    array(
-                          'image'        => $fileName,
-                          ));
-    }
-
+        $fileName = $request->image->getClientOriginalName();
+        Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
+        Product::create(
+                      array(
+                            'image'        => $fileName,
+                            ));
+     }
       return redirect('/users/products');
     }
+
 
     public function edit($id){
     // 作品情報の編集画面表示
@@ -64,13 +63,14 @@ class ProductsController extends Controller
       return view('products.edit')->with('product', $product);
     }
 
+
     public function update($id, Request $request){
 
     // バリデーション 空白の場合を入力無効
      $this->validate($request, [
                         'title' => 'required'
                      ]);
-
+    // 
      if($request->image){
       $fileName = $request->image->getClientOriginalName();
       Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
@@ -80,7 +80,6 @@ class ProductsController extends Controller
                           'image'        => $fileName,
                           ));
     }
-
      // 作品情報の更新
       Product::find($id)->update(
                     array(
