@@ -21,10 +21,11 @@ function initMap() {
         var markLat = locations[i]['lat'];
         var markLng = locations[i]['lng'];
 
+        console.log(markLat);
+        console.log(markLng);
+
         markers[i] = new google.maps.Marker(
         {
-          console.log(markLat);
-          console.log(markLng);
           position: {lat : markLat, lng : markLng },
           map: map,
         });
