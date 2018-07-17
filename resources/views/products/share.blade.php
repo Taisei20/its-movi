@@ -23,9 +23,9 @@
   <div class="row">
     <div class="col-xs-6 col-md-6">
       @if($dtlProduct->image)
-        <img class="thumbnail " src="{{ asset( 'assets/images')}}/{{$dtlProduct->image}}" alt="..." style="max-width: 100%">
+        <img class="thumbnail " src="{{ asset('assets/images') }}/{{$dtlProduct->image}}" alt="..." style="max-width: 100%">
       @else
-        <img class="thumbnail " src="{{ asset( 'assets/images')}}/171×180.svg" alt="..." style="max-width: 100%">
+        <img class="thumbnail " src="{{ asset('assets/images') }}/171×180.svg" alt="..." style="max-width: 100%">
       @endif
     </div>
 
