@@ -18,7 +18,7 @@ class CreateScenesTable extends Migration{
             $table->string('place_name')->nullable();
             $table->text('adress')->nullable();
             $table->text('memo')->nullable();
-            $table->integer('product_id');
+            $table->integer('product_id')->nullable();
             $table->timestamps();
         });
     }
