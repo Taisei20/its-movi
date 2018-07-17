@@ -1,0 +1,47 @@
+body {
+  background-color: white;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+
+ul,li {
+  margin: 10;
+/*  float: left;*/
+  /*padding-right: 10px;*/
+  /*display: block;*/
+  list-style: none;
+  line-height: 5;
+}
+
+/*.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}*/
+
+.ichiran img {
+  margin-left: 10px;
+}
+
+.ichiran a:hover {
+  text-decoration: none;
+}
+
+.moji {
+  float: left;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.hako {
+  height: 100px;
+  width: 100%;
+}
+
+

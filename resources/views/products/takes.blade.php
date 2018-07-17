@@ -6,27 +6,36 @@
   <head>
     <meta charset="utf-8">
     <title>テイク一覧</title>
+    <link rel="stylesheet" type="text/css" href="/css/takes.css">
   </head>
   <body>
+    <h2>カット:{{ $cut->cut_number }}</h2>
   	  	<div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">カチンコ画面へ</a></div>
 
+<div class = "ichiran">
+<ul>
 @foreach($takes as $take)
-<p>==================================</p>
-<h3>カットNo.{{ $cut->cut_number }}</h3>
-<h3>テイクNo.{{ $take->take_number }}</h3>
+<!-- <p>==================================</p> -->
+<li>
+<div class="hako">
+<div class = "moji">テイク:{{ $take->take_number }}</div>
 <?php if ($take->judge == 1) : ?>
-<p>OK</p>
+<div class = "moji">OK</div>
 <?php elseif ($take->judge == 2) : ?>
-<p>NG</p>
+<div class = "moji">NG</div>
 <?php elseif ($take->judge == 3) : ?>
-<p>PD</p>
+<div class = "moji">PD</div>
 <?php else : ?>
-<p>エラー</p>
+<div class = "moji">エラー</div>
 <?php endif; ?>
-<h3>メモ</h3>
-<p>{{ $take->memo }}</p>
+<div class = "moji"><img src="/assets/images/pen.jpeg" width="45" height="45"></div>
+<div class = "moji">メモ:{{ $take->memo }}</div>
+</div>
+</li>
 @endforeach
-<p>==================================</p>
+</ul>
+</div>
+<!-- <p>==================================</p> -->
 
   </body>
 </html>
