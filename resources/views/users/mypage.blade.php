@@ -43,23 +43,23 @@
               <ul class="dropdown-menu" role="menu">
                 <li>
                   <a href="#">
-                    <i class="fa fa-btn glyphicon glyphicon-share"></i>
+                    <i class="fa fa-btn glyphicon glyphicon-info-sign"></i>
                     作品情報
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa fa-btn glyphicon glyphicon-log-out"></i>
+                    <i class="fa fa-btn glyphicon glyphicon-pencil"></i>
                     作品情報編集
                   </a>
                   <a href="/users/products/{{$product->id}}">
-                    <i class="fa fa-btn glyphicon glyphicon-share"></i>
+                    <i class="fa fa-btn glyphicon glyphicon-list-alt"></i>
                     シーン一覧
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa fa-btn glyphicon glyphicon-log-out"></i>
+                    <i class="fa fa-btn glyphicon glyphicon-remove"></i>
                     削除
                   </a>
                 </li>
