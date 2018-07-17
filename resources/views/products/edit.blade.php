@@ -51,7 +51,7 @@
         @endif
 
         @if (count($errors)>0)
-          <div class ="error_message">
+          <div class ="error_message" style="color:red;">
             ※半角英数字で入力してください
           </div>
         @endif
