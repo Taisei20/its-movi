@@ -74,6 +74,7 @@ class ProductsController extends Controller
     // バリデーション 空白の場合を入力無効
      $this->validate($request, [
                         'title' => 'required'
+                        'running_time' => 'required|numeric'
                      ]);
     // 
      if($request->image){
