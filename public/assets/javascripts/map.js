@@ -23,6 +23,8 @@ function initMap() {
 
         markers[i] = new google.maps.Marker(
         {
+          console.log(markLat);
+          console.log(markLng);
           position: {lat : markLat, lng : markLng },
           map: map,
         });
