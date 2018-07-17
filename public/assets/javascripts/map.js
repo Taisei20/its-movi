@@ -26,7 +26,7 @@ function initMap() {
 
         markers[i] = new google.maps.Marker(
         {
-          position: {lat : markLat, lng : markLng },
+          position: new google.maps.LatLng(markLat, markLng),
           map: map,
         });
 
