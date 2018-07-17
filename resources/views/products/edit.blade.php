@@ -44,7 +44,7 @@
     <div class="row">
       <div class="col-xs-5 col-md-5">
         <h3>作品の分数</h3>
-        {{ Form::text('running_time',"$product->running_time" ,['style' => 'width: 100%; height:40px;'] )}}
+        {{ Form::number('running_time',"$product->running_time" ,['style' => 'width: 100%; height:40px;'] )}}
       </div>
       <div class="col-xs-5 col-md-5 col-md-offset-1">
         <h3>作品URL</h3>
