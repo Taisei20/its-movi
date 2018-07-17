@@ -38,6 +38,18 @@ class ProductsController extends Controller
                         'title' => 'required'
                      ]);
     // 作品情報の登録
+     if($request->image){
+        $fileName = $request->image->getClientOriginalName();
+        Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
+        Product::create(
+                      array(
+                        'user_id'   => Auth::user()->id,
+                        'title'     => $request->title,
+                        'story'     => $request->story,
+                        'comment'   => $request->comment,
+                        'image'     => $fileName,
+                      ));
+     } else {
       Product::create(
                     array(
                           'user_id'   => Auth::user()->id,
@@ -45,13 +57,6 @@ class ProductsController extends Controller
                           'story'     => $request->story,
                           'comment'   => $request->comment,
                     ));
-     if($request->image){
-        $fileName = $request->image->getClientOriginalName();
-        Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
-        Product::create(
-                      array(
-                            'image'        => $fileName,
-                            ));
      }
       return redirect('/users/products');
     }
