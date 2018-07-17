@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration{
             $table->text('url')->nullable();
             $table->text('comment')->nullable();
             $table->integer('end_flag')->nullable();
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->timestamps();
         });
     }
