@@ -68,5 +68,17 @@ class ScenesController extends Controller
                                           ));
     }
 
+    public function edit($id){
+        $scene = Scene::find($id);
+      return view('Products.scenes_edit')->with('scene', $scene);
+    }
+
+    // public function update($id, Request $request){
+    //     Scene::find($id)->update(
+    //                 array(
+    //                       '' =>,
+    //                             ));
+    // }
+
 
 }

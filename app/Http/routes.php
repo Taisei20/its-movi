@@ -24,6 +24,10 @@
 // シーン情報ページへのroute
   Route::get('/users/products/scenes/{id}/info', 'ScenesController@show_info');
 
+// シーン情報の編集・削除
+  Route::resource('/users/products/scenes', 'ScenesController',
+                  ['only' => ['update', 'edit', 'destroy'] ]);
+
 //
   Route::post('/users/products/scenes/{id}','CutsController@store');
   Route::get('/users/products/scenes/{id}','CutsController@show');
