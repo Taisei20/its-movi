@@ -44,18 +44,18 @@
                 @endif
 
               </div>
-              <div>シーン{{ $scene->scene_number }}<span class="caret"></span></div>
+              <div>SCENE:{{ $scene->scene_number }}<span class="caret"></span></div>
             </a>
 
               <ul class="dropdown-menu" role="menu">
                 <li>
-                  <a href="#">
+                  <a href="/users/products/scenes/{{ $scene->id }}/info">
                     <i class="fa fa-btn glyphicon glyphicon-info-sign"></i>
                     シーン情報
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/users/products/scenes/{{ $scene->id }}/edit">
                     <i class="fa fa-btn glyphicon glyphicon-pencil"></i>
                     シーン情報編集
                   </a>
@@ -65,7 +65,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/users/products/scenes/{{ $scene->id }}/alart">
                     <i class="fa fa-btn glyphicon glyphicon-remove"></i>
                     削除
                   </a>

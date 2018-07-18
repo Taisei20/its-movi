@@ -68,6 +68,7 @@ h2{
   line-height: 100px;
   -webkit-text-stroke: 2px #000;
   background-image: url("/assets/images/kachinko.jpg");
+  cursor: pointer;
 }
 
 .title {
