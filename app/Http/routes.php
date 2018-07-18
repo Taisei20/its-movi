@@ -17,9 +17,17 @@
 //
   Route::resource('/users/products', 'ProductsController',['except' => 'show']);
 
+// 作品削除画面
+  Route::get('/users/products/{id}/delete', 'ProductsController@destroy');
+  Route::get('/users/products/{id}/alart', 'ProductsController@alart');
+
 //
   Route::post('/users/products/{id}', 'ScenesController@store');
   Route::get('/users/products/{id}', 'ScenesController@show');
+
+// シーン削除画面
+  Route::get('/users/products/scenes/{id}/delete', 'ScenesController@destroy');
+  Route::get('/users/products/scenes/{id}/alart', 'ScenesController@alart');
 
 // シーン情報ページへのroute
   Route::get('/users/products/scenes/{id}/info', 'ScenesController@show_info');

@@ -19,15 +19,15 @@
 <li>
 <div class="hako">
 <div class = "moji">テイク:{{ $take->take_number }}</div>
-<?php if ($take->judge == 1) : ?>
+@if ($take->judge == 1)
 <div class = "moji">OK</div>
-<?php elseif ($take->judge == 2) : ?>
+@elseif ($take->judge == 2)
 <div class = "moji">NG</div>
-<?php elseif ($take->judge == 3) : ?>
+@elseif ($take->judge == 3)
 <div class = "moji">PD</div>
-<?php else : ?>
+@else
 <div class = "moji">エラー</div>
-<?php endif; ?>
+@endif
 <div class = "moji"><img src="/assets/images/pen.jpeg" width="45" height="45"></div>
 <div class = "moji">メモ:{{ $take->memo }}</div>
 </div>

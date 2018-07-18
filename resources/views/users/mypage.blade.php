@@ -42,13 +42,13 @@
 
               <ul class="dropdown-menu" role="menu">
                 <li>
-                  <a href="#">
+                  <a href="/users/products/share/{{$product->id}}">
                     <i class="fa fa-btn glyphicon glyphicon-info-sign"></i>
                     作品情報
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/users/products/{{ $product->id }}/edit">
                     <i class="fa fa-btn glyphicon glyphicon-pencil"></i>
                     作品情報編集
                   </a>
@@ -58,7 +58,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/users/products/{{ $product->id }}/alart">
                     <i class="fa fa-btn glyphicon glyphicon-remove"></i>
                     削除
                   </a>
