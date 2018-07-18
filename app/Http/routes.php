@@ -21,6 +21,9 @@
   Route::get('/users/products/{id}/delete', 'ProductsController@destroy');
   Route::get('/users/products/{id}/alart', 'ProductsController@alart');
 
+// エンドフラグ
+  Route::get('/users/products/{id}/flag', 'ProductsController@flag');
+
 //
   Route::post('/users/products/{id}', 'ScenesController@store');
   Route::get('/users/products/{id}', 'ScenesController@show');

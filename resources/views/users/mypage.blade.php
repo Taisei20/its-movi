@@ -27,6 +27,14 @@
       @foreach($products as $product)
       <div class="content">
         <li>
+          <a href="/users/products/{{$product->id}}/flag">
+            @if($product->end_flag==0)
+              <i class="fa fa-btn glyphicon glyphicon-unchecked"></i>
+            @elseif($product->end_flag==1)
+              <i class="fa fa-btn glyphicon glyphicon-check"></i>
+            @endif
+            CRANK UP!
+          </a>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
               <div class="image">
@@ -40,31 +48,31 @@
               <div>{{ $product->title }}<span class="caret"></span></div>
             </a>
 
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a href="/users/products/share/{{$product->id}}">
-                    <i class="fa fa-btn glyphicon glyphicon-info-sign"></i>
-                    作品情報
-                  </a>
-                </li>
-                <li>
-                  <a href="/users/products/{{ $product->id }}/edit">
-                    <i class="fa fa-btn glyphicon glyphicon-pencil"></i>
-                    作品情報編集
-                  </a>
-                  <a href="/users/products/{{$product->id}}">
-                    <i class="fa fa-btn glyphicon glyphicon-list-alt"></i>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="/users/products/share/{{$product->id}}">
+                  <i class="fa fa-btn glyphicon glyphicon-info-sign"></i>
+                  作品情報
+                </a>
+              </li>
+              <li>
+                <a href="/users/products/{{ $product->id }}/edit">
+                  <i class="fa fa-btn glyphicon glyphicon-pencil"></i>
+                  作品情報編集
+                </a>
+                <a href="/users/products/{{$product->id}}">
+                  <i class="fa fa-btn glyphicon glyphicon-list-alt"></i>
                     シーン一覧
-                  </a>
-                </li>
-                <li>
-                  <a href="/users/products/{{ $product->id }}/alart">
-                    <i class="fa fa-btn glyphicon glyphicon-remove"></i>
-                    削除
-                  </a>
-                </li>
-              </ul>
-            </li>
+                </a>
+              </li>
+              <li>
+                <a href="/users/products/{{ $product->id }}/alart">
+                  <i class="fa fa-btn glyphicon glyphicon-remove"></i>
+                  削除
+                </a>
+              </li>
+            </ul>
+          </li>
         </li>
       </div>
       @endforeach
