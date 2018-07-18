@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/css/takes.css">
   </head>
   <body>
-    <h2>カット:{{ $cut->cut_number }}</h2>
-  	  	<div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">カチンコ画面へ</a></div>
+    <h2>CUT:{{ $cut->cut_number }}</h2>
+  	  	<div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ"><img src="/assets/images/kachinko-icon.jpeg" width="45" height="45">カチンコ画面へ</a></div>
 
 <div class = "ichiran">
 <ul>
@@ -18,7 +18,7 @@
 <!-- <p>==================================</p> -->
 <li>
 <div class="hako">
-<div class = "moji">テイク:{{ $take->take_number }}</div>
+<div class = "moji">TAKE:{{ $take->take_number }}</div>
 <?php if ($take->judge == 1) : ?>
 <div class = "moji">OK</div>
 <?php elseif ($take->judge == 2) : ?>
