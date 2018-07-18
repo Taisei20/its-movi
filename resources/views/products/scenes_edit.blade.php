@@ -68,4 +68,5 @@
   src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KYE') }}&callback=initMap">
   </script>
   <script src="{{ asset('assets/javascripts/jquery-3.3.1.js') }}"></script>
+
 @endsection
