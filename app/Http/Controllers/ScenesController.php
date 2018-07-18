@@ -68,5 +68,16 @@ class ScenesController extends Controller
                                           ));
     }
 
+    public function destroy($id) {
+      $product_id = Scene::find($id)->product_id;
+      Scene::destroy($id);
+
+      return redirect("/users/products/{$product_id}");
+    }
+
+    public function alart($id){
+      $scene = Scene::find($id);
+      return view('products.delete')->with(array('scene' => $scene));
+    }
 
 }
