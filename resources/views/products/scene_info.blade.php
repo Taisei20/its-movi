@@ -6,7 +6,7 @@
 
 <!-- シーン情報の表示 -->
  <div class="row">
-    <h1>シーン{{ $Scene_info->scene_number }}</h1>
+    <h1>SCENE:{{ $Scene_info->scene_number }}</h1>
   </div>
 
   <div class="row">

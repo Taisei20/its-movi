@@ -150,13 +150,13 @@
 
             @if(isset($nav_scene))
             <a class="navbar-brand" href="/users/products/{{ $title->id }}" title="">
-            Scene: {{ $nav_scene->scene_number }}
+            SCENE: {{ $nav_scene->scene_number }}
             </a>
             @endif
 
             @if(isset($nav_cut))
             <a class="navbar-brand" href="/users/products/scenes/{{ $nav_scene->id }}" title="">
-            cut: {{ $nav_cut->cut_number }}
+            CUT: {{ $nav_cut->cut_number }}
             </a>
             @endif
 

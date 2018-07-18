@@ -44,7 +44,7 @@
                 @endif
 
               </div>
-              <div>シーン{{ $scene->scene_number }}<span class="caret"></span></div>
+              <div>SCENE:{{ $scene->scene_number }}<span class="caret"></span></div>
             </a>
 
               <ul class="dropdown-menu" role="menu">
