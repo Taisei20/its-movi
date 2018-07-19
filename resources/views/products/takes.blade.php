@@ -27,7 +27,8 @@
             @else
               <div class = "moji">エラー</div>
             @endif
-          <div class = "moji"><img src="/assets/images/pen.jpeg" width="45" height="45"></div>
+          <div class = "moji">
+            <a href="/users/products/scenes/cuts/takes{{ $take->id }}/edit" title="テイク編集画面へ"><img src="/assets/images/pen.jpeg" width="45" height="45"></a></div>
           <div class = "moji">メモ:{{ $take->memo }}</div>
         </div>
       </li>
