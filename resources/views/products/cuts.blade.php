@@ -37,7 +37,9 @@
       <a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">
         <img src="/assets/images/kachinko-icon.jpeg" width="45" height="45">
       </a>
-      <img src="/assets/images/pen.jpeg" width="45" height="45">
+      <a href="/users/products/scenes/cuts/{{ $cut->id }}/edit" title="カット編集画面へ">
+        <img src="/assets/images/pen.jpeg" width="45" height="45">
+      </a>
       <a href="/users/products/scenes/cuts/{{ $cut->id }}/alart">
         <img src="/assets/images/gomibako.jpeg" width="45" height="45">
       </a>

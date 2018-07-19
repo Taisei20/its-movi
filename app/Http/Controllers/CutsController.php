@@ -63,5 +63,21 @@ class CutsController extends Controller
     return view('products.delete')->with(array('cut' => $cut));
   }
 
+  public function edit($id){
+    $cut = Cut::find($id);
+
+    return view('products.cuts_edit')->with('cut', $cut);
+  }
+
+  public function update($id, Request $request){
+    Cut::find($id)->update(
+      array(
+        'cut_number' => $request->cut_number,
+        'scene_id' => $id
+      )
+    );
+
+    return view('products.cuts_edit');
+  }
 
 }
