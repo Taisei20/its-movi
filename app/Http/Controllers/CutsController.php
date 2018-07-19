@@ -23,7 +23,7 @@ class CutsController extends Controller
     }
 
     public function store($id, Request $request){
-
+dd("hoge");
 // バリデーション
 // 半角数字以外の場合・空白の場合をエラー
    $this->validate($request, [
@@ -73,5 +73,20 @@ class CutsController extends Controller
     ));
   }
 
+  public function edit($id){
+    $cut = Cut::find($id);
+    return view('products.cuts_edit')->with('cut', $cut);
+  }
+
+  public function update($id, Request $request){
+    $cut = Cut::find($id);
+    $cut->update(
+      array(
+        'cut_number' => $request->cut_number,
+      )
+    );
+
+    return redirect("/users/products/scenes/{$cut->scene->id}");
+  }
 
 }

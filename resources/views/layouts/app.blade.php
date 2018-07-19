@@ -27,7 +27,7 @@
 
         .header {
             position: fixed;
-            z-index: 10;
+            z-index: 100;
         }
 
         .ue {
@@ -47,6 +47,7 @@
             width: 100vw;
             position: fixed;
             bottom: 0;
+            z-index: 100;
         }
 
         .film-image {

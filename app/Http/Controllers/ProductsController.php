@@ -76,7 +76,7 @@ class ProductsController extends Controller
                         'title' => 'required',
                         'running_time' => 'required|numeric'
                      ]);
-    //
+
      if($request->image){
       $fileName = $request->image->getClientOriginalName();
       Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
@@ -107,6 +107,22 @@ class ProductsController extends Controller
     public function alart($id){
       $product = Product::find($id);
       return view('products.delete')->with(array('product' => $product));
+    }
+
+    public function flag($id){
+      $end_flag = Product::find($id)->end_flag;
+      if( $end_flag == 0){
+        $end_flag =1;
+      }
+      elseif( $end_flag == 1){
+        $end_flag =0;
+      }
+
+      Product::find($id)->update(
+                                  array('end_flag' => $end_flag)
+                                );
+
+      return redirect("/users/products");
     }
 
 

@@ -13,6 +13,7 @@ use App\Scene;
 use App\Product;
 use App\Http\User;
 use Auth;
+use Image;
 
 class ScenesController extends Controller
 {
@@ -55,10 +56,10 @@ class ScenesController extends Controller
                                         ));
   }
 
-
   //  シーン情報ページの表示
     public function show_info($id){
         $Scene_info = Scene::find($id);
+
     // シーンの位置情報を取得
         $location = Scene::where('product_id',$Scene_info->product_id)->where('id',$id)->get();
 
@@ -70,16 +71,15 @@ class ScenesController extends Controller
       return view('products.scene_info')->with(array(
                                           'Scene_info' => $Scene_info,
                                           'location'  => $location,
-                                             'nav_scene' => $nav_scene,
-                                             'title' => $title
+                                          'nav_scene' => $nav_scene,
+                                          'title' => $title
                                           ));
     }
 
-    public function destroy($id) {
-      $product_id = Scene::find($id)->product_id;
-      Scene::destroy($id);
 
-      return redirect("/users/products/{$product_id}");
+    public function edit($id){
+        $scene = Scene::find($id);
+      return view('Products.scenes_edit')->with('scene', $scene);
     }
 
     public function alart($id){
@@ -95,8 +95,27 @@ class ScenesController extends Controller
         'title' => $title
       ));
 
+    public function update($id, Request $request){
+
+     if($request->image){
+      $fileName = $request->image->getClientOriginalName();
+      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
 
 
+      Scene::find($id)->update(
+                    array(
+                          'image'        => $fileName,
+                          ));
     }
 
+      Scene::find($id)->update(
+                  array(
+                        'place_name' => $request->place_name,
+                        'adress'     => $request->adress,
+                        'memo'       => $request->memo,
+                        'lat'        => $request->lat,
+                        'lng'        => $request->lng,
+                              ));
+   return redirect("users/products/scenes/{$id}/info");
+  }
 }

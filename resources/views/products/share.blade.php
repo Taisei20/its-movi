@@ -88,7 +88,7 @@
     <h1>Map</h1>
   </div>
 
-  <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
+  <div id="map" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
 
 <?php
   $varLocations = json_encode($locations);
