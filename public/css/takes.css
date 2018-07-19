@@ -9,15 +9,8 @@ h1,h2,h3,h4,h5,h6,p {
   margin: 0;
 }
 
-.error_message{
-  color: red;
-}
 
-.moji {
-  font-size: 20px;
-}
-
-li,a {
+ul,li {
   margin: 10;
 /*  float: left;*/
   /*padding-right: 10px;*/
@@ -26,6 +19,12 @@ li,a {
   line-height: 5;
 }
 
+/*.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}*/
+
 .ichiran img {
   margin-left: 10px;
 }
@@ -33,3 +32,16 @@ li,a {
 .ichiran a:hover {
   text-decoration: none;
 }
+
+.moji {
+  float: left;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.hako {
+  height: 100px;
+  width: 100%;
+}
+
+

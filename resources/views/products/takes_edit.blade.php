@@ -16,8 +16,8 @@
         <h3>テイク編集</h3>
         {{ Form::open(['url' => "takes", 'method' => 'PATCH']) }}
         <p>==================================</p>
-        <h3>カットNo.{{ $cut->cut_number }}</h3>
-        <h3>テイクNo.{{ $take->take_number }}</h3>
+        <h3>CUT:{{ $cut->cut_number }}</h3>
+        <h3>TAKE:{{ $take->take_number }}</h3>
         <?php if ($take->judge == 1) : ?>
         <p>OK</p>
         <?php elseif ($take->judge == 2) : ?>

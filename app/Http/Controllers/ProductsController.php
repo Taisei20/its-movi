@@ -26,37 +26,41 @@ class ProductsController extends Controller
       return view('users.mypage')->with('products', $products);
     }
 
+
     public function create(){
       return view('products.create');
     }
 
-    public function store(Request $request){
 
+    public function store(Request $request){
     // バリデーション 空白の場合を入力無効
      $this->validate($request, [
                         'title' => 'required'
                      ]);
-
-      Product::create(
-                    array(
-                          'user_id'   => Auth::user()->id,
-                          'title'     => $request->title,
-                          'story'     => $request->story,
-                          'comment'   => $request->comment,
-                    ));
-
+    // 作品情報の登録
      if($request->image){
-      $fileName = $request->image->getClientOriginalName();
-      Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
-
-      Product::find($id)->update(
-                    array(
-                          'image'        => $fileName,
-                          ));
-    }
-
+        $fileName = $request->image->getClientOriginalName();
+        Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
+        Product::create(
+                      array(
+                        'user_id'   => Auth::user()->id,
+                        'title'     => $request->title,
+                        'story'     => $request->story,
+                        'comment'   => $request->comment,
+                        'image'     => $fileName,
+                      ));
+     } else {
+        Product::create(
+                      array(
+                        'user_id'   => Auth::user()->id,
+                        'title'     => $request->title,
+                        'story'     => $request->story,
+                        'comment'   => $request->comment,
+                      ));
+     }
       return redirect('/users/products');
     }
+
 
     public function edit($id){
     // 作品情報の編集画面表示
@@ -64,13 +68,15 @@ class ProductsController extends Controller
       return view('products.edit')->with('product', $product);
     }
 
+
     public function update($id, Request $request){
 
     // バリデーション 空白の場合を入力無効
      $this->validate($request, [
-                        'title' => 'required'
+                        'title' => 'required',
+                        'running_time' => 'required|numeric'
                      ]);
-
+    //
      if($request->image){
       $fileName = $request->image->getClientOriginalName();
       Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
@@ -80,7 +86,6 @@ class ProductsController extends Controller
                           'image'        => $fileName,
                           ));
     }
-
      // 作品情報の更新
       Product::find($id)->update(
                     array(
@@ -91,6 +96,33 @@ class ProductsController extends Controller
                           'running_time' => $request->running_time,
                           ));
       return redirect("/users/products/share/$id");
+    }
+
+    public function destroy($id) {
+      Product::destroy($id);
+
+      return redirect("/users/products");
+    }
+
+    public function alart($id){
+      $product = Product::find($id);
+      return view('products.delete')->with(array('product' => $product));
+    }
+
+    public function flag($id){
+      $end_flag = Product::find($id)->end_flag;
+      if( $end_flag == 0){
+        $end_flag =1;
+      }
+      elseif( $end_flag == 1){
+        $end_flag =0;
+      }
+
+      Product::find($id)->update(
+                                  array('end_flag' => $end_flag)
+                                );
+
+      return redirect("/users/products");
     }
 
 

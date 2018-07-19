@@ -6,27 +6,34 @@
   <head>
     <meta charset="utf-8">
     <title>テイク一覧</title>
+    <link rel="stylesheet" type="text/css" href="/css/takes.css">
   </head>
   <body>
-  	  	<div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">カチンコ画面へ</a></div>
+    <h2>CUT:{{ $cut->cut_number }}</h2>
+  	  	<div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ"><img src="/assets/images/kachinko-icon.jpeg" width="45" height="45">カチンコ画面へ</a></div>
 
-@foreach($takes as $take)
-<p>==================================</p>
-<h3>カットNo.{{ $cut->cut_number }}</h3>
-<h3>テイクNo.{{ $take->take_number }}</h3>
-<?php if ($take->judge == 1) : ?>
-<p>OK</p>
-<?php elseif ($take->judge == 2) : ?>
-<p>NG</p>
-<?php elseif ($take->judge == 3) : ?>
-<p>PD</p>
-<?php else : ?>
-<p>エラー</p>
-<?php endif; ?>
-<h3>メモ</h3>
-<p>{{ $take->memo }}</p>
-@endforeach
-<p>==================================</p>
+  <div class = "ichiran">
+    <ul>
+    @foreach($takes as $take)
+      <li>
+        <div class="hako">
+          <div class = "moji">TAKE:{{ $take->take_number }}</div>
+            @if ($take->judge == 1)
+              <div class = "moji">OK</div>
+            @elseif ($take->judge == 2)
+              <div class = "moji">NG</div>
+            @elseif ($take->judge == 3)
+              <div class = "moji">PD</div>
+            @else
+              <div class = "moji">エラー</div>
+            @endif
+          <div class = "moji"><img src="/assets/images/pen.jpeg" width="45" height="45"></div>
+          <div class = "moji">メモ:{{ $take->memo }}</div>
+        </div>
+      </li>
+    @endforeach
+    </ul>
+  </div>
 
   </body>
 </html>

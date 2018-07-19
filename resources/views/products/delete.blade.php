@@ -11,9 +11,19 @@
     <!-- <link rel="stylesheet" type="text/css" href="/css/cuts.css"> -->
   </head>
   <body>
-    <h2>カット:{{ $cut->cut_number }}を削除してよろしいですか</h2>
+    @if(isset($cut))
+    <h2>CUT:{{ $cut->cut_number }}を削除してよろしいですか</h2>
     <a href="/users/products/scenes/cuts/{{ $cut->id }}/delete">はい</a>
     <a href="/users/products/scenes/{{$cut->scene_id}}">いいえ</a>
+    @elseif(isset($scene))
+    <h2>SCENE:{{ $scene->scene_number }}を削除してよろしいですか</h2>
+    <a href="/users/products/scenes/{{ $scene->id }}/delete">はい</a>
+    <a href="/users/products/{{$scene->product_id}}">いいえ</a>
+    @elseif(isset($product))
+    <h2>{{ $product->title }}を削除してよろしいですか</h2>
+    <a href="/users/products/{{ $product->id }}/delete">はい</a>
+    <a href="/users/products">いいえ</a>
+    @endif
   </body>
 
   @endsection

@@ -44,7 +44,18 @@
     <div class="row">
       <div class="col-xs-5 col-md-5">
         <h3>作品の分数</h3>
-        {{ Form::text('running_time',"$product->running_time" ,['style' => 'width: 100%; height:40px;'] )}}
+        @if(!$product->running_time)
+          {{ Form::text('running_time', 0, ['style' => 'width: 100%; height:40px;'] )}}
+        @else
+          {{ Form::text('running_time',"$product->running_time" ,['style' => 'width: 100%; height:40px;'] )}}
+        @endif
+
+        @if (count($errors)>0)
+          <div class ="error_message" style="color:red;">
+            ※半角英数字で入力してください
+          </div>
+        @endif
+
       </div>
       <div class="col-xs-5 col-md-5 col-md-offset-1">
         <h3>作品URL</h3>

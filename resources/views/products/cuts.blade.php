@@ -13,7 +13,7 @@
   <body>
 
   <div>
-    <h2>シーン:{{$nav_scene->scene_number}}</h2>
+    <h2>SCENE:{{$nav_scene->scene_number}}</h2>
     {{ Form::open(['url' => "/users/products/scenes/{$id}", 'method' => 'post']) }}
         <input placeholder="追加するカット No." type="integer" name="cut_number">
         <input type="submit" value="カットを追加">
@@ -30,7 +30,7 @@
   <div class = "ichiran">
     <ul>
     @foreach($cuts as $cut)
-    <li class="moji">カット:{{ $cut->cut_number }}
+    <li class="moji">CUT:{{ $cut->cut_number }}
       <a href="/users/products/scenes/cuts/{{ $cut->id }}">
         <img src="/assets/images/take-icon.jpeg" width="45" height="45">
       </a>
