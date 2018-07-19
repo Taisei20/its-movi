@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{ asset('assets/javascripts/sceneMap.js') }}" ></script>
 <style>
 .submit{
   margin:15px 0;
@@ -47,12 +48,13 @@
     {!! Form::close() !!}
 
 
+
 <!-- 以下マップ表示機能 -->
   <div class="row">
     <h1>Map</h1>
   </div>
 
-  <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
+  <div id="map" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
 
 <?php
   $varLocations = json_encode($scene);
@@ -60,7 +62,7 @@
 
 <!-- 位置情報をJSON変換 -->
 <script>
-  var locations = JSON.parse('<?php echo $varLocations; ?>');
+  locations = JSON.parse('<?php echo $varLocations; ?>');
 </script>
 
 <!-- google maspの読み込み -->
