@@ -9,6 +9,13 @@
     <h1>SCENE:{{ $Scene_info->scene_number }}</h1>
   </div>
 
+      <span style="font-size: 14px; padding-left: 10px;">
+        <a href="/users/products/scenes/{{ $Scene_info->id }}/edit" >
+          <i class="fa fa-btn glyphicon glyphicon-pencil"></i>
+            編集
+        </a>
+      </span>
+
   <div class="row">
     <div class="col-xs-6 col-md-6">
       @if($Scene_info->image)
