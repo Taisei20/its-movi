@@ -39,9 +39,43 @@ ul,li {
   font-size: 20px;
 }
 
+.moji img {
+  z-index: 10;
+}
+
 .hako {
   height: 100px;
   width: 100%;
 }
 
+.memo {
+      width: 600px;
+      line-height: 20px;
+      z-index: 50;
+}
 
+.kachi .message a:hover span.remark {
+  margin-top: 10px;
+}
+
+
+.message {
+    position: relative;
+}
+.message span.remark {
+    display: none;
+}
+.message a:hover span.remark {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #CCCCCC;
+    color: #000000;
+    display: block;
+    line-height: 20px;
+    margin-top: 30px;
+    padding: 5px;
+    position: absolute;
+    top: 50px;
+    width: 120px;
+    font-size: 15px;
+    z-index: 10;
+}

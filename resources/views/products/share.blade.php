@@ -31,8 +31,8 @@
 
     <div class="col-xs-6 col-md-6">
       <ul class="list-group">
-        <li class="list-group-item">作品分数</li>
-
+<!--         <li class="list-group-item">作品分数</li> -->
+        <li class="list-group-item">作品時間(分)</li>
         <li class="list-group-item" style="word-wrap: break-word;">
           @if($dtlProduct->running_time)
             {{ $dtlProduct->running_time }}
@@ -88,7 +88,7 @@
     <h1>Map</h1>
   </div>
 
-  <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
+  <div id="map" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
 
 <?php
   $varLocations = json_encode($locations);

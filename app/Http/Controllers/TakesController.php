@@ -26,9 +26,7 @@ class TakesController extends Controller{
   }
 
   public function edit($id){
-        $takes = Takes::find($id);
-
-        return view('takes.edit')->with('takes', $takes);
+        $take = Take::find($id);
+        return view('products.takes_edit')->with('take', $take);
   }
 }
-
