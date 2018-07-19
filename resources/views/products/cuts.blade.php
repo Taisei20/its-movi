@@ -30,19 +30,34 @@
   <div class = "ichiran">
     <ul>
     @foreach($cuts as $cut)
-    <li class="moji">CUT:{{ $cut->cut_number }}
-      <a href="/users/products/scenes/cuts/{{ $cut->id }}">
+    <li>
+      <div class="hako">
+    <div class="moji">CUT:{{ $cut->cut_number }}</div>
+      <div class="moji message">
+        <a href="/users/products/scenes/cuts/{{ $cut->id }}">
         <img src="/assets/images/take-icon.jpeg" width="45" height="45">
+        <span class="remark">テイク画面へ</span>
       </a>
+    </div>
+    <div class="moji message">
       <a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ">
         <img src="/assets/images/kachinko-icon.jpeg" width="45" height="45">
+        <span class="remark">カチンコ画面へ</span>
       </a>
+    </div>
+    <div class="moji message">
       <a href="/users/products/scenes/cuts/{{ $cut->id }}/edit" title="カット編集画面へ">
         <img src="/assets/images/pen.jpeg" width="45" height="45">
+        <span class="remark">編集画面へ</span>
       </a>
+    </div>
+    <div class="moji message">
       <a href="/users/products/scenes/cuts/{{ $cut->id }}/alart">
         <img src="/assets/images/gomibako.jpeg" width="45" height="45">
+        <span class="remark">削除画面へ</span>
       </a>
+    </div>
+  </div>
     </li>
     @endforeach
     </ul>
