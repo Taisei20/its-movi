@@ -65,6 +65,7 @@ class ScenesController extends Controller
                                           ));
     }
 
+
     public function edit($id){
         $scene = Scene::find($id);
       return view('Products.scenes_edit')->with('scene', $scene);
@@ -75,6 +76,7 @@ class ScenesController extends Controller
      if($request->image){
       $fileName = $request->image->getClientOriginalName();
       Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
+
 
       Scene::find($id)->update(
                     array(

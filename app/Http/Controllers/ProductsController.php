@@ -73,7 +73,8 @@ class ProductsController extends Controller
 
     // バリデーション 空白の場合を入力無効
      $this->validate($request, [
-                        'title' => 'required'
+                        'title' => 'required',
+                        'running_time' => 'required|numeric'
                      ]);
 
      if($request->image){
@@ -95,6 +96,33 @@ class ProductsController extends Controller
                           'running_time' => $request->running_time,
                           ));
       return redirect("/users/products/share/$id");
+    }
+
+    public function destroy($id) {
+      Product::destroy($id);
+
+      return redirect("/users/products");
+    }
+
+    public function alart($id){
+      $product = Product::find($id);
+      return view('products.delete')->with(array('product' => $product));
+    }
+
+    public function flag($id){
+      $end_flag = Product::find($id)->end_flag;
+      if( $end_flag == 0){
+        $end_flag =1;
+      }
+      elseif( $end_flag == 1){
+        $end_flag =0;
+      }
+
+      Product::find($id)->update(
+                                  array('end_flag' => $end_flag)
+                                );
+
+      return redirect("/users/products");
     }
 
 
