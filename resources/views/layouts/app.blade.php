@@ -27,7 +27,7 @@
 
         .header {
             position: fixed;
-            z-index: 10;
+            z-index: 100;
         }
 
         .ue {
@@ -47,6 +47,7 @@
             width: 100vw;
             position: fixed;
             bottom: 0;
+            z-index: 100;
         }
 
         .film-image {
@@ -144,18 +145,18 @@
 <!-- header内のパン屑情報 -->
 
             @if(isset($title))
-            <a class="navbar-brand" href="{{ url('/users/products') }}" title="">
+            <a class="navbar-brand" href="/users/products/{{ $title->id }}" title="">
             {{ $title->title }}</a>
             @endif
 
             @if(isset($nav_scene))
-            <a class="navbar-brand" href="/users/products/{{ $title->id }}" title="">
+            <a class="navbar-brand" href="/users/products/scenes/{{ $nav_scene->id }}" title="">
             SCENE: {{ $nav_scene->scene_number }}
             </a>
             @endif
 
             @if(isset($nav_cut))
-            <a class="navbar-brand" href="/users/products/scenes/{{ $nav_scene->id }}" title="">
+            <a class="navbar-brand" href="/users/products/scenes/cuts/{{ $nav_cut->id }}" title="">
             CUT: {{ $nav_cut->cut_number }}
             </a>
             @endif

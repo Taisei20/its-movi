@@ -1,13 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="{{ asset('assets/javascripts/map.js') }}" ></script>
+<script src="{{ asset('assets/javascripts/sceneMap.js') }}" ></script>
 
 
 <!-- シーン情報の表示 -->
  <div class="row">
     <h1>SCENE:{{ $Scene_info->scene_number }}</h1>
   </div>
+
+      <span style="font-size: 14px; padding-left: 10px;">
+        <a href="/users/products/scenes/{{ $Scene_info->id }}/edit" >
+          <i class="fa fa-btn glyphicon glyphicon-pencil"></i>
+            編集
+        </a>
+      </span>
 
   <div class="row">
     <div class="col-xs-6 col-md-6">
@@ -43,8 +50,8 @@
     <ul class="list-group" >
       <li class="list-group-item">撮影場所</li>
       <li class="list-group-item" style="word-wrap: break-word;">
-        @if($Scene_info->place)
-          {{ $Scene_info->place }}
+        @if($Scene_info->place_name)
+          {{ $Scene_info->place_name }}
         @else
           No data
         @endif
@@ -71,10 +78,10 @@
     <h1>Map</h1>
   </div>
 
-  <div id="map" onload="initMap()" style="height: 600px; width: 100%;margin-bottom: 40px;">  </div>
+  <div id="map" style="height: 600px; width: 100%;margin-bottom: 40px;">  </div>
 
 <?php
-  $varLocations = json_encode($location);
+  $varLocations = json_encode($Scene_info);
 ?>
 
 <!-- 位置情報をJSON変換 -->

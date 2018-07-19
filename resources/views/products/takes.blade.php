@@ -10,7 +10,14 @@
   </head>
   <body>
     <h2>CUT:{{ $cut->cut_number }}</h2>
-  	  	<div><a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" title="カチンコ画面へ"><img src="/assets/images/kachinko-icon.jpeg" width="45" height="45">カチンコ画面へ</a></div>
+    <div class="kachi">
+  	  	<div class="message">
+          <a href="/users/products/scenes/cuts/{{ $cut->id }}/kachinko" >
+            <img src="/assets/images/kachinko-icon.jpeg" width="45" height="45">
+            <span class="remark">カチンコ画面へ</span>
+          </a>
+        </div>
+      </div>
 
   <div class = "ichiran">
     <ul>
@@ -27,9 +34,25 @@
             @else
               <div class = "moji">エラー</div>
             @endif
-          <div class = "moji">
-            <a href="/users/products/scenes/cuts/takes/{{ $take->id }}/edit" title="テイク編集画面へ"><img src="/assets/images/pen.jpeg" width="45" height="45"></a></div>
-          <div class = "moji">メモ:{{ $take->memo }}</div>
+
+          <div class = "moji message">
+            <a href=""/users/products/scenes/cuts/takes/{{ $take->id }}/edit"">
+              <img src="/assets/images/pen.jpeg" width="45" height="45">
+              <span class="remark">編集画面へ</span>
+            </a>
+          </div>
+          <div class = "moji message">
+            <div class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <img src="/assets/images/memo.jpeg" width="45" height="45">
+                <span class="remark">メモ表示</span>
+              </a>
+              <div class="dropdown-menu memo" role="menu">
+                {{ $take->memo }}
+              </div>
+            </div>
+          </div>
+
         </div>
       </li>
     @endforeach
