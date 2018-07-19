@@ -60,7 +60,17 @@ class CutsController extends Controller
 
   public function alart($id){
     $cut = Cut::find($id);
-    return view('products.delete')->with(array('cut' => $cut));
+
+// ヘッダー表示用の情報取得
+    $nav_scene = Scene::find($cut->scene_id);
+    $title = Product::find($nav_scene->product_id);
+//
+
+    return view('products.delete')->with(array(
+      'cut' => $cut,
+      'nav_scene' => $nav_scene,
+      'title' => $title
+    ));
   }
 
 

@@ -32,7 +32,6 @@ class ScenesController extends Controller
 // 半角数字以外の場合・空白の場合をエラー
    $this->validate($request, [
         'scene_number' => 'required|numeric'
-                // 'scene_number' => 'required|numeric|unique:scenes,scene_number'
     ]);
 //
 
@@ -62,9 +61,17 @@ class ScenesController extends Controller
         $Scene_info = Scene::find($id);
     // シーンの位置情報を取得
         $location = Scene::where('product_id',$Scene_info->product_id)->where('id',$id)->get();
+
+// ヘッダー表示用の情報取得
+    $nav_scene = Scene::find($id);
+    $title = Product::find($nav_scene->product_id);
+//
+
       return view('products.scene_info')->with(array(
                                           'Scene_info' => $Scene_info,
-                                          'location'  => $location
+                                          'location'  => $location,
+                                             'nav_scene' => $nav_scene,
+                                             'title' => $title
                                           ));
     }
 
@@ -77,7 +84,19 @@ class ScenesController extends Controller
 
     public function alart($id){
       $scene = Scene::find($id);
-      return view('products.delete')->with(array('scene' => $scene));
+
+// ヘッダー表示用の情報取得
+      $nav_scene = Scene::find($id);
+      $title = Product::find($nav_scene->product_id);
+//
+
+      return view('products.delete')->with(array(
+        'scene' => $scene,
+        'title' => $title
+      ));
+
+
+
     }
 
 }
