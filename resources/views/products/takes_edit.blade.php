@@ -1,11 +1,20 @@
 @extends('layout')
 
 @section('content')
-<div class="contents row">
-    <div class="container">
-        {{ Form::open(['url' => "takes/$takes->id", 'method' => 'PATCH']) }}
-        <h3>編集する</h3>
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>カット編集</title>
+    <link rel="stylesheet" type="text/css" href="/css/cuts.css">
+  </head>
+
+  <body>
+    <div class="contents row">
+    <div class="container">
+        <h3>テイク編集</h3>
+        {{ Form::open(['url' => "takes", 'method' => 'PATCH']) }}
         <p>==================================</p>
         <h3>CUT:{{ $cut->cut_number }}</h3>
         <h3>TAKE:{{ $take->take_number }}</h3>
@@ -21,11 +30,9 @@
         <h3>メモ</h3>
         <p>{{ $take->memo }}</p>
         <p>==================================</p>
-
-        <input placeholder="Image Url" type="text" name="image" value="{{$tweet->image}}" autofocus="true">
-        <textarea cols="30" name="text" placeholder="text" rows="10">{{$tweet->text}}</textarea>
         <input type="submit" value="SENT">
         {{ Form::close() }}
     </div>
-</div>
+  </body>
+</html>
 @endsection

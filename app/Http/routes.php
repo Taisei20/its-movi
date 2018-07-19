@@ -39,14 +39,17 @@
   Route::post('/users/products/scenes/{id}','CutsController@store');
   Route::get('/users/products/scenes/{id}','CutsController@show');
 
-  // カット削除画面
+// カットページ削除
   Route::get('/users/products/scenes/cuts/{id}/delete', 'CutsController@destroy');
   Route::get('/users/products/scenes/cuts/{id}/alart', 'CutsController@alart');
-  Route::get('/users/products/scenes/{id}/edit', 'CutsController@edit');
+// カットページ編集
+  Route::get('/users/products/scenes/cuts/{id}/edit', 'CutsController@edit');
+  Route::patch('/users/products/scenes/cuts/{id}/edit', 'CutsController@update');
 
 //
   Route::get('/users/products/scenes/cuts/{id}', 'TakesController@show');
-  Route::get('/users/products/scenes/cuts/{id}/edit', 'TakesController@edit');
+  Route::get('/users/products/scenes/cuts/takes/{id}/edit', 'TakesController@edit');
+  Route::patch('/users/products/scenes/cuts/takes/{id}/edit', 'TakesController@update');
 
 //
   Route::post('/users/products/scenes/cuts/{id}/kachinko', 'KachinkoController@store');
