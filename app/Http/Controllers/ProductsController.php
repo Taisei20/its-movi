@@ -75,7 +75,7 @@ class ProductsController extends Controller
      $this->validate($request, [
                         'title' => 'required'
                      ]);
-    // 
+
      if($request->image){
       $fileName = $request->image->getClientOriginalName();
       Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);

@@ -5,6 +5,9 @@ var currentInfoWindow = null;
 
 // mapsの生成
 function initMap() {
+
+  console.log(locations);
+
   var centerLat = locations['lat'];
   var centerLon = locations['lng'];
   var map = new google.maps.Map(document.getElementById('map'),
@@ -24,9 +27,6 @@ function initMap() {
       map: map,
     });
 
-// マーカーの位置情報を取得
-
-
 // windowの生成
   infoWindow = new google.maps.InfoWindow(
     {
@@ -34,7 +34,18 @@ function initMap() {
     });
 
   markerEvent();
+  markerPoition();
+}
 
+// マーカーの位置情報を取得
+function markerPoition(){
+  google.maps.event.addListener( markers, 'dragend', function(){
+    var pos = markers.getPosition();
+    var poslat = pos.lat();
+    var poslng = pos.lng();
+    document.getElementById("poslat").value = poslat;
+    document.getElementById("poslng").value = poslng;
+  });
 }
 
 // マーカーのクリックアクションの設定
@@ -44,5 +55,9 @@ function markerEvent(){
     currentInfoWindow = infoWindow;
   });
 }
+
+
+
+
 
 

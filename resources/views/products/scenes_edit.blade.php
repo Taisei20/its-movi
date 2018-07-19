@@ -9,8 +9,8 @@
 
 </style>
 
-    {!! Form::open( array('url' => "users/products/scenes/$scene->id/info",
-                         'method' => 'PATCH',
+    {!! Form::open( array('url' => "users/products/scenes/$scene->id",
+                         'method' => 'put',
                          'files' => 'true') ) !!}
 
     <div class="row">
@@ -26,21 +26,32 @@
       </div>
 
       <div class="col-xs-5 col-md-5 col-md-offset-1">
-        <h3>画像</h3>
-        {{ Form::file('image') }}
+        <h3>撮影場所</h3>
+        {{ Form::textarea('place_name', "$scene->place_name", ['style' => 'width: 100%; height:50px;']) }}
       </div>
+
     </div>
 
     <div class="row">
       <div class="col-xs-5 col-md-5">
         <h3>住所</h3>
-        {{ Form::textarea('adress',"$scene->adress" ,['style' => 'width: 100%; height:200px;']) }}
+        {{ Form::textarea('adress',"$scene->adress" ,['style' => 'width: 100%; height:50px;']) }}
       </div>
       <div class="col-xs-5 col-md-5 col-md-offset-1">
         <h3>メモ</h3>
-        {{ Form::textarea('memo' ,"$scene->memo" ,['style' => 'width: 100%; height:200px;'] )}}
+        {{ Form::textarea('memo' ,"$scene->memo" ,['style' => 'width: 100%; height:50px;'] )}}
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-xs-5 col-md-5">
+        <h3>画像</h3>
+        {{ Form::file('image') }}
+      </div>
+    </div>
+
+    {{ Form::hidden('lat', "$scene->lat", ['id' => 'poslat']) }}
+    {{ Form::hidden('lng', "$scene->lng", ['id' => 'poslng']) }}
 
     <div class="submit">
       {{ Form::submit('作成する',  ['class' => 'btn btn-default'] ) }}
