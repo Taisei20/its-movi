@@ -31,8 +31,8 @@
 
     <div class="col-xs-6 col-md-6">
       <ul class="list-group">
-        <li class="list-group-item">作品分数</li>
-
+<!--         <li class="list-group-item">作品分数</li> -->
+        <li class="list-group-item">作品時間(分)</li>
         <li class="list-group-item" style="word-wrap: break-word;">
           @if($dtlProduct->running_time)
             {{ $dtlProduct->running_time }}

@@ -43,7 +43,8 @@
 
     <div class="row">
       <div class="col-xs-5 col-md-5">
-        <h3>作品の分数</h3>
+<!--         <h3>作品の分数</h3> -->
+        <h3>作品時間(分)</h3>
         @if(!$product->running_time)
           {{ Form::text('running_time', 0, ['style' => 'width: 100%; height:40px;'] )}}
         @else
