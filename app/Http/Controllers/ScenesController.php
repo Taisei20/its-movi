@@ -94,6 +94,7 @@ class ScenesController extends Controller
         'scene' => $scene,
         'title' => $title
       ));
+    }
 
     public function update($id, Request $request){
 
