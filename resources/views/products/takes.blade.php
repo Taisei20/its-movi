@@ -34,8 +34,9 @@
             @else
               <div class = "moji">エラー</div>
             @endif
+
           <div class = "moji message">
-            <a href="#">
+            <a href=""/users/products/scenes/cuts/takes/{{ $take->id }}/edit"">
               <img src="/assets/images/pen.jpeg" width="45" height="45">
               <span class="remark">編集画面へ</span>
             </a>
@@ -51,6 +52,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </li>
     @endforeach
