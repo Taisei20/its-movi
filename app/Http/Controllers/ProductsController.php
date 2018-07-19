@@ -76,7 +76,7 @@ class ProductsController extends Controller
                         'title' => 'required',
                         'running_time' => 'required|numeric'
                      ]);
-    //
+
      if($request->image){
       $fileName = $request->image->getClientOriginalName();
       Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
