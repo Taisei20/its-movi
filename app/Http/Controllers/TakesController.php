@@ -34,11 +34,12 @@ class TakesController extends Controller{
     $take = Take::find($id);
     $take->update(
       array(
-        'take_number' => $request->take_number,
+        'judge' => $request->judge,
+        'memo' => $request->memo
       )
     );
 
-    return redirect("/users/products/scenes/cuts/{$take->cut->scene->id}");
+    return redirect("/users/products/scenes/cuts/{$take->cut_id}");
   }
 
 }
