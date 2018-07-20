@@ -27,8 +27,20 @@ class TakesController extends Controller{
 
   public function edit($id){
     $take = Take::find($id);
-    return view('products.takes_edit')->with('take', $take);
+
+// ヘッダー表示用情報取得
+    $nav_cut = Cut::find($take->cut_id);
+    $nav_scene = Scene::find($nav_cut->scene_id);
+    $title = Product::find($nav_scene->product_id);
+//
+
+    return view('products.takes_edit')->with(array(
+                                          'take' => $take,
+                                          'title' => $title,
+                                          'nav_scene' => $nav_scene,
+                                          'nav_cut' => $nav_cut));
   }
+
 
   public function update($id, Request $request){
     $take = Take::find($id);
