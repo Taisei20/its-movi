@@ -30,13 +30,6 @@
         // buttonタグのDOMを取得後ボタンをクリックするというイベントに対してkachinkoメソッドを実行
         document.getElementsByTagName("button")[0].addEventListener("click", kachinko);
 
-        // 位置情報保存
-        $('get_location').on('click', function(){
-          ajax($('.lng').val())
-        });
-        $('get_location').on('click', function(){
-          ajax($('.lat').val())
-        });
       </script>
 
         {{ Form::open(['url' => "/users/products/scenes/cuts/{$cut->id}/kachinko", 'method' => 'post']) }}
@@ -112,13 +105,13 @@
               <!-- メモテキストエリア -->
               <div class="memo_box">
                 <div class="memo">
-                  <textarea name="memo" placeholder="memo" cols="70" rows="18"></textarea>
+                  {{ Form::textarea('memo', "", ['placeholder' => "memo", 'cols' => '70', 'rows' => '18']) }}
                 </div>
               </div>
 
               <!-- 位置情報保存（非表示） -->
-              <input id="lat" class="form-control" name="lat" type="hidden" placeholder="緯度 :">
-              <input id="lng" class="form-control" name="lng" type="hidden" placeholder="経度 :">
+              {{ Form::hidden('lat', '0', ['id' => 'lat']) }}
+              {{ Form::hidden('lng', '0', ['id' => 'lng']) }}
 
               <!-- 保存ボタン -->
               <div class="save_box">
