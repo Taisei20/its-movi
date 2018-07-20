@@ -26,7 +26,20 @@ class TakesController extends Controller{
   }
 
   public function edit($id){
-        $take = Take::find($id);
-        return view('products.takes_edit')->with('take', $take);
+    $take = Take::find($id);
+    return view('products.takes_edit')->with('take', $take);
   }
+
+  public function update($id, Request $request){
+    $take = Take::find($id);
+    $take->update(
+      array(
+        'judge' => $request->judge,
+        'memo' => $request->memo
+      )
+    );
+
+    return redirect("/users/products/scenes/cuts/{$take->cut_id}");
+  }
+
 }

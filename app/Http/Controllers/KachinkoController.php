@@ -18,7 +18,9 @@ class KachinkoController extends Controller
 // バリデーション
 // 空白の場合にはいらない
    $this->validate($request, [
-        'judge' => 'required'
+        'judge' => 'required',
+        'lng' => 'required',
+        'lat' => 'required'
     ]);
 //
 
@@ -49,7 +51,6 @@ class KachinkoController extends Controller
     return redirect("/users/products/scenes/cuts/{$id}/kachinko");
   }
 
-  
 
   public function show($id){
     $cut = Cut::find($id);
