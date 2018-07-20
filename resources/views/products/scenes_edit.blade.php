@@ -59,7 +59,6 @@
     {!! Form::close() !!}
 
 
-
 <!-- 以下マップ表示機能 -->
   <div class="row">
     <h1>Map</h1>
