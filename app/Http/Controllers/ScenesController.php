@@ -77,16 +77,22 @@ class ScenesController extends Controller
 
 
     public function edit($id){
-        $scene = Scene::find($id);
+      
+      $scene = Scene::find($id);
 // ヘッダー表示用の情報取得
-      $nav_scene = Scene::find($id);
-      $title = Product::find($nav_scene->product_id);
+      $title = Product::find($scene->product_id);
 //
-
       return view('Products.scenes_edit')->with(array(
                                           'scene' => $scene,
                                           'title' => $title
       ));
+    }
+
+    public function destroy($id) {
+      $product_id = Scene::find($id)->product_id;
+      Scene::destroy($id);
+
+      return redirect("/users/products/{$product_id}");
     }
 
     public function alart($id){
