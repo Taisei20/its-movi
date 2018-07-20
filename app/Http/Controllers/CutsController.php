@@ -83,6 +83,7 @@ class CutsController extends Controller
         $title = Product::find($nav_scene->product_id);
     //
 
+
         return view('products.cuts_edit')->with(array(
         'cut' => $cut,
         'nav_scene' => $nav_scene,
@@ -92,6 +93,11 @@ class CutsController extends Controller
 
     public function update($id, Request $request)
     {
+
+       $this->validate($request, [
+        'cut_number' => 'required|numeric'
+        ]);
+
         $cut = Cut::find($id);
         $cut->update(
             array(
