@@ -78,8 +78,15 @@ class ScenesController extends Controller
 
 
     public function edit($id){
-        $scene = Scene::find($id);
+      $scene = Scene::find($id);
       return view('Products.scenes_edit')->with('scene', $scene);
+    }
+
+    public function destroy($id) {
+      $product_id = Scene::find($id)->product_id;
+      Scene::destroy($id);
+
+      return redirect("/users/products/{$product_id}");
     }
 
     public function alart($id){

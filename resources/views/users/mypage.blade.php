@@ -45,7 +45,7 @@
                 @endif
 
               </div>
-              <div>{{ $product->title }}<span class="caret"></span></div>
+              <div class="text">{{ $product->title }}</div>
             </a>
 
             <ul class="dropdown-menu" role="menu">

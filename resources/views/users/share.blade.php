@@ -23,7 +23,7 @@
                 <img src="{{ asset( 'assets/images')}}/171×180.svg">
               @endif
               </div>
-              <div>{{ $product->title }}</div>
+              <div class="text">{{ $product->title }}</div>
             </a>
           </li>
         </div>

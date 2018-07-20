@@ -9,8 +9,11 @@
   font-size: 20px;
 }
 
-.product a:hover {
-  background-color: #EEEEEE;
+.text {
+  overflow: hidden;
+  width: 192px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .image {
