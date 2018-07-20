@@ -6,8 +6,6 @@ var currentInfoWindow = null;
 // mapsの生成
 function initMap() {
 
-  console.log(locations);
-
   var centerLat = locations['lat'];
   var centerLon = locations['lng'];
   var map = new google.maps.Map(document.getElementById('map'),
@@ -55,6 +53,15 @@ function markerEvent(){
     currentInfoWindow = infoWindow;
   });
 }
+
+// マーカーを初期位置に戻す
+function resetMarker(locations){
+  var position = new google.maps.LatLng(locations['lat'],locations['lng']);
+  markers.setPosition(position);
+  map.setCenter(position);
+}
+
+
 
 
 
