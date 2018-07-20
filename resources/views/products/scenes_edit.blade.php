@@ -63,10 +63,11 @@
 <!-- 以下マップ表示機能 -->
   <div class="row">
     <h1>Map</h1>
+    <input type="button" value="元の位置に戻す" onclick="resetMarker(locations)">
   </div>
 
   <div id="map" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
-
+  <div onload="fsetPosition()">  </div>
 <?php
   $varLocations = json_encode($scene);
 ?>

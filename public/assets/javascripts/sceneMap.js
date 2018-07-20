@@ -1,16 +1,16 @@
 var markers = Array();
 var infoWindow = Array();
 var currentInfoWindow = null;
+var map;
 
 
 // mapsの生成
 function initMap() {
 
-  console.log(locations);
-
   var centerLat = locations['lat'];
   var centerLon = locations['lng'];
-  var map = new google.maps.Map(document.getElementById('map'),
+
+  map = new google.maps.Map(document.getElementById('map'),
     {
       zoom: 15,
       center: new google.maps.LatLng(centerLat, centerLon),
@@ -37,6 +37,8 @@ function initMap() {
   markerPoition();
 }
 
+console.log(markers);
+
 // マーカーの位置情報を取得
 function markerPoition(){
   google.maps.event.addListener( markers, 'dragend', function(){
@@ -55,6 +57,15 @@ function markerEvent(){
     currentInfoWindow = infoWindow;
   });
 }
+
+// マーカーを初期位置に戻す
+function resetMarker(locations){
+  var position = new google.maps.LatLng(locations['lat'],locations['lng']);
+  markers.setPosition(position);
+  map.panTo(position);
+}
+
+
 
 
 
