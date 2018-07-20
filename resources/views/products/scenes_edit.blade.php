@@ -67,7 +67,7 @@
   </div>
 
   <div id="map" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
-
+  <div onload="fsetPosition()">  </div>
 <?php
   $varLocations = json_encode($scene);
 ?>
