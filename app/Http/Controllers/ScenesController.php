@@ -71,15 +71,21 @@ class ScenesController extends Controller
       return view('products.scene_info')->with(array(
                                           'Scene_info' => $Scene_info,
                                           'location'  => $location,
-                                          'nav_scene' => $nav_scene,
                                           'title' => $title
                                           ));
     }
 
 
     public function edit($id){
+      
       $scene = Scene::find($id);
-      return view('Products.scenes_edit')->with('scene', $scene);
+// ヘッダー表示用の情報取得
+      $title = Product::find($scene->product_id);
+//
+      return view('Products.scenes_edit')->with(array(
+                                          'scene' => $scene,
+                                          'title' => $title
+      ));
     }
 
     public function destroy($id) {
@@ -98,8 +104,8 @@ class ScenesController extends Controller
 //
 
       return view('products.delete')->with(array(
-        'scene' => $scene,
-        'title' => $title
+                                         'scene' => $scene,
+                                         'title' => $title
       ));
     }
 
