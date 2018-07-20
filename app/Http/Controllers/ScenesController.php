@@ -87,7 +87,7 @@ class ScenesController extends Controller
 // ヘッダー表示用の情報取得
       $title = Product::find($scene->product_id);
 //
-      return view('Products.scenes_edit')->with(array(
+      return view('products.scenes_edit')->with(array(
                                           'scene' => $scene,
                                           'title' => $title
       ));
