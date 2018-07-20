@@ -39,13 +39,15 @@ class KachinkoController extends Controller
     );
 
     // 位置情報をDBに保存
-    $cut = Cut::find($id);
-    Scene::find($cut->scene_id)->update(
-      array(
-        'lng' => $request->lng,
-        'lat' => $request->lat
-      )
-    );
+    if( $request->lng != 0 || $request->lat != 0){
+      $cut = Cut::find($id);
+      Scene::find($cut->scene_id)->update(
+        array(
+          'lng' => $request->lng,
+          'lat' => $request->lat
+        )
+      );
+    }
 
 
     return redirect("/users/products/scenes/cuts/{$id}/kachinko");
