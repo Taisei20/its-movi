@@ -54,7 +54,7 @@
     {{ Form::hidden('lng', "$scene->lng", ['id' => 'poslng']) }}
 
     <div class="submit">
-      {{ Form::submit('作成する',  ['class' => 'btn btn-default'] ) }}
+      {{ Form::submit('更新する',  ['class' => 'btn btn-default'] ) }}
     </div>
     {!! Form::close() !!}
 
