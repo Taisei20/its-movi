@@ -109,6 +109,13 @@
           background-color: #EEEEEE;
         }
 
+        .text {
+          overflow: hidden;
+          width: 200px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
     </style>
 </head>
 <body id="app-layout">
@@ -138,25 +145,25 @@
             @if(Auth::check() )
                 <!-- Left Side Of Navbar -->
                 <!-- <ul class="nav navbar-nav"> -->
-                   <a href="{{ url('/users/products') }}" class="navbar-brand"> {{ Auth::user()->name }}さんのマイページ</a>
+                   <a href="{{ url('/users/products') }}" class="navbar-brand text"> {{ Auth::user()->name }}さんのマイページ</a>
                 <!-- </ul> -->
             @endif
 
 <!-- header内のパン屑情報 -->
 
             @if(isset($title))
-            <a class="navbar-brand" href="/users/products/{{ $title->id }}" title="">
+            <a class="navbar-brand text" href="/users/products/{{ $title->id }}" title="">
             {{ $title->title }}</a>
             @endif
 
             @if(isset($nav_scene))
-            <a class="navbar-brand" href="/users/products/scenes/{{ $nav_scene->id }}" title="">
+            <a class="navbar-brand text" href="/users/products/scenes/{{ $nav_scene->id }}" title="">
             SCENE: {{ $nav_scene->scene_number }}
             </a>
             @endif
 
             @if(isset($nav_cut))
-            <a class="navbar-brand" href="/users/products/scenes/cuts/{{ $nav_cut->id }}" title="">
+            <a class="navbar-brand text" href="/users/products/scenes/cuts/{{ $nav_cut->id }}" title="">
             CUT: {{ $nav_cut->cut_number }}
             </a>
             @endif
@@ -164,7 +171,7 @@
 <!-- header内のshare機能時のパン屑 -->
 
             @if(isset($dtlProduct) && !Auth::user() )
-            <a class="navbar-brand" href="/users/share/{{ $dtlProduct->user_id }}" title="">
+            <a class="navbar-brand text" href="/users/share/{{ $dtlProduct->user_id }}" title="">
             {{ $dtlProduct->user->name }}さんの作品一覧
             </a>
             @endif
@@ -178,7 +185,7 @@
                         <li><a href="{{ url('/register') }}">新規登録</a></li>
                     @else
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle text" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
