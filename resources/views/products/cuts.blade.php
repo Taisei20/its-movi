@@ -48,7 +48,7 @@
     <div class="moji message">
       <a href="/users/products/scenes/cuts/{{ $cut->id }}/edit" title="カット編集画面へ">
         <img src="/assets/images/pen.jpeg" width="45" height="45">
-        <span class="remark">編集画面へ</span>
+        <span class="remark">カットNo.変更画面へ</span>
       </a>
     </div>
     <div class="moji message">
