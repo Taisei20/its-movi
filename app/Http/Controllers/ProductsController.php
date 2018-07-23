@@ -22,7 +22,7 @@ class ProductsController extends Controller
     }
 
     public function index(){
-      $products = Product::where('user_id', Auth::user()->id)->get();
+      $products = Product::where('user_id', Auth::user()->id)->orderBy('id', 'ASC')->get();
       return view('users.mypage')->with('products', $products);
     }
 

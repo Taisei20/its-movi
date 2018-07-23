@@ -4,13 +4,11 @@
 <link rel="stylesheet" type="text/css" href="/css/imagelist.css">
 
 <style>
-
 .new{
   display: inline-block;
   font-size: 24px;
   margin:14px 0 0 50px;
 }
-
 </style>
 
 <div class="content">
