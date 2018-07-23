@@ -83,6 +83,51 @@ function markerPoition(){
   });
 }
 
+function reverseGeo(){
+    var pos = markers.getPosition();
+    var poslat = pos.lat();
+    var poslng = pos.lng();
+    var latlng = new google.maps.LatLng(poslat, poslng);
+
+    var adress = "";
+
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({'location': latlng}, function(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        if(results[0].address_components.length == 9){
+          for(i = results[0].address_components.length - 3; i > 0; i--){
+            if(i == 1){
+          adress = adress + "-" +results[0].address_components
+[i].long_name;
+                       }else{
+          adress = adress + results[0].address_components
+[i].long_name;}
+           }
+      }else if(results[0].address_components.length == 8){
+        for(i = results[0].address_components.length - 3; i >= 0; i--){
+          if(i == 0){
+          adress = adress + "-" +results[0].address_components
+[i].long_name;
+                       }else{
+          adress = adress + results[0].address_components
+[i].long_name;}
+        }
+      }else{
+        for(i = results[0].address_components.length - 3; i >= 0; i--){
+          adress = adress + results[0].address_components
+[i].long_name;
+        }
+      }
+console.log(results[0]);
+    document.getElementById("adress").value = adress;
+
+      }else{
+        console.log(status);
+      }
+    });
+
+}
+
 // マーカーのクリックアクションの設定
 function markerEvent(){
   markers.addListener('click',function(){
