@@ -36,7 +36,7 @@
       <div class="moji message">
         <a href="/users/products/scenes/cuts/{{ $cut->id }}">
         <img src="/assets/images/take-icon.jpeg" width="45" height="45">
-        <span class="remark">テイク画面へ</span>
+        <span class="remark">テイク一覧</span>
       </a>
     </div>
     <div class="moji message">
@@ -48,13 +48,13 @@
     <div class="moji message">
       <a href="/users/products/scenes/cuts/{{ $cut->id }}/edit" title="カット編集画面へ">
         <img src="/assets/images/pen.jpeg" width="45" height="45">
-        <span class="remark">編集画面へ</span>
+        <span class="remark">カットNo.変更</span>
       </a>
     </div>
     <div class="moji message">
       <a href="/users/products/scenes/cuts/{{ $cut->id }}/alart">
         <img src="/assets/images/gomibako.jpeg" width="45" height="45">
-        <span class="remark">削除画面へ</span>
+        <span class="remark">シーンを削除</span>
       </a>
     </div>
   </div>

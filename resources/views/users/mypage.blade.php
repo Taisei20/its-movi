@@ -3,7 +3,6 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="/css/imagelist.css">
 
-</style>
 <style>
 
 .new{
