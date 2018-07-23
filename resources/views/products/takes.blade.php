@@ -38,7 +38,7 @@
           <div class = "moji message">
             <a href="/users/products/scenes/cuts/takes/{{ $take->id }}/edit">
               <img src="/assets/images/pen.jpeg" width="45" height="45">
-              <span class="remark">編集画面へ</span>
+              <span class="remark">テイク情報編集</span>
             </a>
           </div>
           <div class = "moji message">
