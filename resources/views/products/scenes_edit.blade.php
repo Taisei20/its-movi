@@ -46,6 +46,11 @@
     <div class="row">
       <div class="col-xs-5 col-md-5">
         <h3>画像</h3>
+        @if( $scene->image )
+          <img src="/assets/images/{{$scene->image}}" alt="{{$scene->image}}">
+        @else
+          <img src="/assets/images/171×180.svg" alt="未設定">
+        @endif
         {{ Form::file('image') }}
       </div>
     </div>

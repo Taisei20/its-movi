@@ -26,6 +26,11 @@
 
       <div class="col-xs-5 col-md-5 col-md-offset-1">
         <h3>作品イメージ</h3>
+        @if( $product->image )
+          <img src="/assets/images/{{$product->image}}" alt="{{$product->image}}">
+        @else
+          <img src="/assets/images/171×180.svg" alt="未設定">
+        @endif
         {{ Form::file('image') }}
       </div>
     </div>
