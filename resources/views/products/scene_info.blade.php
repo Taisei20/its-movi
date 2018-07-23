@@ -91,7 +91,7 @@
 
 <!-- google maspの読み込み -->
   <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KYE') }}&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KYE') }}&callback=initMap2">
   </script>
   <script src="{{ asset('assets/javascripts/jquery-3.3.1.js') }}"></script>
 

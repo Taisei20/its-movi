@@ -4,7 +4,7 @@ var currentInfoWindow = null;
 var map;
 
 
-// mapsの生成
+// シーン編集用mapsの生成
 function initMap() {
 
   var centerLat = locations['lat'];
@@ -23,6 +23,39 @@ function initMap() {
   markers = new google.maps.Marker(
     {
       draggable:true,
+      position: new google.maps.LatLng(markLat, markLng),
+      map: map,
+    });
+
+// windowの生成
+  infoWindow = new google.maps.InfoWindow(
+    {
+      content: '<div>' + locations['place_name'] + '</div>'
+    });
+
+  markerEvent();
+  markerPoition();
+}
+
+
+// シーン詳細用mapsの生成
+function initMap2() {
+
+  var centerLat = locations['lat'];
+  var centerLon = locations['lng'];
+
+  map = new google.maps.Map(document.getElementById('map'),
+    {
+      zoom: 15,
+      center: new google.maps.LatLng(centerLat, centerLon),
+    });
+
+// makerの生成
+  var markLat = locations['lat'];
+  var markLng = locations['lng'];
+
+  markers = new google.maps.Marker(
+    {
       position: new google.maps.LatLng(markLat, markLng),
       map: map,
     });
