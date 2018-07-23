@@ -1,8 +1,12 @@
+.content {
+  margin-bottom: 50px;
+}
+
 .contents li{
   display: inline;
 }
 
-.content {
+.content_list {
   display: inline-block;
   margin: 10px;
   text-align: center;
