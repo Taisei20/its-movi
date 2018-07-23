@@ -7,6 +7,11 @@
   margin:15px 0;
 }
 
+#adress {
+  width:100%;
+  height: 50px;
+}
+
 </style>
 
     {!! Form::open( array('url' => "users/products/scenes/$scene->id",
@@ -35,7 +40,7 @@
     <div class="row">
       <div class="col-xs-5 col-md-5">
         <h3>住所</h3>
-        {{ Form::textarea('adress',"$scene->adress" ,['style' => 'width: 100%; height:50px;']) }}
+        {{ Form::textarea('adress',"$scene->adress",['id' => 'adress'])}}
       </div>
       <div class="col-xs-5 col-md-5 col-md-offset-1">
         <h3>メモ</h3>
@@ -63,12 +68,11 @@
     </div>
     {!! Form::close() !!}
 
-
-
 <!-- 以下マップ表示機能 -->
   <div class="row">
     <h1>Map</h1>
     <input type="button" value="元の位置に戻す" onclick="resetMarker(locations)">
+    <input type="button" value="現在位置の住所を取得" onclick="reverseGeo()">
   </div>
 
   <div id="map" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>

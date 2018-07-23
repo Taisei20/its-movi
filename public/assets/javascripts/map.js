@@ -1,15 +1,14 @@
 
-
 var markers = Array();
 var infoWindow = Array();
 var currentInfoWindow = null;
-
+var map;
 
 // mapsの生成
 function initMap() {
   var centerLat = 35.6284713;
   var centerLon = 139.736571;
-  var map = new google.maps.Map(document.getElementById('map'),
+   map = new google.maps.Map(document.getElementById('map'),
     {
       zoom: 15,
       center: new google.maps.LatLng(centerLat, centerLon),
@@ -21,8 +20,15 @@ function initMap() {
         var markLat = locations[i]['lat'];
         var markLng = locations[i]['lng'];
 
-        console.log(markLat);
-        console.log(markLng);
+        if(locations[i]['image']){
+          var image = locations[i]['image'];
+          var imageDr = `<img style="width: 150px;, hight: 150px;, " src="/assets/images/${image}">`;
+      }else{
+          var imageDr = `<img style="width: 150px;, hight: 150px;, " src="/assets/images/171×180.svg">`;
+
+      }
+
+console.log(imageDr);
 
         markers[i] = new google.maps.Marker(
         {
@@ -33,7 +39,8 @@ function initMap() {
 // windowの生成
         infoWindow[i] = new google.maps.InfoWindow(
           {
-            content: '<div>' + locations[i]['place_name'] + '</div>'
+            content: '<h4>' + locations[i]['place_name'] + '</h4>'
+                     + imageDr,
           });
         markerEvent(i);
       }
@@ -70,9 +77,16 @@ function markerEvent(i){
   markers[i].addListener('click',function(){
     if (currentInfoWindow){
       currentInfoWindow.close();
-    }
+    }    var pos = markers[i].getPosition();
+    var poslat = pos.lat();
+    var poslng = pos.lng();
+
+    map.panTo(new google.maps.LatLng(poslat,poslng));
+
     infoWindow[i].open(map,markers[i]);
     currentInfoWindow = infoWindow[i];
+
+
   });
 }
 
