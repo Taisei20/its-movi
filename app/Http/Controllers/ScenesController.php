@@ -34,12 +34,17 @@ class ScenesController extends Controller
    $this->validate($request, [
         'scene_number' => 'required|numeric'
     ]);
+
+   $lng = 139.7398508;
+   $lat = 35.6254073;
 //
 
     Scene::create(
       array(
         'scene_number' => $request->scene_number,
-        'product_id' => $id
+        'product_id' => $id,
+        'lng' => $lng,
+        'lat' => $lat
       )
     );
 
@@ -77,12 +82,12 @@ class ScenesController extends Controller
 
 
     public function edit($id){
-      
+
       $scene = Scene::find($id);
 // ヘッダー表示用の情報取得
       $title = Product::find($scene->product_id);
 //
-      return view('Products.scenes_edit')->with(array(
+      return view('products.scenes_edit')->with(array(
                                           'scene' => $scene,
                                           'title' => $title
       ));
@@ -124,11 +129,12 @@ class ScenesController extends Controller
 
       Scene::find($id)->update(
                   array(
-                        'place_name' => $request->place_name,
-                        'adress'     => $request->adress,
-                        'memo'       => $request->memo,
-                        'lat'        => $request->lat,
-                        'lng'        => $request->lng,
+                        'scene_number' => $request->scene_number,
+                        'place_name'   => $request->place_name,
+                        'adress'       => $request->adress,
+                        'memo'         => $request->memo,
+                        'lat'          => $request->lat,
+                        'lng'          => $request->lng,
                               ));
    return redirect("users/products/scenes/{$id}/info");
   }
