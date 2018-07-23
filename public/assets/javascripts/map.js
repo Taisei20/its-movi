@@ -28,8 +28,6 @@ function initMap() {
 
       }
 
-console.log(imageDr);
-
         markers[i] = new google.maps.Marker(
         {
           position: new google.maps.LatLng(markLat, markLng),
@@ -37,11 +35,19 @@ console.log(imageDr);
         });
 
 // windowの生成
+
+        if(locations[i]['place_name']){
         infoWindow[i] = new google.maps.InfoWindow(
           {
             content: '<h4>' + locations[i]['place_name'] + '</h4>'
                      + imageDr,
           });
+        }else{
+        infoWindow[i] = new google.maps.InfoWindow(
+        {
+            content: imageDr,
+        });
+        }
         markerEvent(i);
       }
 
