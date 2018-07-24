@@ -37,7 +37,7 @@
                   @if($product->image)
                     <img src="/assets/images/{{ $product->image }}" alt="{{ $product->title }}">
                   @else
-                    <img src="/assets/images/171×180.svg" alt="{{ $product->title }}">
+                    <img src="/assets/images/noimage.jpg" alt="{{ $product->title }}">
                   @endif
                 </div>
                 <div class="text">{{ $product->title }}</div>

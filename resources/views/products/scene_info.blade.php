@@ -22,7 +22,7 @@
       @if($Scene_info->image)
         <img class="thumbnail " src="{{ asset('assets/images') }}/{{$Scene_info->image}}" alt="..." style="max-width: 100%">
       @else
-        <img class="thumbnail " src="{{ asset('assets/images') }}/171×180.svg" alt="..." style="max-width: 100%">
+        <img class="thumbnail " src="{{ asset('assets/images') }}/noimage.jpg" alt="..." style="max-width: 100%">
       @endif
     </div>
   </div>

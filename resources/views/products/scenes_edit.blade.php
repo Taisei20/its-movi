@@ -42,9 +42,9 @@
     <div class="col-xs-6 col-md-6">
       <h3>画像</h3>
         @if( $scene->image )
-          <img src="/assets/images/{{$scene->image}}" alt="{{$scene->image}}">
+          <img class="thumbnail" src="/assets/images/{{$scene->image}}" alt="{{$scene->image}}" style="max-width: 100%">
         @else
-          <img src="/assets/images/171×180.svg" alt="未設定">
+          <img class="thumbnail" src="/assets/images/noimage.jpg" alt="未設定" style="max-width: 100%">
         @endif
         {{ Form::file('image') }}
     </div>

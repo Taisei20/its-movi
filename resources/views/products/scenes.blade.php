@@ -40,7 +40,7 @@
                     @if($scene->image)
                       <img src="/assets/images/{{ $scene->image }}" alt="シーン{{ $scene->scene_number }}">
                     @else
-                      <img src="/assets/images/171×180.svg" alt="{{ $scene->scene_number }}">
+                      <img src="/assets/images/noimage.jpg" alt="{{ $scene->scene_number }}">
                     @endif
 
                   </div>
