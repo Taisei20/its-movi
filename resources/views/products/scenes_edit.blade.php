@@ -19,8 +19,16 @@
                          'method' => 'put',
                          'files' => 'true') ) !!}
 
-    <div class="row">
-      <div class="col-xs-5 col-md-5">
+
+
+
+
+
+
+
+
+  <div class="row">
+    <div class="col-xs-5 col-md-5">
         <h3>シーンNo<span style="color: red; font-size: 15px; padding-left: 5px;">※入力必須</span></h3>
         {{ Form::textarea('scene_number', "$scene->scene_number" ,['style' => 'width: 100%; height:40px;']) }}
 
@@ -30,44 +38,52 @@
             </div>
           @endif
       </div>
-
-      <div class="col-xs-5 col-md-5 col-md-offset-1">
-        <h3>撮影場所</h3>
-        {{ Form::textarea('place_name', "$scene->place_name", ['style' => 'width: 100%; height:50px;']) }}
-      </div>
-
     </div>
-
-    <div class="row">
-      <div class="col-xs-5 col-md-5">
-        <h3>住所</h3>
-        {{ Form::textarea('adress',"$scene->adress",['id' => 'adress'])}}
-      </div>
-      <div class="col-xs-5 col-md-5 col-md-offset-1">
-        <h3>メモ</h3>
-        {{ Form::textarea('memo' ,"$scene->memo" ,['style' => 'width: 100%; height:50px;'] )}}
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-5 col-md-5">
-        <h3>画像</h3>
+    <div class="col-xs-6 col-md-6">
+      <h3>画像</h3>
         @if( $scene->image )
           <img src="/assets/images/{{$scene->image}}" alt="{{$scene->image}}">
         @else
           <img src="/assets/images/171×180.svg" alt="未設定">
         @endif
         {{ Form::file('image') }}
-      </div>
     </div>
 
-    {{ Form::hidden('lat', "$scene->lat", ['id' => 'poslat']) }}
-    {{ Form::hidden('lng', "$scene->lng", ['id' => 'poslng']) }}
 
-    <div class="submit">
-      {{ Form::submit('更新する',  ['class' => 'btn btn-default'] ) }}
-    </div>
-    {!! Form::close() !!}
+<!-- レイアウト調整役として設置 -->
+  <div class="row">
+    <p></p>
+  </div>
+<!--  -->
+
+
+  <div class="row" style="margin: 20px 0 5px;">
+    <ul class="list-group" >
+      <li class="list-group-item">メモ</li>
+      <li class="list-group-item" style="word-wrap: break-word;">
+        {{ Form::textarea('memo' ,"$scene->memo" ,['style' => 'width: 100%; height:40px;'] )}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="row" style="margin: 5px 0;">
+    <ul class="list-group" >
+      <li class="list-group-item">撮影場所</li>
+      <li class="list-group-item" style="word-wrap: break-word;">
+        {{ Form::textarea('place_name', "$scene->place_name", ['style' => 'width: 100%; height:40px;']) }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="row" style="margin: 5px 0;">
+    <ul class="list-group" >
+      <li class="list-group-item">住所</li>
+      <li class="list-group-item" style="word-wrap: break-word;">
+        {{ Form::textarea('adress',"$scene->adress",['id' => 'adress'])}}
+      </li>
+    </ul>
+  </div>
+
 
 <!-- 以下マップ表示機能 -->
   <div class="row">
