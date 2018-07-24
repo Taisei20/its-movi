@@ -31,9 +31,10 @@ class ScenesController extends Controller
 
 // バリデーション
 // 半角数字以外の場合・空白の場合をエラー
-   $this->validate($request, [
-        'scene_number' => 'required|numeric'
+    $this->validate($request, [
+        'scene_number' => 'required|numeric|digits:8'
     ]);
+
 
    $lng = 139.7398508;
    $lat = 35.6254073;
@@ -115,6 +116,11 @@ class ScenesController extends Controller
     }
 
     public function update($id, Request $request){
+
+    $this->validate($request, [
+        'scene_number' => 'required|numeric|digits:8',
+        'image' => 'image'
+    ]);
 
      if($request->image){
       $fileName = $request->image->getClientOriginalName();
