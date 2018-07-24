@@ -30,7 +30,7 @@
   <div class="row">
     <div class="col-xs-5 col-md-5">
         <h3>シーンNo<span style="color: red; font-size: 15px; padding-left: 5px;">※入力必須</span></h3>
-        {{ Form::textarea('scene_number', "$scene->scene_number" ,['style' => 'width: 100%; height:40px;']) }}
+        {{ Form::textarea('scene_number', "$scene->scene_number" ,['style' => 'width: 100%; height:25px;']) }}
 
           @if (count($errors)>0)
             <div class ="error_message">
@@ -79,10 +79,19 @@
     <ul class="list-group" >
       <li class="list-group-item">住所</li>
       <li class="list-group-item" style="word-wrap: break-word;">
-        {{ Form::textarea('adress',"$scene->adress",['id' => 'adress'])}}
+        {{ Form::textarea('adress',"$scene->adress",['id' => 'adress'] ,['style' => 'width: 100%; height:40px;'] )}}
       </li>
     </ul>
   </div>
+
+      {{ Form::hidden('lat', "$scene->lat", ['id' => 'poslat']) }}
+    {{ Form::hidden('lng', "$scene->lng", ['id' => 'poslng']) }}
+
+    <div class="submit">
+      {{ Form::submit('更新する',  ['class' => 'btn btn-default'] ) }}
+    </div>
+    {!! Form::close() !!}
+
 
 
 <!-- 以下マップ表示機能 -->
