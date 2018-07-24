@@ -6,7 +6,7 @@
 <div class="content">
 
   <div class="row">
-    <h1 style=" float: left">作品一覧</h1>
+    <h1 style=" float: left">{{ $name->name }}さんの作品一覧</h1>
   </div>
 
   <!-- 作品リンクの表示 -->
