@@ -6,8 +6,7 @@
 
 <!-- シーン情報の表示 -->
  <div class="row">
-    <h1>SCENE:{{ $Scene_info->scene_number }}</h1>
-  </div>
+    <h1>SCENE:{{ $Scene_info->scene_number }}
 
       <span style="font-size: 14px; padding-left: 10px;">
         <a href="/users/products/scenes/{{ $Scene_info->id }}/edit" >
@@ -15,6 +14,8 @@
             編集
         </a>
       </span>
+    </h1>
+  </div>
 
   <div class="row">
     <div class="col-xs-6 col-md-6">
