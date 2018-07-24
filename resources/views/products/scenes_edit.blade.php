@@ -71,13 +71,10 @@
 
 <!-- 以下マップ表示機能 -->
   <div class="row">
-
-      <h1>Map
-
-
-    <input type="button" value="元の位置に戻す" onclick="resetMarker(locations)" class="btn btn-default ">
-    <input type="button" value="現在位置の住所を取得" onclick="reverseGeo()" class="btn btn-default ">
-</h1>
+    <h1>Map
+      <input type="button" value="元の位置に戻す" onclick="resetMarker(locations)" class="btn btn-default ">
+      <input type="button" value="現在位置の住所を取得" onclick="reverseGeo()" class="btn btn-default ">
+    </h1>
   </div>
 
   <div id="map" style="height: 400px; width: 100%;margin-bottom: 80px;">  </div>
