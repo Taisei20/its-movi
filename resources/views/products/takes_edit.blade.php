@@ -3,6 +3,9 @@
 @section('content')
 {{ Form::open(['url' => "/users/products/scenes/cuts/takes/{$take->id}/edit", 'method' => 'PATCH']) }}
 
+
+<h4>テイク情報の編集</h4>
+
   <h3>TAKE:{{ $take->take_number }}</h3>
 
   <div class="edit">
@@ -26,7 +29,7 @@
     <h4>メモ</h4>
     {{ Form::textarea('memo',"$take->memo" ,['style' => 'width: 50%; height:100px;']) }}
       <div>
-      <input type="submit" value="テイクを編集">
+      <input type="submit" value="テイク情報を更新">
       </div>
   </div>
 
