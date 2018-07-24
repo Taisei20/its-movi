@@ -27,7 +27,7 @@ class CutsController extends Controller
         // バリデーション
         // 半角数字以外の場合・空白の場合をエラー
         $this->validate($request, [
-        'cut_number' => 'required|numeric'
+        'cut_number' => 'required|numeric|digits:8'
         ]);
 
         Cut::create(
@@ -95,7 +95,7 @@ class CutsController extends Controller
     {
 
        $this->validate($request, [
-        'cut_number' => 'required|numeric'
+        'cut_number' => 'required|numeric|digits:8'
         ]);
 
         $cut = Cut::find($id);
