@@ -9,7 +9,7 @@
 
 #adress {
   width:100%;
-  height: 50px;
+  height: 40px;
 }
 
 
@@ -87,10 +87,6 @@
       {{ Form::hidden('lat', "$scene->lat", ['id' => 'poslat']) }}
     {{ Form::hidden('lng', "$scene->lng", ['id' => 'poslng']) }}
 
-    <div class="submit">
-      {{ Form::submit('更新する',  ['class' => 'btn btn-default'] ) }}
-    </div>
-    {!! Form::close() !!}
 
 
 
@@ -102,7 +98,7 @@
     </h1>
   </div>
 
-  <div id="map" style="height: 400px; width: 100%;margin-bottom: 80px;">  </div>
+  <div id="map" style="height: 400px; width: 100%;margin-bottom: 50px;">  </div>
   <div onload="fsetPosition()">  </div>
 <?php
   $varLocations = json_encode($scene);
@@ -118,5 +114,11 @@
   src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KYE') }}&callback=initMap">
   </script>
   <script src="{{ asset('assets/javascripts/jquery-3.3.1.js') }}"></script>
+
+      <div class="submit">
+      {{ Form::submit('更新する',  ['class' => 'btn btn-default'] ) }}
+    </div>
+    {!! Form::close() !!}
+
 
 @endsection
