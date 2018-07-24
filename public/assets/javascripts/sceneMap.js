@@ -27,7 +27,7 @@ function initMap() {
       map: map,
     });
 
-// windowの生成
+// 吹き出しの生成
   infoWindow = new google.maps.InfoWindow(
     {
       content: '<div>' + locations['place_name'] + '</div>'
@@ -70,8 +70,6 @@ function initMap2() {
   markerPoition();
 }
 
-console.log(markers);
-
 // マーカーの位置情報を取得
 function markerPoition(){
   google.maps.event.addListener( markers, 'dragend', function(){
@@ -83,6 +81,22 @@ function markerPoition(){
   });
 }
 
+// マーカーのクリックアクションの設定
+function markerEvent(){
+  markers.addListener('click',function(){
+    infoWindow.open(map,markers);
+    currentInfoWindow = infoWindow;
+  });
+}
+
+// マーカーを初期位置に戻す
+function resetMarker(locations){
+  var position = new google.maps.LatLng(locations['lat'],locations['lng']);
+  markers.setPosition(position);
+  map.panTo(position);
+}
+
+// ピンの位置の住所情報を取得
 function reverseGeo(){
     var pos = markers.getPosition();
     var poslat = pos.lat();
@@ -118,31 +132,13 @@ function reverseGeo(){
 [i].long_name;
         }
       }
-console.log(results[0]);
+
     document.getElementById("adress").value = adress;
 
-      }else{
-        console.log(status);
       }
     });
 
 }
-
-// マーカーのクリックアクションの設定
-function markerEvent(){
-  markers.addListener('click',function(){
-    infoWindow.open(map,markers);
-    currentInfoWindow = infoWindow;
-  });
-}
-
-// マーカーを初期位置に戻す
-function resetMarker(locations){
-  var position = new google.maps.LatLng(locations['lat'],locations['lng']);
-  markers.setPosition(position);
-  map.panTo(position);
-}
-
 
 
 

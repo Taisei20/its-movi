@@ -12,6 +12,7 @@
   height: 50px;
 }
 
+
 </style>
 
     {!! Form::open( array('url' => "users/products/scenes/$scene->id",
@@ -70,12 +71,16 @@
 
 <!-- 以下マップ表示機能 -->
   <div class="row">
-    <h1>Map</h1>
-    <input type="button" value="元の位置に戻す" onclick="resetMarker(locations)">
-    <input type="button" value="現在位置の住所を取得" onclick="reverseGeo()">
+
+      <h1>Map
+
+
+    <input type="button" value="元の位置に戻す" onclick="resetMarker(locations)" class="btn btn-default ">
+    <input type="button" value="現在位置の住所を取得" onclick="reverseGeo()" class="btn btn-default ">
+</h1>
   </div>
 
-  <div id="map" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
+  <div id="map" style="height: 400px; width: 100%;margin-bottom: 80px;">  </div>
   <div onload="fsetPosition()">  </div>
 <?php
   $varLocations = json_encode($scene);

@@ -51,7 +51,6 @@ function initMap() {
         markerEvent(i);
       }
 
-console.log(locations[0]);
 
 // マーカーが収まる縮尺の判定
   var minX = locations[0]['lng'];
