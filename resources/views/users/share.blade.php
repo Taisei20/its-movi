@@ -23,7 +23,7 @@
               @if($product->image)
                 <img src="{{ asset( 'assets/images')}}/{{ $product->image }}">
               @else
-                <img src="{{ asset( 'assets/images')}}/171×180.svg">
+                <img src="{{ asset( 'assets/images')}}/noimage.jpg">
               @endif
               </div>
               <div class="text">{{ $product->title }}</div>

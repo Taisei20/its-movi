@@ -37,7 +37,7 @@
           @if( $product->image )
             <img class="thumbnail" src="/assets/images/{{$product->image}}" alt="{{$product->image}}" style="max-width: 100%">
           @else
-            <img class="thumbnail" src="/assets/images/171×180.svg" alt="未設定" style="max-width: 100%">
+            <img class="thumbnail" src="/assets/images/noimage.jpg" alt="未設定" style="max-width: 100%">
           @endif
         {{ Form::file('image') }}
       </div>
