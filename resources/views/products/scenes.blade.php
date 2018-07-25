@@ -17,7 +17,7 @@
       <div>
         {{ Form::open(['url' => "/users/products/{$id}", 'method' => 'post']) }}
 
-          <input placeholder="追加するシーン No." type="integer" name="scene_number">
+          <input placeholder="追加するシーン No." type="integer" name="scene_number" maxlength='8'>
           <input type="submit" value="シーンを追加">
 
           @if (count($errors)>0)
