@@ -32,10 +32,10 @@ class ScenesController extends Controller
 // バリデーション
 // 半角数字以外の場合・空白の場合をエラー
     $this->validate($request, [
-        'scene_number' => 'required|numeric|digits_between:0,8'
+        'scene_number' => 'required|numeric'
     ]);
 
-
+// デフォルトの位置情報設定
    $lng = 139.7398508;
    $lat = 35.6254073;
 //
@@ -118,7 +118,7 @@ class ScenesController extends Controller
     public function update($id, Request $request){
 
     $this->validate($request, [
-        'scene_number' => 'required|numeric|digits_between:0,8',
+        'scene_number' => 'required|numeric',
         'image' => 'image'
     ]);
 
