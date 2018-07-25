@@ -39,5 +39,4 @@ class UsersController extends Controller
                                           'locations'  => $locations
                                           ));
     }
-
 }
