@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Scene;
 use App\Product;
-use App\Http\User;
+use App\User;
 use Auth;
 use Image;
 
@@ -40,15 +40,12 @@ class ScenesController extends Controller
    $lat = 35.6254073;
 //
 
-    Scene::create(
-      array(
-        'scene_number' => $request->scene_number,
-        'product_id' => $id,
-        'lng' => $lng,
-        'lat' => $lat
-      )
-    );
-
+    Scene::create(array(
+                  'scene_number' => $request->scene_number,
+                  'product_id' => $id,
+                  'lng' => $lng,
+                 'lat' => $lat
+                  ));
     return redirect("/users/products/{$id}");
   }
 
@@ -62,32 +59,26 @@ class ScenesController extends Controller
                                         ));
   }
 
-  //  シーン情報ページの表示
-    public function show_info($id){
-        $Scene_info = Scene::find($id);
-
-    // シーンの位置情報を取得
-        $location = Scene::where('product_id',$Scene_info->product_id)->where('id',$id)->get();
+// シーン情報ページの表示
+  public function show_info($id){
+    $Scene_info = Scene::find($id);
 
 // ヘッダー表示用の情報取得
     $nav_scene = Scene::find($id);
     $title = Product::find($nav_scene->product_id);
-//
 
-      return view('products.scene_info')->with(array(
+    return view('products.scene_info')->with(array(
                                           'Scene_info' => $Scene_info,
-                                          'location'  => $location,
                                           'title' => $title
                                           ));
     }
 
 
     public function edit($id){
-
       $scene = Scene::find($id);
 // ヘッダー表示用の情報取得
       $title = Product::find($scene->product_id);
-//
+
       return view('products.scenes_edit')->with(array(
                                           'scene' => $scene,
                                           'title' => $title
@@ -97,18 +88,14 @@ class ScenesController extends Controller
     public function destroy($id) {
       $product_id = Scene::find($id)->product_id;
       Scene::destroy($id);
-
       return redirect("/users/products/{$product_id}");
     }
 
     public function alart($id){
       $scene = Scene::find($id);
-
 // ヘッダー表示用の情報取得
       $nav_scene = Scene::find($id);
       $title = Product::find($nav_scene->product_id);
-//
-
       return view('products.delete')->with(array(
                                          'scene' => $scene,
                                          'title' => $title
@@ -116,31 +103,27 @@ class ScenesController extends Controller
     }
 
     public function update($id, Request $request){
-
     $this->validate($request, [
         'scene_number' => 'required|numeric|digits_between:0,8',
         'image' => 'image'
     ]);
 
-     if($request->image){
+    if($request->image){
       $fileName = $request->image->getClientOriginalName();
       Image::make($request->image)->save(public_path().'/assets/images/'.$fileName);
-
-
       Scene::find($id)->update(
                     array(
                           'image'        => $fileName,
                           ));
     }
 
-      Scene::find($id)->update(
-                  array(
-                        'scene_number' => $request->scene_number,
-                        'place_name'   => $request->place_name,
-                        'adress'       => $request->adress,
-                        'memo'         => $request->memo,
-                        'lat'          => $request->lat,
-                        'lng'          => $request->lng,
+    Scene::find($id)->update(array(
+                          'scene_number' => $request->scene_number,
+                          'place_name'   => $request->place_name,
+                          'adress'       => $request->adress,
+                          'memo'         => $request->memo,
+                          'lat'          => $request->lat,
+                          'lng'          => $request->lng,
                               ));
    return redirect("users/products/scenes/{$id}/info");
   }
