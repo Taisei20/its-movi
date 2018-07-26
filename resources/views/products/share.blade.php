@@ -5,6 +5,7 @@
 <style>
 .copy{
   float: right;
+  margin-right: 15px;
 }
 
 #copy{
@@ -14,15 +15,14 @@
 </style>
 
 <script src="{{ asset('assets/javascripts/map.js') }}" ></script>
-
+<script src="{{ asset('assets/javascripts/copy.js') }}" ></script>
 
   <div class="row">
-
     <!-- copy form btn -->
-  <div class="copy">
-    <input id="copy" type="text" value="https://its-movi.herokuapp.com/users/products/share/{{ $dtlProduct->id }}">
-    <button id="button" class="btn btn-default" onclick="copy()"><i class="fa fa-btn glyphicon glyphicon-paperclip"></i></button>
-  </div>
+    <div class="copy">
+      <input id="copy" type="text" value="https://its-movi.herokuapp.com/users/products/share/{{ $dtlProduct->id }}">
+      <button id="button" class="btn btn-default" onclick="copy()"><i class="fa fa-btn glyphicon glyphicon-paperclip"></i></button>
+    </div>
 
     <h1>{{ $dtlProduct->title }}
     @if( Auth::check() )
@@ -35,8 +35,6 @@
     @endif
     </h1>
   </div>
-
-<script src="{{ asset('assets/javascripts/copy.js') }}" ></script>
 
 
 <!-- 作品詳細情報の表示 -->
