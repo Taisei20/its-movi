@@ -18,7 +18,7 @@
           @endif
 
     <h2>CUT:{{$cut->cut_number}}</h2>
-    <input placeholder="変更後のカットNo." type="integer" name="cut_number" value="{{$cut->cut_number}}">
+    <input placeholder="変更後のカットNo." type="integer" name="cut_number" value="{{$cut->cut_number}}" maxlength='8'>
     <input type="submit" value="カットNo.を変更">
 
 {{ Form::close() }}

@@ -35,7 +35,8 @@ class ProductsController extends Controller
     public function store(Request $request){
     // バリデーション 空白の場合を入力無効
      $this->validate($request, [
-                        'title' => 'required'
+                        'title' => 'required',
+                        'image' => 'image'
                      ]);
     // 作品情報の登録
      if($request->image){
@@ -74,7 +75,7 @@ class ProductsController extends Controller
     // バリデーション 空白の場合を入力無効
      $this->validate($request, [
                         'title' => 'required',
-                        'running_time' => 'numeric|digits_between:0,8',
+                        'running_time' => 'numeric',
                         'image' => 'image'
                      ]);
 

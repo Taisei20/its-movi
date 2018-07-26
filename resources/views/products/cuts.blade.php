@@ -15,7 +15,7 @@
   <div>
     <h2>SCENE:{{$nav_scene->scene_number}}</h2>
     {{ Form::open(['url' => "/users/products/scenes/{$id}", 'method' => 'post']) }}
-        <input placeholder="追加するカット No." type="integer" name="cut_number">
+        <input placeholder="追加するカット No." type="integer" name="cut_number" maxlength='8'>
         <input type="submit" value="カットを追加">
 
       @if (count($errors)>0)
