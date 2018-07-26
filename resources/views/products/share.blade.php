@@ -1,9 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+.copy{
+  float: right;
+  margin-right: 15px;
+}
+
+#copy{
+  width: 250px;
+}
+
+</style>
+
 <script src="{{ asset('assets/javascripts/map.js') }}" ></script>
+<script src="{{ asset('assets/javascripts/copy.js') }}" ></script>
 
   <div class="row">
+    <!-- copy form btn -->
+    <div class="copy">
+      <input id="copy" type="text" value="https://its-movi.herokuapp.com/users/products/share/{{ $dtlProduct->id }}">
+      <button id="button" class="btn btn-default" onclick="copy()"><i class="fa fa-btn glyphicon glyphicon-paperclip"></i></button>
+    </div>
+
     <h1>{{ $dtlProduct->title }}
     @if( Auth::check() )
       <span style="font-size: 14px; padding-left: 10px;">
@@ -15,8 +35,6 @@
     @endif
     </h1>
   </div>
-
-
 
 
 <!-- 作品詳細情報の表示 -->
@@ -88,7 +106,7 @@
     <h1>Map</h1>
   </div>
 
-  <div id="map" style="height: 600px; width: 100%;margin-bottom: 80px;">  </div>
+  <div id="map" style="height: 450px; width: 100%;margin-bottom: 80px;">  </div>
 
 <?php
   $varLocations = json_encode($locations);

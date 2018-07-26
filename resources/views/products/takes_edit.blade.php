@@ -1,8 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+
+<link rel="stylesheet" type="text/css" href="/css/erorrs.css">
+
 {{ Form::open(['url' => "/users/products/scenes/cuts/takes/{$take->id}/edit", 'method' => 'PATCH']) }}
 
+          @if (count($errors) > 0)
+            <div id="error_explanation">
+              <ul class="erorr">
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
 
 <h4>テイク情報の編集</h4>
 

@@ -1,12 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+.copy{
+  float: right;
+  margin-right: 15px;
+}
+
+#copy{
+  width: 250px;
+}
+
+</style>
+
 <link rel="stylesheet" type="text/css" href="/css/imagelist.css">
+<script src="{{ asset('assets/javascripts/copy.js') }}" ></script>
 
 <div class="content">
 
   <div class="row">
-    <h1 style=" float: left">作品一覧</h1>
+    <!-- copy form btn -->
+    <div class="copy">
+      <input id="copy" type="text" value="https://its-movi.herokuapp.com/users/share/{{ $name->id }}">
+      <button class="btn btn-default" onclick="copy()"><i class="fa fa-btn glyphicon glyphicon-paperclip"></i></button>
+    </div>
+
+    <h1 style=" float: left">{{ $name->name }}さんの作品一覧</h1>
   </div>
 
   <!-- 作品リンクの表示 -->
@@ -34,9 +54,6 @@
       </ul>
     </div>
   </div>
-
 </div>
-
-
 
 @endsection

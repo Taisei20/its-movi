@@ -24,7 +24,7 @@ function initMap() {
           var image = locations[i]['image'];
           var imageDr = `<img style="width: 150px;, hight: 150px;, " src="/assets/images/${image}">`;
       }else{
-          var imageDr = `<img style="width: 150px;, hight: 150px;, " src="/assets/images/171×180.svg">`;
+          var imageDr = `<img style="width: 150px;, hight: 150px;, " src="/assets/images/noimage.jpg">`;
 
       }
 
