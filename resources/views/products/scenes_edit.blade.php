@@ -2,6 +2,7 @@
 
 @section('content')
 <script src="{{ asset('assets/javascripts/sceneMap.js') }}" ></script>
+<link rel="stylesheet" type="text/css" href="/css/erorrs.css">
 <style>
 .submit{
   margin:15px 0;
@@ -19,16 +20,20 @@
                       'method' => 'put',
                       'files' => 'true') ) !!}
 
+          @if (count($errors) > 0)
+            <div id="error_explanation">
+              <ul class="erorr">
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+
   <div class="row">
     <div class="col-xs-5 col-md-5">
         <h3>シーンNo<span style="color: red; font-size: 15px; padding-left: 5px;">※入力必須</span></h3>
         {{ Form::textarea('scene_number', "$scene->scene_number" ,['style' => 'width: 100%; height:25px;']) }}
-
-          @if (count($errors)>0)
-            <div class ="error_message">
-            ※シーンNoは入力必須です
-            </div>
-          @endif
       </div>
   </div>
     <div class="col-xs-6 col-md-6">
