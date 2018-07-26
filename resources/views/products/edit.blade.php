@@ -47,7 +47,7 @@
   <!--         <li class="list-group-item">作品分数</li> -->
           <li class="list-group-item">作品時間(分)</li>
           <li class="list-group-item" style="word-wrap: break-word;">
-              {{ Form::text('running_time', "$product->running_time", ['style' => 'width: 100%; height:40px;'] )}}
+              {{ Form::text('running_time', "$product->running_time", ['style' => 'width: 100%; height:40px;','maxlength' => '8'] )}}
           </li>
         </ul>
 

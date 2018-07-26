@@ -30,7 +30,7 @@
   <div class="row">
     <div class="col-xs-5 col-md-5">
         <h3>シーンNo<span style="color: red; font-size: 15px; padding-left: 5px;">※入力必須</span></h3>
-        {{ Form::textarea('scene_number', "$scene->scene_number" ,['style' => 'width: 100%; height:25px;']) }}
+        {{ Form::textarea('scene_number', "$scene->scene_number" ,['style' => 'width: 100%; height:25px;','maxlength' => '8']) }}
 
           @if (count($errors)>0)
             <div class ="error_message">
